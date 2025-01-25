@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://be0wkcxua363x"]
+
+[ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="1_k8rrd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8extg"]
+size = Vector3(10, 0.02, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p2g0v"]
+size = Vector2(10, 10)
+
+[node name="Test" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_8extg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("PlaneMesh_p2g0v")
+skeleton = NodePath("../..")
+
+[node name="Car" parent="." instance=ExtResource("1_k8rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.543019, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.722983, 0.377695, -0.578482, 0.0867267, 0.781088, 0.618368, 0.6854, -0.49724, 0.531958, 0, 8, 0)
+shadow_enabled = true

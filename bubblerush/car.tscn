@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4qssepqrjmmk"]
+
+[ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ak3fp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6i1e"]
+
+[node name="Car" type="CharacterBody3D"]
+script = ExtResource("1_xxi4i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ak3fp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_q6i1e")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.958113, 0.286391, 0, -0.286391, 0.958113, 0, 1.90814, 3.25932)
