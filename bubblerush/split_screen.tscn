@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfuhwdte25jtw"]
+
+[ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="1_0mga4"]
+
+[node name="Split Screen" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72213, 0, 1.72311)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player1" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Player1"]
+handle_input_locally = false
+size = Vector2i(576, 512)
+render_target_update_mode = 4
+
+[node name="Car" parent="HBoxContainer/Player1/SubViewport" instance=ExtResource("1_0mga4")]
+
+[node name="soap" parent="HBoxContainer/Player1/SubViewport/Car/3DModel" index="0"]
+visible = true
+
+[node name="Player2" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Player2"]
+handle_input_locally = false
+size = Vector2i(576, 512)
+render_target_update_mode = 4
+
+[node name="Car" parent="HBoxContainer/Player2/SubViewport" instance=ExtResource("1_0mga4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12727, 0, 0)
+player2 = true
+
+[node name="Camera3D" parent="HBoxContainer/Player2/SubViewport/Car" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.127, 0, 0)
+
+[node name="duck" parent="HBoxContainer/Player2/SubViewport/Car/3DModel" index="1"]
+visible = true
+
+[editable path="HBoxContainer/Player1/SubViewport/Car"]
+[editable path="HBoxContainer/Player1/SubViewport/Car/3DModel"]
+[editable path="HBoxContainer/Player2/SubViewport/Car"]
+[editable path="HBoxContainer/Player2/SubViewport/Car/3DModel"]

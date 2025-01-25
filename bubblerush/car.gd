@@ -5,9 +5,11 @@ class_name car
 const SPEED = 25.0
 @export var base_FOV = 75
 @export var speedup_FOV = 120
+@export var player2 = false
 
 
 var speed_percent = 1
+var input_dir : Vector2
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -18,7 +20,10 @@ func _physics_process(delta: float) -> void:
 	#%Camera3D.transform=%CameraHolder.transform
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	if not player2:
+		input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	else:
+		input_dir = Input.get_vector("left", "right", "forward", "back")
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity/4)
@@ -30,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	
 	speed_percent += 0.01
 	speed_percent = min(speed_percent, 1)
-	print("speed_percent ", speed_percent)
+	#print("speed_percent ", speed_percent)
 
 	#if currentVelocity > 0.0 and %Camera3D.fov <= speedup_FOV:
 	#	%Camera3D.fov = %Camera3D.fov * (1 - delta) + speedup_FOV * delta
