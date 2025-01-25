@@ -59,7 +59,8 @@ func _physics_process(delta: float) -> void:
 	%Camera3D.fov = base_FOV + currentVelocity * 3
 	
 	#print("velocity ", velocity.length())
-	$BubbleTrail/GPUParticles3D.amount_ratio = velocity.length() / 10
+	$BubbleTrail/BubbleParticles3D.amount_ratio = velocity.length() / 10
+	$BubbleTrail/FoamParticles3D.amount_ratio = velocity.length() / 10
 	
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	#print("area entered")

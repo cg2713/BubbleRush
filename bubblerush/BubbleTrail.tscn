@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp2cncocua5kc"]
+[gd_scene load_steps=7 format=3 uid="uid://dp2cncocua5kc"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r7cc5"]
+lifetime_randomness = 0.99
 emission_shape_scale = Vector3(0.5, 0.5, 0.5)
 emission_shape = 1
 emission_sphere_radius = 1.0
@@ -21,12 +22,43 @@ material = SubResource("StandardMaterial3D_nhtl7")
 radial_segments = 16
 rings = 8
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5ue4q"]
+lifetime_randomness = 0.15
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 3
+emission_box_extents = Vector3(1.5, 0.01, 0.1)
+direction = Vector3(0, 0, 0)
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 0.999978
+gravity = Vector3(0, -0.5, 0)
+scale_min = 0.15
+scale_max = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ex6wh"]
+transparency = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_m16e4"]
+material = SubResource("StandardMaterial3D_ex6wh")
+radial_segments = 16
+rings = 8
+
 [node name="BubbleTrail" type="Node3D"]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="BubbleParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144811, -0.189518, -1.19209e-07)
-amount = 50
+amount = 40
+lifetime = 2.95
 explosiveness = 0.07
-randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_r7cc5")
 draw_pass_1 = SubResource("SphereMesh_3c8f3")
+
+[node name="FoamParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144811, -0.189518, -1.19209e-07)
+amount = 200
+explosiveness = 0.07
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_5ue4q")
+draw_pass_1 = SubResource("SphereMesh_m16e4")
