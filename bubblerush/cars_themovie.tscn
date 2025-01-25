@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b85fcdjemdhnd"]
+
+[ext_resource type="PackedScene" uid="uid://k52ghsxwvjgy" path="res://cars_themovie.glb" id="1_jkrty"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rmm3"]
+albedo_color = Color(1, 0.795102, 0.92149, 1)
+
+[node name="cars_themovie" instance=ExtResource("1_jkrty")]
+
+[node name="soap" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7rmm3")
+
+[node name="duck" parent="." index="1"]
+visible = false
+
+[node name="Sphere" parent="." index="2"]
+visible = false

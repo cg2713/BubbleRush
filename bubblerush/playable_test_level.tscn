@@ -1,14 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://chxhjxybcijc4"]
 
 [ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
-[ext_resource type="PackedScene" path="res://car.tscn" id="2_yj6gw"]
+[ext_resource type="PackedScene" uid="uid://bh110wmurdrig" path="res://soap_car.tscn" id="2_rcuv2"]
 
 [node name="PlayableTestLevel" type="Node3D"]
 
 [node name="Level" parent="." instance=ExtResource("1_30ef4")]
 transform = Transform3D(20.9635, 0, 0, 0, 20.9635, 0, 0, 0, 20.9635, -14.7904, -3.06501, -0.910541)
-
-[node name="Car" parent="." instance=ExtResource("2_yj6gw")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.970888, -0.223837, 0.0852827, 0.165117, 0.883336, 0.438695, -0.17353, -0.411842, 0.89458, 24.0591, 29.8346, 0)
@@ -17,3 +15,5 @@ light_energy = 0.2
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.538108, -0.78765, 0.300079, 3.95694e-08, 0.356018, 0.934479, -0.842876, 0.502851, -0.191576, -49.6027, 29.8346, 0)
 light_energy = 0.5
+
+[node name="SoapCar" parent="." instance=ExtResource("2_rcuv2")]
