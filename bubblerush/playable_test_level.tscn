@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://chxhjxybcijc4"]
+[gd_scene load_steps=6 format=3 uid="uid://chxhjxybcijc4"]
 
 [ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="1_v4755"]
 [ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="2_ej04t"]
 [ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="4_dtuyo"]
+[ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="5_6mkut"]
 
 [node name="PlayableTestLevel" type="Node3D"]
 
@@ -26,15 +27,13 @@ light_energy = 0.5
 
 [node name="Split Screen" parent="." instance=ExtResource("4_dtuyo")]
 
+[node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player1/SubViewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0197, 0, 0)
+
 [node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6974, 0, -2.27001)
 
-[node name="Camera3D" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000396729, 0, 0)
-top_level = false
+[node name="Finish Line" parent="." instance=ExtResource("5_6mkut")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, 0.496232, -7.00158)
 
 [editable path="Split Screen"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car/3DModel"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car/3DModel"]
