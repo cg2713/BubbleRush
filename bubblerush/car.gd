@@ -27,8 +27,5 @@ func _physics_process(delta: float) -> void:
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	print("area entered")
 	print(area)
-
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("body entered")
-	print(body)
+	if area.name == "DirtArea3D":
+		area.get_parent().get_parent().queue_free()

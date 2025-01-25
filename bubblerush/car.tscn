@@ -21,7 +21,7 @@ visible = false
 mesh = SubResource("BoxMesh_ak3fp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.958113, 0.286391, 0, -0.286391, 0.958113, 0, 1.90814, 3.25932)
+transform = Transform3D(1, 0, 0, 0, 0.853041, 0.521844, 0, -0.521844, 0.853041, 0, 2.50808, 3.25932)
 current = true
 
 [node name="CarArea3D" type="Area3D" parent="."]
