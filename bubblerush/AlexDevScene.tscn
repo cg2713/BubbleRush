@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://be0wkcxua363x"]
+[gd_scene load_steps=5 format=3 uid="uid://be0wkcxua363x"]
 
 [ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="1_k8rrd"]
+[ext_resource type="PackedScene" uid="uid://b4mpe80lbnxof" path="res://finish_line.tscn" id="2_idkmy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8extg"]
 size = Vector3(10, 0.02, 50)
@@ -25,3 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.543019, 0)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.722983, 0.377695, -0.578482, 0.0867267, 0.781088, 0.618368, 0.6854, -0.49724, 0.531958, 0, 8, 0)
 shadow_enabled = true
+
+[node name="Finish Line" parent="." instance=ExtResource("2_idkmy")]
+transform = Transform3D(10.6065, 0, 0, 0, 3.13918, 0, 0, 0, 1, -0.204009, 1.01173, -24.3885)
