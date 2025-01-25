@@ -6,7 +6,7 @@ const SPEED = 25.0
 @export var base_FOV = 75
 @export var speedup_FOV = 120
 @export var player2 = false
-
+@export var PlayerChoice = 1
 
 var speed_percent = 1
 var input_dir : Vector2
@@ -14,6 +14,7 @@ var input_dir : Vector2
 func _ready() -> void:
 	
 	%Camera3D.top_level = true
+	$"3DModel".get_children()[PlayerChoice - 1].visible = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
