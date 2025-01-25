@@ -37,3 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6974, 0, -2.27001)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, 0.496232, -7.00158)
 
 [editable path="Split Screen"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car/3DModel"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car/3DModel"]

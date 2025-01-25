@@ -1,39 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp2cncocua5kc"]
+[gd_scene load_steps=4 format=3 uid="uid://dp2cncocua5kc"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r7cc5"]
-scale_min = 0.01
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 2, 0)
+scale_min = 0.1
 scale_max = 0.5
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhtl7"]
+transparency = 1
+albedo_color = Color(0.701961, 0.862745, 0.952941, 0.533333)
+emission_enabled = true
+emission = Color(3.08037e-06, 0.946509, 0.953947, 1)
+emission_energy_multiplier = 0.2
+
 [sub_resource type="SphereMesh" id="SphereMesh_3c8f3"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wu70"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_vxbg3"]
-material = SubResource("StandardMaterial3D_6wu70")
-radial_segments = 9
+material = SubResource("StandardMaterial3D_nhtl7")
+radial_segments = 16
 rings = 8
 
 [node name="BubbleTrail" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-process_mode = 4
-amount = 6000
-lifetime = 600.0
-process_material = SubResource("ParticleProcessMaterial_r7cc5")
-draw_pass_1 = SubResource("SphereMesh_3c8f3")
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-amount = 30
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144811, -0.189518, -1.19209e-07)
+amount = 50
 explosiveness = 0.07
 randomness = 0.3
-lifetime_randomness = 0.35
-mesh = SubResource("SphereMesh_vxbg3")
-emission_shape = 3
-emission_box_extents = Vector3(1, 0.1, 1)
-direction = Vector3(0, 0, 0)
-gravity = Vector3(0, -3, 0)
-initial_velocity_max = 1.0
-angle_max = 360.0
-scale_amount_min = 0.01
-scale_amount_max = 0.5
-color = Color(0.403922, 1, 1, 1)
+process_material = SubResource("ParticleProcessMaterial_r7cc5")
+draw_pass_1 = SubResource("SphereMesh_3c8f3")
