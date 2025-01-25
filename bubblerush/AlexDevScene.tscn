@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://be0wkcxua363x"]
+[gd_scene load_steps=6 format=3 uid="uid://be0wkcxua363x"]
 
-[ext_resource type="PackedScene" uid="uid://ylq0i04q785e" path="res://car.tscn" id="1_k8rrd"]
+[ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="1_k8rrd"]
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="2_idkmy"]
+[ext_resource type="PackedScene" uid="uid://b11714nbd5mqd" path="res://Dritparticle.tscn" id="3_q4q1i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8extg"]
 size = Vector3(10, 0.02, 50)
@@ -35,3 +36,6 @@ shadow_enabled = true
 
 [node name="Finish Line" parent="." instance=ExtResource("2_idkmy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0952551, 0.0279018, -21.8583)
+
+[node name="Node3D" parent="." instance=ExtResource("3_q4q1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48834, 18.9114, -13.9263)
