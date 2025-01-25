@@ -27,7 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 0.958113, 0.286391, 0, -0.286391, 0.958113, 
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-top_level = true
 current = true
 fov = 90.0
 

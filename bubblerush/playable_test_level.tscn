@@ -27,6 +27,9 @@ light_energy = 0.5
 
 [node name="Split Screen" parent="." instance=ExtResource("4_dtuyo")]
 
+[node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player1/SubViewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0197, 0, 0)
+
 [node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6974, 0, -2.27001)
 
