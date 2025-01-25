@@ -11,7 +11,7 @@
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("1_v4755")]
 
-[node name="StopWatch" parent="." groups=["stopwatch"] instance=ExtResource("2_ej04t")]
+[node name="StopWatch" parent="." instance=ExtResource("2_ej04t")]
 
 [node name="Level" parent="." instance=ExtResource("1_30ef4")]
 transform = Transform3D(20.9484, 0, 0, 0, 20.9484, 0, 0, 0, 20.9484, -14.7904, -3.06501, -0.910541)
