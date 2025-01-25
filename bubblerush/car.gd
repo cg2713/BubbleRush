@@ -44,9 +44,16 @@ func _physics_process(delta: float) -> void:
 	%Camera3D.fov = base_FOV + currentVelocity * 3
 	
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	print("area entered")
-	print(area)
+	#print("area entered")
+	#print(area)
 	if area.name == "DirtArea3D":
-		area.get_parent().get_parent().visible = false
-		speed_percent *= 0.95
+		#area.get_parent().get_parent().visible = false
+		var dirt_mesh_instance : MeshInstance3D = area.get_parent()
+		var current_dirt_energy = 1 - dirt_mesh_instance.transparency # Goes from 0 lowest, to 1
+		# When energy is the highest, the speed percent is going to be reduced by 5%
+		# When energy is the lowest (0), speed is not changing
+		speed_percent *= lerp(1.0, 0.95, current_dirt_energy)
+		#print(speed_percent)
+		dirt_mesh_instance.transparency += 0.9
+		#print("dirt_mesh_instance.transparency ", dirt_mesh_instance.transparency)
 		
