@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://chxhjxybcijc4"]
 
 [ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
-[ext_resource type="PackedScene" path="res://soap_car.tscn" id="2_rcuv2"]
+[ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="2_oh2ki"]
 
 [node name="PlayableTestLevel" type="Node3D"]
 
@@ -16,5 +16,5 @@ light_energy = 0.2
 transform = Transform3D(-0.538108, -0.78765, 0.300079, 3.95694e-08, 0.356018, 0.934479, -0.842876, 0.502851, -0.191576, -49.6027, 29.8346, 0)
 light_energy = 0.5
 
-[node name="SoapCar" parent="." instance=ExtResource("2_rcuv2")]
-transform = Transform3D(-0.912941, 0, 0.408092, 0, 1, 0, -0.408092, 0, -0.912941, -27.6165, 0, -15.7897)
+[node name="Car" parent="." instance=ExtResource("2_oh2ki")]
+transform = Transform3D(-0.951814, 0, -0.306676, 0, 1, 0, 0.306676, 0, -0.951814, -1.91303, 1.06087, -11.7188)
