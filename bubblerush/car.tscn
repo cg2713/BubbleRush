@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ylq0i04q785e"]
+[gd_scene load_steps=6 format=3 uid="uid://ylq0i04q785e"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
+[ext_resource type="PackedScene" uid="uid://b85fcdjemdhnd" path="res://cars_themovie.tscn" id="2_3v1jy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q6i1e"]
 
@@ -15,6 +16,7 @@ script = ExtResource("1_xxi4i")
 shape = SubResource("BoxShape3D_q6i1e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_ak3fp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -25,3 +27,6 @@ current = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_5bhmy")
+
+[node name="cars_themovie2" parent="." instance=ExtResource("2_3v1jy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85606, 0, 0)

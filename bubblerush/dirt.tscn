@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2547qh46avf4"]
+[gd_scene load_steps=5 format=3 uid="uid://c2547qh46avf4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6l77p"]
 transparency = 1
@@ -6,8 +6,21 @@ albedo_color = Color(0.443137, 0.329412, 0.243137, 0.658824)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d54lq"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ccevi"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_st7p8"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_6l77p")
 mesh = SubResource("BoxMesh_d54lq")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+shape = SubResource("BoxShape3D_ccevi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_st7p8")
