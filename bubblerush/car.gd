@@ -7,6 +7,9 @@ const SPEED = 25.0
 @export var speedup_FOV = 120
 @export var player2 = false
 @export var PlayerChoice = 1
+@export var checkpoint : Vector3
+@export var checkpointRotation : Vector3
+
 
 var speed_percent = 1
 var input_dir : Vector2
@@ -15,6 +18,13 @@ func _ready() -> void:
 	
 	%Camera3D.top_level = true
 	$"3DModel".get_children()[PlayerChoice - 1].visible = true
+	checkpoint = position
+
+func _process(delta: float) -> void:
+	if position.y <= -10:
+		position = checkpoint
+		rotation = checkpointRotation
+		velocity = Vector3.ZERO
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -47,6 +57,9 @@ func _physics_process(delta: float) -> void:
 	#elif %Camera3D.fov >= base_FOV:
 	#	%Camera3D.fov = %Camera3D.fov * (1 - delta) + base_FOV * delta
 	%Camera3D.fov = base_FOV + currentVelocity * 3
+	
+	#print("velocity ", velocity.length())
+	$BubbleTrail/GPUParticles3D.amount_ratio = velocity.length() / 10
 	
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	#print("area entered")
