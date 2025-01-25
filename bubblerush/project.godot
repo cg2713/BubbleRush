@@ -14,3 +14,7 @@ config/name="BubbleRush"
 run/main_scene="res://playable_test_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scene_object_brush/plugin.cfg")
