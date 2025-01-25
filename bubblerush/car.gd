@@ -4,6 +4,7 @@ class_name car
 
 const SPEED = 25.0
 
+var speed_percent = 1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -17,15 +18,21 @@ func _physics_process(delta: float) -> void:
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity/4)
-	velocity += transform.basis.z * input_dir.y * SPEED * delta
+	velocity += transform.basis.z * input_dir.y * SPEED * speed_percent * delta
 	velocity += transform.basis.x * input_dir.x * (SPEED/3) * delta * (currentVelocity/4)
 	velocity *= 1 - delta * 1.2
 	#print(velocity.z)
 	move_and_slide()
+	
+	speed_percent += 0.01
+	speed_percent = min(speed_percent, 1)
+	print("speed_percent ", speed_percent)
 
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	print("area entered")
 	print(area)
 	if area.name == "DirtArea3D":
-		area.get_parent().get_parent().queue_free()
+		area.get_parent().get_parent().visible = false
+		speed_percent *= 0.95
+		
