@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://51pd6coiy4rs"]
+[gd_scene load_steps=4 format=3 uid="uid://51pd6coiy4rs"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_tj12n"]
+[ext_resource type="PackedScene" uid="uid://cnrh6wyt5uo10" path="res://Stoplight.tscn" id="2_0ab6v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ot7n0"]
 font_size = 40
@@ -18,6 +19,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tj12n")
 stopwatch_label = NodePath("StopwatchLabel")
+
+[node name="stoplight" parent="." instance=ExtResource("2_0ab6v")]
+layout_mode = 1
 
 [node name="StopwatchLabel" type="Label" parent="."]
 layout_mode = 1

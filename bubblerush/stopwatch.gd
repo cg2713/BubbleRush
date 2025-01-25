@@ -2,12 +2,14 @@ extends Node
 class_name Stopwatch
 
 var time = 0.0
-var stoppped = false
+var stoppped = true
 
 func _process(delta):
-	if stoppped:
-		return
-	time += delta
+	if not stoppped:
+		time += delta
+	
+func start():
+	stoppped = false
 	
 func reset():
 	time = 0.0
