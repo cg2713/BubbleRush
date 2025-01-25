@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://stopwatch.gd" id="1_rm2w3"]
 
-[node name="StopWatch" type="Node"]
+[node name="StopWatch" type="Node" groups=["stopwatch"]]
 script = ExtResource("1_rm2w3")

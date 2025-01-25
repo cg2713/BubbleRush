@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://chxhjxybcijc4"]
+[gd_scene load_steps=5 format=3 uid="uid://chxhjxybcijc4"]
 
 [ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
+[ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="1_v4755"]
+[ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="2_ej04t"]
 [ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="2_oh2ki"]
 
 [node name="PlayableTestLevel" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("1_v4755")]
+
+[node name="StopWatch" parent="." groups=["stopwatch"] instance=ExtResource("2_ej04t")]
 
 [node name="Level" parent="." instance=ExtResource("1_30ef4")]
 transform = Transform3D(20.9484, 0, 0, 0, 20.9484, 0, 0, 0, 20.9484, -14.7904, -3.06501, -0.910541)
