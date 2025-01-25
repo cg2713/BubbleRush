@@ -3,14 +3,15 @@ class_name car
 
 
 const SPEED = 25.0
-
+@export var base_FOV = 75
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-
+	$Camera3D.global_transform=$Camera3D.global_transform.interpolate_with(%CameraHolder.global_transform,10*delta)
+	#%Camera3D.transform=%CameraHolder.transform
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
