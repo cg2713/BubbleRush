@@ -11,6 +11,10 @@ const SPEED = 25.0
 var speed_percent = 1
 var input_dir : Vector2
 
+func _ready() -> void:
+	
+	%Camera3D.top_level = true
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
