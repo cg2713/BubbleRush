@@ -4,6 +4,8 @@ class_name Stopwatch
 var time = 0.0
 var stoppped = true
 
+
+
 func _process(delta):
 	if not stoppped:
 		time += delta
