@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4qssepqrjmmk"]
+[gd_scene load_steps=7 format=3 uid="uid://c4qssepqrjmmk"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
 [ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="2_5p2si"]
+[ext_resource type="PackedScene" uid="uid://dp2cncocua5kc" path="res://BubbleTrail.tscn" id="3_rw01i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q6i1e"]
 
@@ -26,7 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 0.958113, 0.286391, 0, -0.286391, 0.958113, 
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-top_level = true
 current = true
 fov = 90.0
 
@@ -41,13 +41,21 @@ shape = SubResource("BoxShape3D_5bhmy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.41334, 0, 0)
 
 [node name="soap" parent="3DModel" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39, 0, 0)
+visible = false
+
+[node name="duck" parent="3DModel" index="1"]
 visible = false
 
 [node name="Cube_001" parent="3DModel" index="2"]
+transform = Transform3D(0.525848, 0, 0, 0, 0.525848, 0, 0, 0, 0.525848, 8.405, 0, 0)
 visible = false
 
 [node name="Cube" parent="3DModel" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.44, 0, 0)
 visible = false
+
+[node name="BubbleTrail" parent="." instance=ExtResource("3_rw01i")]
 
 [connection signal="area_entered" from="CarArea3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="CarArea3D" to="." method="_on_area_3d_body_entered"]

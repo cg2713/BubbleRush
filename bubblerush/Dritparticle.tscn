@@ -8,7 +8,7 @@ scale_max = 0.5
 
 [sub_resource type="BoxMesh" id="BoxMesh_qf5kj"]
 
-[node name="Node3D" type="Node3D"]
+[node name="DirtParticle" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 process_mode = 4
@@ -19,6 +19,7 @@ draw_pass_1 = SubResource("BoxMesh_up8ij")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+emitting = false
 amount = 48000
 lifetime = 60.0
 mesh = SubResource("BoxMesh_qf5kj")
