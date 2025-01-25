@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name car
 
 
-const SPEED = 5.0
+const SPEED = 25.0
 
 
 func _physics_process(delta: float) -> void:
@@ -15,10 +15,12 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	#print(input_dir.y)
-	rotate_y(-input_dir.x * delta)
+	var currentVelocity = velocity.length()
+	rotate_y(-input_dir.x * delta * currentVelocity/4)
 	velocity += transform.basis.z * input_dir.y * SPEED * delta
-	velocity.z *= 1 - delta
-	#print(velocity.z)
+	velocity += transform.basis.x * input_dir.x * (SPEED/3) * delta * (currentVelocity/4)
+	velocity *= 1 - delta * 1.2
+	print(velocity.z)
 	move_and_slide()
 
 
