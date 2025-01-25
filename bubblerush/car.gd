@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name car
 
 
 const SPEED = 5.0
@@ -17,5 +18,5 @@ func _physics_process(delta: float) -> void:
 	rotate_y(-input_dir.x * delta)
 	velocity += transform.basis.z * input_dir.y * SPEED * delta
 	velocity.z *= 1 - delta
-	print(velocity.z)
+	#print(velocity.z)
 	move_and_slide()

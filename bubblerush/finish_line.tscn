@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://diq6shlq4m8l7"]
+
+[ext_resource type="Script" path="res://finish_line.gd" id="1_m0kg3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q405b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_awj0i"]
+
+[node name="Finish Line" type="Area3D"]
+script = ExtResource("1_m0kg3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_q405b")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_awj0i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
