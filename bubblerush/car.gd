@@ -4,6 +4,8 @@ class_name car
 
 const SPEED = 25.0
 @export var base_FOV = 75
+@export var speedup_FOV = 120
+
 
 var speed_percent = 1
 
@@ -30,7 +32,12 @@ func _physics_process(delta: float) -> void:
 	speed_percent = min(speed_percent, 1)
 	print("speed_percent ", speed_percent)
 
-
+	#if currentVelocity > 0.0 and %Camera3D.fov <= speedup_FOV:
+	#	%Camera3D.fov = %Camera3D.fov * (1 - delta) + speedup_FOV * delta
+	#elif %Camera3D.fov >= base_FOV:
+	#	%Camera3D.fov = %Camera3D.fov * (1 - delta) + base_FOV * delta
+	%Camera3D.fov = base_FOV + currentVelocity * 3
+	
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	print("area entered")
 	print(area)
