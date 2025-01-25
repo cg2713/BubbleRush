@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://fj1npsnv4s1e"]
 
-[ext_resource type="Script" path="res://addons/scene_object_brush/Brush.gd" id="2_ig3e3"]
+[ext_resource type="Script" path="res://dirt_manager.gd" id="1_pxlts"]
 [ext_resource type="PackedScene" uid="uid://c2547qh46avf4" path="res://dirt.tscn" id="3_d6den"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_43sia"]
@@ -252,12 +252,7 @@ shape = SubResource("BoxShape3D_owmfy")
 
 [node name="Brush" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000131905, 0.00103435, 0.000276566)
-script = ExtResource("2_ig3e3")
-brushSize = 0.1
-brushDensity = 50
-paintableObjects = Array[PackedScene]([ExtResource("3_d6den")])
-minSize = 0.01
-maxSize = 0.01
+script = ExtResource("1_pxlts")
 
 [node name="Brush_1737792488_752" parent="Brush" instance=ExtResource("3_d6den")]
 transform = Transform3D(-4.37114e-10, -0.01, 0, 0.01, -4.37114e-10, 0, 0, 0, 0.01, -0.46, 0.0862226, 1.09326)
