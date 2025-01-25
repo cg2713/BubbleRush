@@ -2,14 +2,18 @@
 
 [ext_resource type="Material" uid="uid://ceu3t7f8fgsan" path="res://dirt_texture.tres" id="1_7wudt"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_d54lq"]
+[sub_resource type="SphereMesh" id="SphereMesh_ni5kd"]
+radius = 1.0
+radial_segments = 16
+rings = 8
+is_hemisphere = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ccevi"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_d54lq")
+mesh = SubResource("SphereMesh_ni5kd")
 surface_material_override/0 = ExtResource("1_7wudt")
 
 [node name="DirtArea3D" type="Area3D" parent="MeshInstance3D"]
