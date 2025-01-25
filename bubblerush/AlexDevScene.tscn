@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="1_k8rrd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8extg"]
-size = Vector3(10, 0.02, 10)
+size = Vector3(10, 0.02, 50)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p2g0v"]
-size = Vector2(10, 10)
+size = Vector2(10, 50)
 
 [node name="Test" type="Node3D"]
 
