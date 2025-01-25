@@ -56,7 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.44, 0, 0)
 visible = false
 
 [node name="BubbleTrail" parent="." instance=ExtResource("3_rw01i")]
-visible = false
 
 [connection signal="area_entered" from="CarArea3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="CarArea3D" to="." method="_on_area_3d_body_entered"]
