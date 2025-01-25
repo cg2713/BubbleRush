@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	velocity += transform.basis.z * input_dir.y * SPEED * delta
 	velocity += transform.basis.x * input_dir.x * (SPEED/3) * delta * (currentVelocity/4)
 	velocity *= 1 - delta * 1.2
-	print(velocity.z)
+	#print(velocity.z)
 	move_and_slide()
 
 
