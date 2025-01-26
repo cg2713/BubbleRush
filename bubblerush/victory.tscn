@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://wni8gpdsbils"]
+[gd_scene load_steps=4 format=3 uid="uid://wni8gpdsbils"]
 
 [ext_resource type="Texture2D" uid="uid://r71xlmyqtio0" path="res://1000_F_19217926_dlZXaPP7DX15igN0HhymDsbYXu2lA2ad.jpg" id="1_0aym4"]
+[ext_resource type="Script" path="res://victory.gd" id="1_svca3"]
 [ext_resource type="Script" path="res://WinTextUI.gd" id="2_kl2kk"]
 
 [node name="Victory" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_svca3")
 
 [node name="1000F19217926DlZXaPp7dx15IgN0HhymDsbYXu2lA2Ad" type="Sprite2D" parent="."]
 position = Vector2(576, 341)
@@ -29,3 +31,20 @@ text = "[center]Congration
 you win[center]"
 fit_content = true
 script = ExtResource("2_kl2kk")
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.837
+anchor_right = 0.504
+anchor_bottom = 0.837
+offset_left = -134.608
+offset_top = -43.376
+offset_right = 134.392
+offset_bottom = 43.624
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Menu"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
