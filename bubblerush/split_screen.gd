@@ -20,14 +20,12 @@ func _ready() -> void:
 			playerNode.get_child(0).size.y = $MarginContainer.size.y/2
 			$MarginContainer/GridContainer.columns = 2
 		cameraList.append(playerNode.get_child(0).get_child(0))
+		carList[0].lapCounterUI = playerNode.get_child(0).get_child(0).get_child(0).get_child(0)
 			
 		print($MarginContainer/GridContainer.columns)
 		for i in range(amountOfPlayers-1):
 			var newNode : Node = playerNode.duplicate()
-			print("New Node", newNode)
-			print("Thingy", newNode.get_child(0).get_child(0).get_child(0).get_child(0))
-			carList[i].lapCounterUI = newNode.get_child(0).get_child(0).get_child(0).get_child(0)
-			print("Lap Counter", carList[i].lapCounterUI)
+			carList[i+1].lapCounterUI = newNode.get_child(0).get_child(0).get_child(0).get_child(0)
 			if amountOfPlayers <= 3:
 				newNode.get_child(0).size.x = $MarginContainer.size.x/amountOfPlayers
 				newNode.get_child(0).size.y = $MarginContainer.size.y
@@ -43,6 +41,7 @@ func _ready() -> void:
 	else:
 		playerNode.get_child(0).size = $MarginContainer.size
 		cameraList.append(playerNode.get_child(0).get_child(0))
+		carList[0].lapCounterUI = playerNode.get_child(0).get_child(0).get_child(0).get_child(0)
 	
 	for i in range(amountOfPlayers):
 		carList[i].carCam = cameraList[i]

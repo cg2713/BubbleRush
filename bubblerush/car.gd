@@ -48,6 +48,7 @@ func _complete_lap():
 	# Include check to confirm that car has traveled around the map
 	print("Lap",LapsCompleted+1,"completed")
 	LapsCompleted += 1
+	print("LapCounterUI", lapCounterUI)
 	if lapCounterUI:
 		lapCounterUI.text = "Lap " + str(LapsCompleted)
 	if LapsCompleted >= 3:

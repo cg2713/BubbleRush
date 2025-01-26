@@ -10,6 +10,11 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-text = "Lap #"
+offset_left = 15.0
+offset_top = 56.0
+offset_right = 181.0
+offset_bottom = 124.0
+theme_override_font_sizes/normal_font_size = 45
+text = "Lap 0"
+fit_content = true
+autowrap_mode = 0
