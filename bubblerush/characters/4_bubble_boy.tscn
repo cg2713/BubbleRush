@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://lws6hpxhvm8x"]
+
+[ext_resource type="PackedScene" uid="uid://cs6orktedqs7e" path="res://3D files/bubble_boy1.blend" id="1_e2ypg"]
+[ext_resource type="Shader" path="res://car.gdshader" id="2_2njt7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wsd00"]
+render_priority = 0
+shader = ExtResource("2_2njt7")
+shader_parameter/time_speed = 1.0
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 2.5
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_height = 0.01
+shader_parameter/texture_height = 0.5
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)
+
+[node name="4_bubble_boy" instance=ExtResource("1_e2ypg")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(-0.325275, 0, -0.0500953, 0, 0.32911, 0, 0.0500953, 0, -0.325275, 0, 0, 0)
+
+[node name="Cube" parent="Armature" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_wsd00")

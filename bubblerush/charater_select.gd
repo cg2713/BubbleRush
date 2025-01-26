@@ -42,6 +42,7 @@ func _ready() -> void:
 func set_player_choices():
 	for i in range(len(playersReady)):
 		Game.playerChoices[i] = playersReady[i].values
+	print("Player choices = ", Game.playerChoices)
 		#print(i.values)
 	get_tree().change_scene_to_file("res://playable_figure8.tscn")
 	

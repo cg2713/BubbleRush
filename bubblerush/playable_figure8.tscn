@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://baisdj3sam854"]
+[gd_scene load_steps=22 format=3 uid="uid://baisdj3sam854"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_226ob"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="2_c61vw"]

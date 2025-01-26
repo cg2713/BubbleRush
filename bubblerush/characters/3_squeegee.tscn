@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://gvtharjqgaen"]
+
+[ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="1_rrgt4"]
+[ext_resource type="PackedScene" uid="uid://ccr4jphvmovxc" path="res://3D files/penguini.blend" id="2_dwwvc"]
+
+[node name="3_squeegee" instance=ExtResource("1_rrgt4")]
+
+[node name="soap" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="penguini" parent="soap" index="0" instance=ExtResource("2_dwwvc")]
+transform = Transform3D(-0.300302, 0, 0.00416708, 0, 0.300331, 0, -0.00416708, 0, -0.300302, 0, 0.221757, -0.457883)
+
+[node name="penguini2" parent="soap" index="1" instance=ExtResource("2_dwwvc")]
+transform = Transform3D(0.208778, 0, -0.148689, 0, 0.256313, 0, 0.148689, 0, 0.208778, 0, 0.221757, 0.463462)
+
+[node name="duck" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="Cube_001" parent="." index="2"]
+transform = Transform3D(0.525848, 0, 0, 0, 0.525848, 0, 0, 0, 0.525848, 0, 0, 0)
+visible = false
