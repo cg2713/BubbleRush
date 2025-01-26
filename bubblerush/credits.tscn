@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtk47bngo2rpf"]
+[gd_scene load_steps=4 format=3 uid="uid://owl5b5d6hxhj"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_fqhhl"]
 [ext_resource type="Texture2D" uid="uid://2j73a10vwyok" path="res://istockphoto-1017626046-612x612.png" id="2_lp8us"]

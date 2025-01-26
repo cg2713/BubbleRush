@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name car
 
-@export var LapsCompleted = 0
+@export var LapsCompleted = 1
 const SPEED = 25.0
 @export var base_FOV = 75
 @export var speedup_FOV = 120
@@ -53,7 +53,7 @@ func _complete_lap():
 	print("LapCounterUI", lapCounterUI)
 	if lapCounterUI:
 		lapCounterUI.text = "Lap " + str(LapsCompleted)
-	if LapsCompleted >= 3:
+	if LapsCompleted > 3:
 		print("Race Complete")
 		Game.Winner = index
 		# This car wins!
