@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1h6q0n7a0s4m"]
+[gd_scene load_steps=7 format=3 uid="uid://bf3mhtmhmqfdk"]
 
 [ext_resource type="Script" path="res://level_preview.gd" id="1_6qwvc"]
 [ext_resource type="PackedScene" uid="uid://cj7pgivlpytgi" path="res://Figure 8.tscn" id="1_7n1nb"]
 [ext_resource type="PackedScene" uid="uid://c7r5ijpdqmela" path="res://bathroom_level.tscn" id="2_kig4p"]
 [ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_x1fdh"]
 [ext_resource type="PackedScene" uid="uid://baisdj3sam854" path="res://playable_figure8.tscn" id="3_cyl4u"]
-[ext_resource type="PackedScene" uid="uid://bqlgw4rpt7uxs" path="res://playable_bathroom_level.tscn" id="4_b2upe"]
+[ext_resource type="PackedScene" uid="uid://bqlgw4rpt7uxs" path="res://playable_test_level.tscn" id="4_b2upe"]
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("models")]
 script = ExtResource("1_6qwvc")

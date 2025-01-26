@@ -26,7 +26,8 @@ normal_texture = ExtResource("4_knd05")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_sedjn"]
 
-[node name="Level" type="Node3D"]
+[node name="Bathroom_Level" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00410032, 0.00425863, 0.000631332)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.48012, -1.48051, -3.02642)
