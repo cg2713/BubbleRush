@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1qguymh8ccx6"]
+[gd_scene load_steps=6 format=3 uid="uid://bngn0rw4gwdcd"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_mcys2"]
 [ext_resource type="Texture2D" uid="uid://2j73a10vwyok" path="res://istockphoto-1017626046-612x612.png" id="1_wwc8l"]
 [ext_resource type="Texture2D" uid="uid://c1mswbx2ef5h5" path="res://Bubble_ILL.png" id="2_dj6ha"]
+[ext_resource type="Script" path="res://bubbleMenuNode.gd" id="3_jrm1u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cs73i"]
 font_size = 100
@@ -28,8 +29,10 @@ scale = Vector2(1.88235, 1.88235)
 texture = ExtResource("1_wwc8l")
 
 [node name="Node" type="Node" parent="."]
+script = ExtResource("3_jrm1u")
 
 [node name="BubbleIll" type="Sprite2D" parent="Node"]
+z_index = 2
 position = Vector2(859, 176)
 scale = Vector2(0.0966798, 0.0966798)
 texture = ExtResource("2_dj6ha")
@@ -100,12 +103,14 @@ scale = Vector2(0.087, 0.087)
 texture = ExtResource("2_dj6ha")
 
 [node name="BubbleIll17" type="Sprite2D" parent="Node"]
+z_index = 2
 position = Vector2(531.33, 166.41)
 rotation = -1.24966
 scale = Vector2(0.0836678, 0.0797889)
 texture = ExtResource("2_dj6ha")
 
 [node name="BubbleIll14" type="Sprite2D" parent="Node"]
+z_index = 2
 position = Vector2(470, 330)
 rotation = 1.21999
 scale = Vector2(0.087, 0.087)
@@ -118,6 +123,7 @@ scale = Vector2(0.052, 0.052)
 texture = ExtResource("2_dj6ha")
 
 [node name="BubbleIll15" type="Sprite2D" parent="Node"]
+z_index = 2
 position = Vector2(647, 354)
 rotation = 1.21999
 scale = Vector2(0.0658425, 0.0613704)
@@ -148,6 +154,7 @@ scale = Vector2(0.046, 0.042)
 texture = ExtResource("2_dj6ha")
 
 [node name="BubbleIll9" type="Sprite2D" parent="Node"]
+z_index = 2
 position = Vector2(344, 344)
 rotation = 1.31598
 scale = Vector2(0.0645468, 0.0645468)
@@ -160,6 +167,7 @@ scale = Vector2(0.0825195, 0.0825195)
 texture = ExtResource("2_dj6ha")
 
 [node name="BubbleIll2" type="Sprite2D" parent="Node"]
+z_index = 2
 position = Vector2(909, 281)
 rotation = 0.418879
 scale = Vector2(0.0766601, 0.0766601)
@@ -176,7 +184,9 @@ rotation = 1.11003
 scale = Vector2(0.037, 0.037)
 texture = ExtResource("2_dj6ha")
 
-[node name="Label" type="Label" parent="Node"]
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.377
@@ -217,7 +227,7 @@ text = "Credits
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
