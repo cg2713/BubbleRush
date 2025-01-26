@@ -15,13 +15,12 @@ control = ExtResource("2_x1fdh")
 Levels = Array[PackedScene]([ExtResource("3_cyl4u"), ExtResource("4_50jrc")])
 
 [node name="Figure8" parent="." instance=ExtResource("1_7n1nb")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
-visible = false
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="Level" parent="Figure8" instance=ExtResource("2_kig4p")]
+transform = Transform3D(16.712, 0, 0, 0, 16.712, 0, 0, 0, 16.712, 45.808, 7.808, 58.229)
 
 [node name="BathroomCourse" parent="." instance=ExtResource("6_jqmcc")]
-visible = false
-
-[node name="Level" parent="." instance=ExtResource("2_kig4p")]
 visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
