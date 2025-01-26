@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://baisdj3sam854"]
+[gd_scene load_steps=27 format=3 uid="uid://baisdj3sam854"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_226ob"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="2_c61vw"]
@@ -84,7 +84,7 @@ transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -12, 1, 
 transform = Transform3D(-4.37112e-08, 0, 1, 0, 1, 0, -1, 0, -4.37112e-08, 33.0326, 0.715605, -96.7178)
 
 [node name="Checkpoint 2" parent="." instance=ExtResource("7_kl1f3")]
-transform = Transform3D(-4.37116e-08, 0, -1, 0, 1, 0, 1, 0, -4.37116e-08, -71.9674, 0.715605, 95.2822)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -71.9674, 0.715605, 95.2822)
 
 [node name="AICar" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("8_hmqxh")]
 transform = Transform3D(-4.37114e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37114e-08, -16, 1, -3)
