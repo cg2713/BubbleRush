@@ -42,6 +42,9 @@ light_energy = 0.5
 carList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car3"), NodePath("../Car4")]
 AICarList = [NodePath("../Car3AI"), NodePath("../Car3AI2"), NodePath("../Car3AI4"), NodePath("../Car3AI3")]
 
+[node name="SubViewport" parent="Split Screen/MarginContainer/GridContainer/Player1" index="0"]
+size = Vector2i(1152, 648)
+
 [node name="Finish Line" parent="." instance=ExtResource("5_6mkut")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)
 
@@ -62,9 +65,11 @@ curve = SubResource("Curve3D_u4vpn")
 
 [node name="Car" parent="." instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+PlayerChoice = 3
 
 [node name="Car2" parent="." instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+PlayerChoice = 2
 
 [node name="Car3" parent="." instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
