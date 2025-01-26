@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1qguymh8ccx6"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_mcys2"]
-[ext_resource type="Texture2D" uid="uid://2j73a10vwyok" path="res://istockphoto-1017626046-612x612.png" id="1_wwc8l"]
 [ext_resource type="Texture2D" uid="uid://c1mswbx2ef5h5" path="res://Bubble_ILL.png" id="2_dj6ha"]
 [ext_resource type="Script" path="res://bubbleMenuNode.gd" id="3_jrm1u"]
+[ext_resource type="Texture2D" uid="uid://c6oeym3e7yogq" path="res://splash_screen4k.webp" id="4_f7qol"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cs73i"]
 font_size = 100
@@ -23,12 +23,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mcys2")
 
-[node name="Istockphoto-1017626046-612x612" type="Sprite2D" parent="."]
-position = Vector2(574, 304)
-scale = Vector2(1.88235, 1.88235)
-texture = ExtResource("1_wwc8l")
+[node name="SplashScreen4k2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_f7qol")
+expand_mode = 1
 
-[node name="Node" type="Node" parent="."]
+[node name="Node" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(460, 173)
 script = ExtResource("3_jrm1u")
 
 [node name="BubbleIll" type="Sprite2D" parent="Node"]
@@ -192,15 +199,16 @@ anchor_left = 0.5
 anchor_top = 0.377
 anchor_right = 0.5
 anchor_bottom = 0.377
-offset_left = -338.0
-offset_top = -68.296
-offset_right = 338.0
-offset_bottom = 68.704
+offset_left = -306.0
+offset_top = -87.16
+offset_right = 370.0
+offset_bottom = 49.84
 grow_horizontal = 2
 text = "BUBBLE RUSH"
 label_settings = SubResource("LabelSettings_cs73i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
