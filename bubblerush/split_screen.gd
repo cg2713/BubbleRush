@@ -2,7 +2,7 @@ extends Node3D
 
 @export var playerNode : Node
 @export_range(1,4) var amountOfPlayers = 1
-@export var cameraList : Array[Camera3D]
+var cameraList : Array[Camera3D]
 @export var carList : Array[Node3D]
 
 # Called when the node enters the scene tree for the first time.
