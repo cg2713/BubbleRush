@@ -1,59 +1,51 @@
 extends Control
 
 @export var playerNode : Node
-var cameraList : Array[Camera3D]
-@export var carList : Array[Node3D]
-
+@export var playerControlerResource : Array[Resource]
+var playersReady : Array[Node]
+var playersReadyBool : Array[bool]
+@export var readyGridNode : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#var newcolorRect = ColorRect.new()
+	#newcolorRect.color = Color.RED
+	playersReady.append(playerNode.get_child(0).get_child(0))
 	if Game.playercount != 1:
 		playerNode.get_child(0).size.x = $VBoxContainer.size.x/Game.playercount
 		playerNode.get_child(0).size.y = $VBoxContainer/GridContainer.size.y
+		#newcolorRect.size.x = $VBoxContainer.size.x/Game.playercount
+		#newcolorRect.size.y = $VBoxContainer/GridContainer2.size.y
+		#readyGridNode.add_child(newcolorRect)
 		for i in range(Game.playercount - 1):
+			#var newcolorRect2 = ColorRect.new()
+			#newcolorRect2.color = Color.RED
+			#newcolorRect2.size.x = $VBoxContainer.size.x/Game.playercount
+			#newcolorRect2.size.y = $VBoxContainer/GridContainer2.size.y
 			var newNode : Node = playerNode.duplicate()
 			newNode.get_child(0).size.x = $VBoxContainer.size.x / Game.playercount
 			newNode.get_child(0).size.y = $VBoxContainer/GridContainer.size.y
+			playersReady.append(newNode.get_child(0).get_child(0))
+			newNode.get_child(0).get_child(0).control = playerControlerResource[i+1]
+			#readyGridNode.add_child(newcolorRect2)
 			$VBoxContainer/GridContainer.add_child(newNode)
 	else:
 		playerNode.get_child(0).size.x = $VBoxContainer.size.x
 		playerNode.get_child(0).size.y = $VBoxContainer/GridContainer.size.y
-			
+		#newcolorRect.size.x = $VBoxContainer.size.x/Game.playercount
+		#newcolorRect.size.y = $VBoxContainer/GridContainer2.size.y
+		#readyGridNode.add_child(newcolorRect)
 	pass
 	
-	#if Game.playercount != 1:
-		#
-		#if Game.playercount <= 3:
-			#playerNode.get_child(0).size.x = $MarginContainer.size.x/Game.playercount
-			#playerNode.get_child(0).size.y = $MarginContainer.size.y
-			#$MarginContainer/GridContainer.columns = Game.playercount
-		#else:
-			#playerNode.get_child(0).size.x = $MarginContainer.size.x/2
-			#playerNode.get_child(0).size.y = $MarginContainer.size.y/2
-			#$MarginContainer/GridContainer.columns = 2
-		#cameraList.append(playerNode.get_child(0).get_child(0))
-			#
-		#print($MarginContainer/GridContainer.columns)
-		#for i in range(Game.playercount-1):
-			#var newNode : Node = playerNode.duplicate()
-			#if Game.playercount <= 3:
-				#newNode.get_child(0).size.x = $MarginContainer.size.x/Game.playercount
-				#newNode.get_child(0).size.y = $MarginContainer.size.y
-				#
-			#else:
-				#newNode.get_child(0).size.x = $MarginContainer.size.x/2
-				#newNode.get_child(0).size.y = $MarginContainer.size.y/2
-				##print("it should be in here")
-			#print(newNode.get_child(0).size.x,' ', newNode.get_child(0).size.y)	
-			##newNode.get_child(0).add_child(cameraList[i+1])
-			#$MarginContainer/GridContainer.add_child(newNode)
-			#cameraList.append(newNode.get_child(0).get_child(0))
-	#else:
-		#playerNode.get_child(0).size = $MarginContainer.size
-		#cameraList.append(playerNode.get_child(0).get_child(0))
-		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	playersReadyBool = []
+	for i in playersReady:
+		playersReadyBool.append(i.finished)
+	#print(playersReadyBool)
+	if not false in playersReadyBool:
+		print("checked")
+		# move to next scene
 	pass

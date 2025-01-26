@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var playerNode : Node
-@export_range(1,4) var amountOfPlayers = 1
+@export_range(1,4) var amountOfPlayers = Game.playercount
 var cameraList : Array[Camera3D]
 @export var carList : Array[car]
 @export var AICarList : Array[car]

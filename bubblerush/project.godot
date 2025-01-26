@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 LapEvents="*res://lap_events.gd"
 LapController="*res://lap_controller.gd"
-Game="*res://game.gd"
+Game="*res://resources/game.gd"
 
 [display]
 
