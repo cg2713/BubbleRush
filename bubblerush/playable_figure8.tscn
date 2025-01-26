@@ -74,9 +74,6 @@ amountOfPlayers = 4
 carList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car3"), NodePath("../Car4")]
 AICarList = [NodePath("../AICar"), NodePath("../AICar2"), NodePath("../AICar3"), NodePath("../AICar4")]
 
-[node name="SubViewport" parent="Split Screen/MarginContainer/GridContainer/Player1" index="0"]
-size = Vector2i(1920, 1080)
-
 [node name="Finish Line" parent="." instance=ExtResource("6_8lnw1")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -12, 1, -1)
 

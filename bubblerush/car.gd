@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 	nextPopSound -= velocity.length() * delta / 10
 	if nextPopSound <= 0:
 		#Play random pop sfx
-		$AudioStreamPlayer3D.steam = PopSFX.pick_random()
+		$AudioStreamPlayer3D.stream = PopSFX.pick_random()
 		$AudioStreamPlayer3D.play()
 		print("Pop!")
 		nextPopSound = 1

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
 [ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_4eqy6"]
-[ext_resource type="AudioStream" uid="uid://b1w7p3c44x2mv" path="res://Audio/Pop/Alex/A_Pawp2.mp3" id="3_l80my"]
+[ext_resource type="AudioStream" uid="uid://erfv1jl8rxht" path="res://Audio/Pop/Alex/A_Pawp2.mp3" id="3_l80my"]
 [ext_resource type="PackedScene" uid="uid://dp2cncocua5kc" path="res://BubbleTrail.tscn" id="3_rw01i"]
-[ext_resource type="AudioStream" uid="uid://eyymojxj8rea" path="res://Audio/Pop/Alex/A_Pawp3.mp3" id="4_m6ibe"]
-[ext_resource type="PackedScene" path="res://3d_models.tscn" id="4_qnu3f"]
-[ext_resource type="AudioStream" uid="uid://dejvsp1hpyany" path="res://Audio/Pop/Alex/A_Pawp4.mp3" id="5_op0x6"]
-[ext_resource type="AudioStream" uid="uid://vnsjvqqa3rui" path="res://Audio/Pop/Alex/A_Pawp.mp3" id="6_ljdg5"]
+[ext_resource type="AudioStream" uid="uid://cp3wom7urtfhf" path="res://Audio/Pop/Alex/A_Pawp3.mp3" id="4_m6ibe"]
+[ext_resource type="PackedScene" uid="uid://bmeslp1i20giw" path="res://3d_models.tscn" id="4_qnu3f"]
+[ext_resource type="AudioStream" uid="uid://n58xkg1611l2" path="res://Audio/Pop/Alex/A_Pawp4.mp3" id="5_op0x6"]
+[ext_resource type="AudioStream" uid="uid://b7trnxvd7i37o" path="res://Audio/Pop/Alex/A_Pawp.mp3" id="6_ljdg5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7gxqu"]
 radius = 1.0
@@ -22,7 +22,7 @@ script = ExtResource("1_xxi4i")
 speedup_FOV = 80
 carCam = NodePath("Camera3D")
 controls = ExtResource("2_4eqy6")
-PopSFX = [ExtResource("3_l80my"), ExtResource("4_m6ibe"), ExtResource("5_op0x6"), ExtResource("6_ljdg5")]
+PopSFX = Array[AudioStream]([ExtResource("3_l80my"), ExtResource("4_m6ibe"), ExtResource("5_op0x6"), ExtResource("6_ljdg5")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7gxqu")
