@@ -1,0 +1,162 @@
+[gd_scene load_steps=15 format=3 uid="uid://baisdj3sam854"]
+
+[ext_resource type="Script" path="res://RaceManager.gd" id="1_226ob"]
+[ext_resource type="PackedScene" uid="uid://d4hr861egpao4" path="res://hud.tscn" id="2_c61vw"]
+[ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="3_o5kel"]
+[ext_resource type="PackedScene" uid="uid://bw5oa8au31kpw" path="res://Figure 8.tscn" id="4_i15uy"]
+[ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="5_nsde3"]
+[ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="6_8lnw1"]
+[ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="7_kl1f3"]
+[ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="8_hmqxh"]
+[ext_resource type="Script" path="res://ai_car.gd" id="9_nrfl7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ujhpf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmiqj"]
+albedo_color = Color(0.920709, 0.813, 3.85046e-07, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_gkast"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdo1d"]
+albedo_color = Color(0.333409, 0.741631, 0.303938, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_xs15q"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -195.073, 0, -1.37976, 0, 0, 0, 0, 0, 0, -743.578, 0, 47.3576, 0, 0, 0, 0, 0, 0, -943.25, 0, 188.635, 0, 0, 0, 0, 0, 0, -1028.02, 0, 419.388, 0, 0, 0, 0, 0, 0, -1056.27, 0, 700.059, 0, 0, 0, 0, 0, 0, -903.692, 0, 932.696, 0, 0, 0, 0, 0, 0, -742.636, 0, 1014.64, 0, 0, 0, 0, 0, 0, -358.361, 0, 1014.64, 0, 0, 0, 0, 0, 0, -62.6208, 0, 883.72, 0, 0, 0, 0, 0, 0, 31.564, 0, 683.106, 0, 0, 0, 0, 0, 0, 28.7386, 0, 328.97, 0, 0, 0, 0, 0, 0, -62.1944, 0, -673.487, 0, 0, 0, 0, 0, 0, 232.122, 0, -997.966, 0, 0, 0, 0, 0, 0, 731.954, 0, -1008.46, 0, 0, 0, 0, 0, 0, 993.579, 0, -804.17, 0, 0, 0, 0, 0, 0, 896.103, 0, -176.435, 0, 0, 0, 0, 0, 0, 676.467, 0, 10.0935, 0, 0, 0, 0, 0, 0, 204.089, 0, 8.47859),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 18
+
+[node name="PlayableTestLevel" type="Node3D"]
+script = ExtResource("1_226ob")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_c61vw")]
+
+[node name="StopWatch" parent="." instance=ExtResource("3_o5kel")]
+
+[node name="Figure8" parent="." instance=ExtResource("4_i15uy")]
+transform = Transform3D(20.9484, 0, 0, 0, 20.9484, 0, 0, 0, 20.9484, -14.79, -1, -0.911)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.970888, -0.223837, 0.0852827, 0.165117, 0.883336, 0.438695, -0.17353, -0.411842, 0.89458, 24.0591, 29.8346, 0)
+light_energy = 0.2
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.538108, -0.78765, 0.300079, 3.95694e-08, 0.356018, 0.934479, -0.842876, 0.502851, -0.191576, -49.6027, 29.8346, 0)
+light_energy = 0.5
+
+[node name="Split Screen" parent="." instance=ExtResource("5_nsde3")]
+
+[node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player1/SubViewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0197, 1.37835, 0)
+
+[node name="AudioListener3D" parent="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car/Camera3D" index="0"]
+current = true
+
+[node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6974, 2.18341, -2.27001)
+
+[node name="Camera3D" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AudioListener3D" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car/Camera3D" index="0"]
+current = true
+
+[node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player3/SubViewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12727, 15.6532, 0)
+
+[node name="AudioListener3D" parent="Split Screen/MarginContainer/GridContainer/Player3/SubViewport/Car/Camera3D" index="0"]
+current = true
+
+[node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player4/SubViewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12727, 12.86, 0)
+
+[node name="AudioListener3D" parent="Split Screen/MarginContainer/GridContainer/Player4/SubViewport/Car/Camera3D" index="0"]
+current = true
+
+[node name="Finish Line" parent="." instance=ExtResource("6_8lnw1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)
+
+[node name="Checkpoint" parent="." instance=ExtResource("7_kl1f3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -13.9674, -0.284395, -22.7178)
+
+[node name="AICar" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_hmqxh")]
+transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -21.0983, 3.0406, 3.32179)
+script = ExtResource("9_nrfl7")
+waypoint_path = NodePath("../AIPath")
+look_ahead_distance = 4
+
+[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar"]
+transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ujhpf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar"]
+mesh = SubResource("TorusMesh_gkast")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
+
+[node name="AICar2" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_hmqxh")]
+transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -28.731, 3.0406, 5.29031)
+script = ExtResource("9_nrfl7")
+waypoint_path = NodePath("../AIPath")
+look_ahead_distance = 4
+
+[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar2"]
+transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ujhpf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar2"]
+mesh = SubResource("TorusMesh_gkast")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
+
+[node name="AICar3" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_hmqxh")]
+transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -32.9229, 3.0406, 1.79495)
+script = ExtResource("9_nrfl7")
+waypoint_path = NodePath("../AIPath")
+look_ahead_distance = 4
+
+[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar3"]
+transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ujhpf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar3"]
+mesh = SubResource("TorusMesh_gkast")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
+
+[node name="AICar4" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_hmqxh")]
+transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -35.7255, 3.0406, 6.14724)
+script = ExtResource("9_nrfl7")
+waypoint_path = NodePath("../AIPath")
+look_ahead_distance = 4
+
+[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar4"]
+transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ujhpf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar4"]
+mesh = SubResource("TorusMesh_gkast")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
+
+[node name="AIPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_xs15q")
+
+[connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
+
+[editable path="Split Screen"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car/3DModel"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car/3DModel"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player3/SubViewport/Car"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player3/SubViewport/Car/3DModel"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player4/SubViewport/Car"]
+[editable path="Split Screen/MarginContainer/GridContainer/Player4/SubViewport/Car/3DModel"]

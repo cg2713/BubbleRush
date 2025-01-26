@@ -20,10 +20,11 @@ func get_input_dir():
 	var local_target_direction = global_transform.basis.inverse() * (objective - global_transform.origin).normalized()
 
 	#print("dir ", local_target_direction)
-	#print("distance ", (target_waypoint - global_transform.origin).length())
 
 	# Are we there yet?
-	if (objective - global_transform.origin).length() < look_ahead_distance:
+	var current_distance = (objective - global_transform.origin).length()
+	print("distance ", current_distance)
+	if current_distance < look_ahead_distance:
 		# Target the next waypoint
 		current_waypoint = (current_waypoint + 1) % waypoint_path.curve.point_count
 		objective = Vector3.ZERO
