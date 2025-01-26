@@ -84,10 +84,63 @@ look_ahead_distance = 4
 
 [node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar"]
 transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_ujhpf")
 surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar"]
+visible = false
+mesh = SubResource("TorusMesh_gkast")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
+
+[node name="AICar2" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_j4l7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6121, 0.447639, 3.08925)
+script = ExtResource("9_mls3h")
+waypoint_path = NodePath("../AIPath")
+look_ahead_distance = 4
+
+[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar2"]
+transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ujhpf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar2"]
+visible = false
+mesh = SubResource("TorusMesh_gkast")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
+
+[node name="AICar3" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_j4l7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4476, 0.447639, 7.7529)
+script = ExtResource("9_mls3h")
+waypoint_path = NodePath("../AIPath")
+look_ahead_distance = 4
+
+[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar3"]
+transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ujhpf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar3"]
+visible = false
+mesh = SubResource("TorusMesh_gkast")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
+
+[node name="AICar4" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_j4l7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.728, 0.447639, 9.87952)
+script = ExtResource("9_mls3h")
+waypoint_path = NodePath("../AIPath")
+look_ahead_distance = 4
+
+[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar4"]
+transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ujhpf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar4"]
+visible = false
 mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
