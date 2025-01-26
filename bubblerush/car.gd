@@ -75,7 +75,7 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		# When energy is the highest, the speed percent is going to be reduced by 5%
 		# When energy is the lowest (0), speed is not changing
 		speed_percent *= lerp(1.0, 0.95, current_dirt_energy)
-		#print(speed_percent)
+		# print(speed_percent)
 		dirt_mesh_instance.transparency += 0.9
 		#print("dirt_mesh_instance.transparency ", dirt_mesh_instance.transparency)
 		

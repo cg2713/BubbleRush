@@ -8,7 +8,7 @@ var objective : Vector3
 
 # Override
 func get_input_dir():
-	print("curr ", current_waypoint)
+	#print("curr ", current_waypoint)
 	if objective == Vector3.ZERO:
 		var target_waypoint : Vector3 = waypoint_path.curve.get_point_position(current_waypoint)
 		objective = target_waypoint
@@ -24,7 +24,7 @@ func get_input_dir():
 
 	# Are we there yet?
 	var current_distance = (objective - global_transform.origin).length()
-	print("distance ", current_distance)
+	#print("distance ", current_distance)
 	if current_distance < look_ahead_distance:
 		# Target the next waypoint
 		current_waypoint = (current_waypoint + 1) % waypoint_path.curve.point_count
