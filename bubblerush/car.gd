@@ -36,7 +36,8 @@ func _physics_process(delta: float) -> void:
 	#%Camera3D.transform=%CameraHolder.transform
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	input_dir = get_input_dir()
+	if get_tree().root.get_child(0).RaceStarted:
+		input_dir = get_input_dir()
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity / 4)
