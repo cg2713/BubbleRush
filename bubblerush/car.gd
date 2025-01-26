@@ -13,6 +13,7 @@ const SPEED = 25.0
 @export var lapCounterUI: RichTextLabel
 @export var passedCheckpoints = []
 @export var controls : Resource
+@export var index = 0
 
 # AI variables
 @export var ai_waypoint_path : Path3D # if set, this is an AI car
@@ -54,6 +55,7 @@ func _complete_lap():
 		lapCounterUI.text = "Lap " + str(LapsCompleted)
 	if LapsCompleted >= 3:
 		print("Race Complete")
+		Game.Winner = index
 		# This car wins!
 		get_tree().change_scene_to_file("res://victory.tscn")
 

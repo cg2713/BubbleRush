@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bn5uu3qdi2non"]
+[gd_scene load_steps=27 format=4 uid="uid://c7r5ijpdqmela"]
 
 [ext_resource type="Script" path="res://dirt_manager.gd" id="1_chf0t"]
 [ext_resource type="PackedScene" uid="uid://c2547qh46avf4" path="res://dirt.tscn" id="2_wesel"]
