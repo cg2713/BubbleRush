@@ -45,3 +45,5 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Lap 0"
 label_settings = SubResource("LabelSettings_q3l75")
+
+[connection signal="raceStart" from="stoplight" to="." method="raceStarting"]
