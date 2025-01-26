@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://baisdj3sam854"]
+[gd_scene load_steps=22 format=3 uid="uid://baisdj3sam854"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_226ob"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="2_c61vw"]
@@ -13,11 +13,6 @@
 [ext_resource type="Resource" uid="uid://c255erv0lc2t1" path="res://resources/p3_controls.tres" id="11_74p75"]
 [ext_resource type="PackedScene" uid="uid://c2547qh46avf4" path="res://dirt.tscn" id="11_lb7uj"]
 [ext_resource type="Resource" uid="uid://bnfq6fjcesg5x" path="res://resources/p4_controls.tres" id="12_infrw"]
-[ext_resource type="PackedScene" uid="uid://osdwscdud0gk" path="res://3D files/TOILET.blend" id="14_0dphe"]
-[ext_resource type="PackedScene" uid="uid://ccr4jphvmovxc" path="res://3D files/penguini.blend" id="15_5xb6f"]
-[ext_resource type="PackedScene" uid="uid://c2j6bfh53tbc6" path="res://3D files/soap bottle.blend" id="16_5h1v0"]
-[ext_resource type="PackedScene" uid="uid://cp1xhotesa35r" path="res://3D files/Toilet Paper.blend" id="17_4hjm1"]
-[ext_resource type="PackedScene" uid="uid://cmardjq01eysr" path="res://3D files/sink.blend" id="18_uvqku"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m4rcc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
