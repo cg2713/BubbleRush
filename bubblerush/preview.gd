@@ -5,9 +5,11 @@ extends Node3D
 
 var models : Array[Node]
 var finished : bool = false
+var n : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	models = model_parent.get_children()
+	n = len(models)
 	for model in models:
 		model.visible = false
 	models[values].visible = true
