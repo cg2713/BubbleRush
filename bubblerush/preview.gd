@@ -18,7 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	models[values].visible = true
 	if Input.is_action_just_pressed(control.move_right):
-		if values + 1 < 4:
+		if values + 1 < len(model_parent.get_children()):
 			models[values].visible = false
 			values += 1
 			models[values].visible = true
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 			models[values].visible = true
 		else:
 			models[values].visible = false
-			values = 3
+			values = len(model_parent.get_children())-1
 			models[values].visible = true
 			
 		pass
