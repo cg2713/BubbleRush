@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cr4a47hexdf4c"]
 
 [ext_resource type="Script" path="res://preview.gd" id="1_1oaje"]
-[ext_resource type="PackedScene" uid="uid://bmeslp1i20giw" path="res://3d_models.tscn" id="2_7qnil"]
+[ext_resource type="PackedScene" path="res://3d_models.tscn" id="2_7qnil"]
 
 [node name="preview" type="Node3D" node_paths=PackedStringArray("model_parent")]
 script = ExtResource("1_1oaje")

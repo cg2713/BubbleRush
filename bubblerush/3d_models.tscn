@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmeslp1i20giw"]
+[gd_scene load_steps=6 format=3 uid="uid://bmeslp1i20giw"]
 
 [ext_resource type="PackedScene" uid="uid://dui5ao2x6r4l" path="res://characters/1_soap.tscn" id="1_e6tns"]
 [ext_resource type="PackedScene" uid="uid://dwuupkdmqhfr1" path="res://characters/2_duck.tscn" id="2_4vb4f"]
 [ext_resource type="PackedScene" uid="uid://gvtharjqgaen" path="res://characters/3_squeegee.tscn" id="3_2tjyg"]
 [ext_resource type="PackedScene" uid="uid://lws6hpxhvm8x" path="res://characters/4_bubble_boy.tscn" id="4_0c3u6"]
+[ext_resource type="PackedScene" uid="uid://deg38b5tyxpse" path="res://3D files/spong1.blend" id="5_8wcmp"]
 
 [node name="3DModel" type="Node3D"]
 
 [node name="1_soap" parent="." instance=ExtResource("1_e6tns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.203158, 0)
+visible = false
 
 [node name="2_duck" parent="." instance=ExtResource("2_4vb4f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.614966, 0)
@@ -21,3 +23,6 @@ visible = false
 [node name="4_bubble_boy" parent="." instance=ExtResource("4_0c3u6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64159, 0)
 visible = false
+
+[node name="5_spong" parent="." instance=ExtResource("5_8wcmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.429169, 0)

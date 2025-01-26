@@ -14,12 +14,16 @@ const SPEED = 25.0
 @export var passedCheckpoints = []
 @export var controls : Resource
 @export var index = 0
+# List not working!!!!
+@export var PopSFX = []
 
 # AI variables
 @export var ai_waypoint_path : Path3D # if set, this is an AI car
 const ai_look_ahead_distance = 4
 var ai_current_waypoint : int = 0
 var ai_objective : Vector3
+
+var nextPopSound = 1
 
 var speed_percent = 1
 var input_dir: Vector2
@@ -46,6 +50,14 @@ func _process(delta: float) -> void:
 		position = checkpoint
 		rotation = checkpointRotation
 		velocity = Vector3.ZERO
+	# Multiply this calculation to pop more often, or a number less than 1 to pop less often
+	nextPopSound -= velocity.length() * delta / 10
+	if nextPopSound <= 0:
+		#Play random pop sfx
+		$AudioStreamPlayer3D.steam = PopSFX.pick_random()
+		$AudioStreamPlayer3D.play()
+		print("Pop!")
+		nextPopSound = 1
 		
 func _complete_lap():
 	passedCheckpoints = []
