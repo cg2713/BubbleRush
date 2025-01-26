@@ -36,10 +36,11 @@ func _physics_process(delta: float) -> void:
 	#%Camera3D.transform=%CameraHolder.transform
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if not player2:
-		input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	else:
-		input_dir = Input.get_vector("left", "right", "forward", "back")
+	if get_tree().root.get_child(0).RaceStarted:
+		if not player2:
+			input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		else:
+			input_dir = Input.get_vector("left", "right", "forward", "back")
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity/4)
@@ -60,8 +61,12 @@ func _physics_process(delta: float) -> void:
 	carCam.fov = base_FOV + currentVelocity * 3
 	
 	#print("velocity ", velocity.length())
-	$BubbleTrail/BubbleParticles3D.amount_ratio = velocity.length() / 10
-	$BubbleTrail/FoamParticles3D.amount_ratio = velocity.length() / 10
+	if is_on_floor():
+		$BubbleTrail/BubbleParticles3D.amount_ratio = velocity.length() / 10
+		$BubbleTrail/FoamParticles3D.amount_ratio = velocity.length() / 10
+	else:
+		$BubbleTrail/BubbleParticles3D.amount_ratio = $BubbleTrail/BubbleParticles3D.amount_ratio + (0 - $BubbleTrail/BubbleParticles3D.amount_ratio) * delta * 10
+		$BubbleTrail/FoamParticles3D.amount_ratio = $BubbleTrail/FoamParticles3D.amount_ratio + (0 - $BubbleTrail/FoamParticles3D.amount_ratio) * delta * 10
 	
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	#print("area entered")
