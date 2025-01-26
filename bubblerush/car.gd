@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 	#	%Camera3D.fov = %Camera3D.fov * (1 - delta) + speedup_FOV * delta
 	#elif %Camera3D.fov >= base_FOV:
 	#	%Camera3D.fov = %Camera3D.fov * (1 - delta) + base_FOV * delta
-	carCam.fov = base_FOV + currentVelocity * 3
+	carCam.fov = clamp(base_FOV + currentVelocity * 3, 1, 179)
 	
 	#print("velocity ", velocity.length())
 	if is_on_floor():
