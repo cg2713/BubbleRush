@@ -23,6 +23,10 @@ var input_dir: Vector2
 func _ready() -> void:
 	carCam.top_level = true
 	
+	if is_ai_car():
+		PlayerChoice = randi_range(1, 4)
+		print("AI choose car ", PlayerChoice)
+	
 	# Hide all except chosen
 	for child in $"3DModel".get_children():
 		child.visible = false
