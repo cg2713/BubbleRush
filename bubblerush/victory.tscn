@@ -14,15 +14,16 @@ grow_vertical = 2
 script = ExtResource("1_svca3")
 
 [node name="1000F19217926DlZXaPp7dx15IgN0HhymDsbYXu2lA2Ad" type="Sprite2D" parent="."]
-position = Vector2(576, 341)
-scale = Vector2(1.15, 1.15)
+position = Vector2(956.416, 594.738)
+scale = Vector2(1.91083, 1.91083)
 texture = ExtResource("1_0aym4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 206.0
+offset_top = 23.0
+offset_bottom = 229.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 75
@@ -36,13 +37,13 @@ script = ExtResource("2_kl2kk")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.504
-anchor_top = 0.837
+anchor_top = 0.325
 anchor_right = 0.504
-anchor_bottom = 0.837
+anchor_bottom = 0.325
 offset_left = -134.608
-offset_top = -43.376
+offset_top = -43.0
 offset_right = 134.392
-offset_bottom = 43.624
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Main Menu"

@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwuupkdmqhfr1"]
+[gd_scene load_steps=8 format=3 uid="uid://dwuupkdmqhfr1"]
 
 [ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="1_r4bqe"]
 [ext_resource type="PackedScene" uid="uid://ccr4jphvmovxc" path="res://3D files/penguini.blend" id="2_njems"]
+[ext_resource type="PackedScene" uid="uid://cng4uoj8ocfhu" path="res://3D files/duck/duck_textured.blend" id="3_a7s21"]
+[ext_resource type="Texture2D" uid="uid://bkyaotrs860fb" path="res://3D files/duck/DUCK_duck_1_BaseColor.png" id="4_pd3kd"]
+[ext_resource type="Texture2D" uid="uid://c8avcyo5jnact" path="res://3D files/duck/DUCK_duck_beak_BaseColor.png" id="5_xlbor"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djj1q"]
+albedo_texture = ExtResource("4_pd3kd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7685"]
+albedo_texture = ExtResource("5_xlbor")
 
 [node name="2_duck" instance=ExtResource("1_r4bqe")]
 
@@ -17,6 +26,7 @@ transform = Transform3D(0.208778, 0, -0.148689, 0, 0.256313, 0, 0.148689, 0, 0.2
 
 [node name="duck" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 
 [node name="Cube_001" parent="." index="2"]
 transform = Transform3D(0.525848, 0, 0, 0, 0.525848, 0, 0, 0, 0.525848, 0, 0, 0)
@@ -24,3 +34,13 @@ visible = false
 
 [node name="Cube" parent="." index="3"]
 visible = false
+
+[node name="duck_textured" parent="." index="4" instance=ExtResource("3_a7s21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56186, 0, -0.170084)
+
+[node name="duck" parent="duck_textured" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5473, 0, 0.172126)
+surface_material_override/0 = SubResource("StandardMaterial3D_djj1q")
+surface_material_override/1 = SubResource("StandardMaterial3D_b7685")
+
+[editable path="duck_textured"]
