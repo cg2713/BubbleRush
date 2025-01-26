@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_15jyv"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="1_v4755"]
 [ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="2_ej04t"]
-[ext_resource type="PackedScene" path="res://bathroom_course_level.tscn" id="4_4ex5u"]
+[ext_resource type="PackedScene" uid="uid://dms6exgn0g23p" path="res://bathroom_course_level.tscn" id="4_4ex5u"]
 [ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="4_dtuyo"]
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="5_6mkut"]
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="5_ejic5"]
