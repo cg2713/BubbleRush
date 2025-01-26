@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw5oa8au31kpw"]
+[gd_scene load_steps=9 format=3 uid="uid://cj7pgivlpytgi"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_4gygr"]
 [ext_resource type="PackedScene" uid="uid://bjtthg8bgsifb" path="res://3D files/Temp Tracks/Track_Hill.glb" id="1_15whw"]
@@ -18,6 +18,7 @@ size = Vector3(7.19194, 0.649918, 0.0841148)
 size = Vector3(7.19194, 0.649918, 2.40015)
 
 [node name="Figure8" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_4gygr")
 
 [node name="8 Track" type="Node3D" parent="."]
