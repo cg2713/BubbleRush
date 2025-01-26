@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqlgw4rpt7uxs"]
+[gd_scene load_steps=11 format=3 uid="uid://bqlgw4rpt7uxs"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_15jyv"]
 [ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="5_6mkut"]
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="5_ejic5"]
 [ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="7_njtlm"]
-[ext_resource type="Script" path="res://ai_car.gd" id="9_8ghbj"]
 
 [sub_resource type="Curve3D" id="Curve3D_u4vpn"]
 _data = {
@@ -48,52 +47,45 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.95
 [node name="Checkpoint" parent="." instance=ExtResource("5_ejic5")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -13.9674, -0.284395, -22.7178)
 
+[node name="Checkpoint2" parent="." instance=ExtResource("5_ejic5")]
+transform = Transform3D(0.012531, 0, 0.999922, 0, 1, 0, -0.999922, 0, 0.012531, -14.2962, -0.284395, 20.2648)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("5_ejic5")]
+transform = Transform3D(-0.999675, 0, 0.0254789, 0, 1, 0, -0.0254789, 0, -0.999675, 1.67545, -0.284395, -0.780235)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("5_ejic5")]
+transform = Transform3D(0.998748, 0, -0.0500176, 0, 1, 0, 0.0500176, 0, 0.998748, -28.8586, -0.284395, -4.20945)
+
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_u4vpn")
 
 [node name="Car" parent="." instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.8943, 3.41948, 3.07571)
 
-[node name="Car3AI" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("7_njtlm")]
+[node name="Car3AI" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -26.0792, 3.41948, 9.73742)
-script = ExtResource("9_8ghbj")
-waypoint_path = NodePath("../Path3D")
-look_ahead_distance = 4
-player2 = true
-PlayerChoice = 2
+ai_waypoint_path = NodePath("../Path3D")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI"]
 mesh = SubResource("TorusMesh_2kxcv")
 
-[node name="Car3AI2" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("7_njtlm")]
+[node name="Car3AI2" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -27.4899, 3.41948, 4.76482)
-script = ExtResource("9_8ghbj")
-waypoint_path = NodePath("../Path3D")
-look_ahead_distance = 4
-player2 = true
-PlayerChoice = 2
+ai_waypoint_path = NodePath("../Path3D")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI2"]
 mesh = SubResource("TorusMesh_2kxcv")
 
-[node name="Car3AI4" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("7_njtlm")]
+[node name="Car3AI4" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -28.4773, 3.41948, -1.33632)
-script = ExtResource("9_8ghbj")
-waypoint_path = NodePath("../Path3D")
-look_ahead_distance = 4
-player2 = true
-PlayerChoice = 2
+ai_waypoint_path = NodePath("../Path3D")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI4"]
 mesh = SubResource("TorusMesh_2kxcv")
 
-[node name="Car3AI3" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("7_njtlm")]
+[node name="Car3AI3" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -30.6286, 3.41948, 8.74995)
-script = ExtResource("9_8ghbj")
-waypoint_path = NodePath("../Path3D")
-look_ahead_distance = 4
-player2 = true
-PlayerChoice = 2
+ai_waypoint_path = NodePath("../Path3D")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI3"]
 mesh = SubResource("TorusMesh_2kxcv")

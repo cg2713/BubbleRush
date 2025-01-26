@@ -11,6 +11,11 @@ const SPEED = 25.0
 @export var checkpointRotation: Vector3
 @export var carCam: Camera3D
 
+# AI variables
+@export var ai_waypoint_path : Path3D # if set, this is an AI car
+const ai_look_ahead_distance = 4
+var ai_current_waypoint : int = 0
+var ai_objective : Vector3
 
 var speed_percent = 1
 var input_dir: Vector2
@@ -37,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if get_tree().root.get_child(0).RaceStarted:
-		input_dir = get_input_dir()
+		input_dir = get_ai_input_dir() if ai_waypoint_path else get_input_dir()
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity / 4)
@@ -84,3 +89,40 @@ func get_input_dir():
 		return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	else:
 		return Input.get_vector("left", "right", "forward", "back")
+		
+func get_ai_input_dir():
+	#print("curr ", current_waypoint)
+	if ai_objective == Vector3.ZERO:
+		ai_objective = ai_waypoint_path.curve.get_point_position(ai_current_waypoint)
+		# Randomize objective a little bit so that different AI cars dont clutter
+		const randomness = 2
+		ai_objective.x += randf_range(-randomness,randomness)
+		ai_objective.z += randf_range(-randomness,randomness)
+	
+	# Find the direction to the waypoint in the car's local space
+	var local_target_direction = global_transform.basis.inverse() * (ai_objective - global_transform.origin).normalized()
+
+	#print("dir ", local_target_direction)
+
+	# Are we there yet?
+	var current_distance = (ai_objective - global_transform.origin).length()
+	#print("distance ", current_distance)
+	if current_distance < ai_look_ahead_distance:
+		# Target the next waypoint
+		ai_current_waypoint = (ai_current_waypoint + 1) % ai_waypoint_path.curve.point_count
+		ai_objective = Vector3.ZERO
+		
+	if find_child("debugMarkerObjective") != null:
+		$debugMarkerObjective.global_position = ai_objective
+
+	#$debugMarkerSteer.position = local_target_direction * 2 # Visual debug in local space
+	
+
+	# Calculate the steering input based on the local direction:
+	var steer_input = local_target_direction.x # Positive if target is to the right, negative if to the left
+	
+	steer_input = clamp(steer_input, -1.0, 1.0)
+
+	var speed_input = -1
+
+	return Vector2(steer_input, speed_input)
