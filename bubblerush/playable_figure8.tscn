@@ -22,10 +22,10 @@ albedo_color = Color(0.333409, 0.741631, 0.303938, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_xs15q"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -195.073, 0, -1.37976, 0, 0, 0, 0, 0, 0, -743.578, 0, 47.3576, 0, 0, 0, 0, 0, 0, -943.25, 0, 188.635, 0, 0, 0, 0, 0, 0, -1028.02, 0, 419.388, 0, 0, 0, 0, 0, 0, -1056.27, 0, 700.059, 0, 0, 0, 0, 0, 0, -903.692, 0, 932.696, 0, 0, 0, 0, 0, 0, -742.636, 0, 1014.64, 0, 0, 0, 0, 0, 0, -358.361, 0, 1014.64, 0, 0, 0, 0, 0, 0, -62.6208, 0, 883.72, 0, 0, 0, 0, 0, 0, 31.564, 0, 683.106, 0, 0, 0, 0, 0, 0, 28.7386, 0, 328.97, 0, 0, 0, 0, 0, 0, -62.1944, 0, -673.487, 0, 0, 0, 0, 0, 0, 232.122, 0, -997.966, 0, 0, 0, 0, 0, 0, 731.954, 0, -1008.46, 0, 0, 0, 0, 0, 0, 962.107, 0, -804.17, 0, 0, 0, 0, 0, 0, 896.103, 0, -176.435, 0, 0, 0, 0, 0, 0, 676.467, 0, 10.0935, 0, 0, 0, 0, 0, 0, 204.089, 0, 8.47859),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.6304, 0, 4.17192, 0, 0, 0, 0, 0, 0, 42.4911, 0, 5.16535, 0, 0, 0, 0, 0, 0, 69.976, 0, 1.9643, 0, 0, 0, 0, 0, 0, 86.202, 0, -18.0147, 0, 0, 0, 0, 0, 0, 91.9418, 0, -39.539, 0, 0, 0, 0, 0, 0, 91.7211, 0, -64.2643, 0, 0, 0, 0, 0, 0, 86.8643, 0, -77.3997, 0, 0, 0, 0, 0, 0, 71.9953, 0, -85.3954, 0, 0, 0, 0, 0, 0, 44.8415, 0, -90.4729, 0, 0, 0, 0, 0, 0, 24.5314, 0, -87.603, 0, 0, 0, 0, 0, 0, 2.01369, 0, -81.6424, 0, 0, 0, 0, 0, 0, -6.48566, 0, -58.7935, 0, 0, 0, 0, 0, 0, -6.07685, 7.69896, 4.78993, 0, 0, 0, 0, 0, 0, -7.66013, 0, 74.2908, 0, 0, 0, 0, 0, 0, -12.848, 0, 87.3158, 0, 0, 0, 0, 0, 0, -25.9834, 0, 96.9189, 0, 0, 0, 0, 0, 0, -51.2607, 0, 102.769, 0, 0, 0, 0, 0, 0, -85.258, 0, 97.4708, 0, 0, 0, 0, 0, 0, -98.3934, 0, 78.3749, 0, 0, 0, 0, 0, 0, -101.263, 0, 53.4288, 0, 0, 0, 0, 0, 0, -98.3934, 0, 32.346, 0, 0, 0, 0, 0, 0, -96.0754, 0, 16.7823, 0, 0, 0, 0, 0, 0, -88.7902, 0, 11.0425, 0, 0, 0, 0, 0, 0, -79.6286, 0, 5.52341, 0, 0, 0, 0, 0, 0, -65.6102, 0, 3.86769, 0, 0, 0, 0, 0, 0, -50.1569, 0, 3.86769, 0, 0, 0, 0, 0, 0, -34.9243, 0, 3.86769, 0, 0, 0, 0, 0, 0, -26.0938, 0, 5.19226, 0, 0, 0, 0, 0, 0, -16.9322, 0, 5.30265, 0, 0, 0, 0, 0, 0, -11.4131, 0, 3.42617),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 18
+point_count = 30
 
 [node name="PlayableTestLevel" type="Node3D"]
 script = ExtResource("1_226ob")
@@ -37,7 +37,7 @@ script = ExtResource("1_226ob")
 [node name="StopWatch" parent="." instance=ExtResource("3_o5kel")]
 
 [node name="Figure8" parent="." instance=ExtResource("4_i15uy")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14.79, -1, -0.911)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.79, -1, -0.911)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.970888, -0.223837, 0.0852827, 0.165117, 0.883336, 0.438695, -0.17353, -0.411842, 0.89458, 24.0591, 29.8346, 0)
@@ -47,16 +47,8 @@ light_energy = 0.2
 transform = Transform3D(-0.538108, -0.78765, 0.300079, 3.95694e-08, 0.356018, 0.934479, -0.842876, 0.502851, -0.191576, -49.6027, 29.8346, 0)
 light_energy = 0.5
 
-[node name="Split Screen" parent="." instance=ExtResource("5_nsde3")]
-
-[node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player1/SubViewport" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0197, 1.37835, 0)
-
-[node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6974, 2.18341, -2.27001)
-
-[node name="Camera3D" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Split Screen" parent="." node_paths=PackedStringArray("carList") instance=ExtResource("5_nsde3")]
+carList = [NodePath("../Car")]
 
 [node name="Finish Line" parent="." instance=ExtResource("6_8lnw1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)
@@ -81,7 +73,7 @@ mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
 [node name="AICar2" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_hmqxh")]
-transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -28.731, 3.0406, 5.29031)
+transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -28.731, 3.0406, 4.02369)
 script = ExtResource("9_nrfl7")
 waypoint_path = NodePath("../AIPath")
 look_ahead_distance = 4
@@ -113,7 +105,7 @@ mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
 [node name="AICar4" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_hmqxh")]
-transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -35.7255, 3.0406, 6.14724)
+transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -35.7255, 3.0406, -1.43359)
 script = ExtResource("9_nrfl7")
 waypoint_path = NodePath("../AIPath")
 look_ahead_distance = 4
@@ -129,11 +121,11 @@ mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
 [node name="AIPath" type="Path3D" parent="."]
-transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, -8.24103, 0, -6.04342)
 curve = SubResource("Curve3D_xs15q")
 
+[node name="Car" parent="." instance=ExtResource("8_hmqxh")]
+transform = Transform3D(-0.282509, 0, -0.959265, 0, 1, 0, 0.959265, 0, -0.282509, -27.3672, 1.69926, -2.0947)
+
+[connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
+
 [editable path="Split Screen"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car/3DModel"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car/3DModel"]

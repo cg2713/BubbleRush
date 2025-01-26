@@ -13,7 +13,7 @@ func get_input_dir():
 		var target_waypoint : Vector3 = waypoint_path.curve.get_point_position(current_waypoint)
 		objective = target_waypoint
 		# Randomize objective a little bit so that different AI cars dont clutter
-		const randomness = 4
+		const randomness = 2
 		objective.x += randf_range(-randomness,randomness)
 		objective.z += randf_range(-randomness,randomness)
 	

@@ -12,10 +12,10 @@
 
 [sub_resource type="Curve3D" id="Curve3D_u4vpn"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.75637, -4.24385e-05, 12.8662, 0, 0, 0, 0, 0, 0, 1.49692, -4.24385e-05, 20.5247, 0, 0, 0, 0, 0, 0, -5.16509, -4.24385e-05, 28.2562, 0, 0, 0, 0, 0, 0, -8.85419, -4.24385e-05, 31.4893, 0, 0, 0, 0, 0, 0, -18.6817, -4.24385e-05, 30.4438, 0, 0, 0, 0, 0, 0, -24.2778, -4.24385e-05, 24.3377, 0, 0, 0, 0, 0, 0, -28.3336, -4.24385e-05, 14.7506, 0, 0, 0, 0, 0, 0, -26.3773, -4.24385e-05, 1.7231, 0, 0, 0, 0, 0, 0, -19.7019, -4.24385e-05, -6.31638, 0, 0, 0, 0, 0, 0, -9.79377, -4.24385e-05, -7.11862, 0, 0, 0, 0, 0, 0, -2.16884, -4.24385e-05, -5.08929),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -28.723, 0, -8.61238, 0, 0, 0, 0, 0, 0, -25.9608, 0, -12.7213, 0, 0, 0, 0, 0, 0, -22.7842, 0, -17.3481, 0, 0, 0, 0, 0, 0, -18.2264, 0, -21.1462, 0, 0, 0, 0, 0, 0, -13.2543, 0, -21.7332, 0, 0, 0, 0, 0, 0, -8.52394, 0, -19.765, 0, 0, 0, 0, 0, 0, -4.55318, 0, -17.5898, 0, 0, 0, 0, 0, 0, -0.0644972, 0, -15.7252, 0, 0, 0, 0, 0, 0, 1.55834, 0, -8.0254, 0, 0, 0, 0, 0, 0, 0.487955, 0, -3.08785, 0, 0, 0, 0, 0, 0, -0.927706, 0, 1.95329, 0, 0, 0, 0, 0, 0, -3.38977, 0, 10.857, 0, 0, 0, 0, 0, 0, -6.52763, 0, 18.0505, 0, 0, 0, 0, 0, 0, -10.8496, 0, 21.4844, 0, 0, 0, 0, 0, 0, -16.0892, 0, 22.4612, 0, 0, 0, 0, 0, 0, -23.0754, 0, 18.6129, 0, 0, 0, 0, 0, 0, -23.1938, 0, 14.7942, 0, 0, 0, 0, 0, 0, -25.8581, 0, 11.0939, 0, 0, 0, 0, 0, 0, -27.1606, 0, 4.93656, 0, 0, 0, 0, 0, 0, -28.9367, 0, -1.33916, 0, 0, 0, 0, 0, 0, -28.1967, 0, -5.51312),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 11
+point_count = 21
 
 [sub_resource type="TorusMesh" id="TorusMesh_2kxcv"]
 
@@ -40,7 +40,7 @@ transform = Transform3D(-0.538108, -0.78765, 0.300079, 3.95694e-08, 0.356018, 0.
 light_energy = 0.5
 
 [node name="Split Screen" parent="." node_paths=PackedStringArray("carList") instance=ExtResource("4_dtuyo")]
-carList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car4")]
+carList = [NodePath("../Car"), NodePath(""), NodePath("")]
 
 [node name="Finish Line" parent="." instance=ExtResource("5_6mkut")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)
@@ -49,19 +49,14 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.95
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -13.9674, -0.284395, -22.7178)
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -26.0792, -1.21883, 9.73742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 curve = SubResource("Curve3D_u4vpn")
 
 [node name="Car" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -30.8943, 3.41948, 3.07571)
-
-[node name="Car2" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -26.0792, 3.41948, 3.07571)
-player2 = true
-PlayerChoice = 2
+transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.8943, 3.41948, 3.07571)
 
 [node name="Car3AI" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -26.0792, 3.41948, 9.73742)
+transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -26.0792, 3.41948, 9.73742)
 script = ExtResource("9_8ghbj")
 waypoint_path = NodePath("../Path3D")
 look_ahead_distance = 4
@@ -71,10 +66,38 @@ PlayerChoice = 2
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI"]
 mesh = SubResource("TorusMesh_2kxcv")
 
-[node name="Car4" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -29.2779, 3.41948, 9.11168)
+[node name="Car3AI2" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("7_njtlm")]
+transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -27.4899, 3.41948, 4.76482)
+script = ExtResource("9_8ghbj")
+waypoint_path = NodePath("../Path3D")
+look_ahead_distance = 4
 player2 = true
 PlayerChoice = 2
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI2"]
+mesh = SubResource("TorusMesh_2kxcv")
+
+[node name="Car3AI4" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("7_njtlm")]
+transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -28.4773, 3.41948, -1.33632)
+script = ExtResource("9_8ghbj")
+waypoint_path = NodePath("../Path3D")
+look_ahead_distance = 4
+player2 = true
+PlayerChoice = 2
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI4"]
+mesh = SubResource("TorusMesh_2kxcv")
+
+[node name="Car3AI3" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("7_njtlm")]
+transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -30.6286, 3.41948, 8.74995)
+script = ExtResource("9_8ghbj")
+waypoint_path = NodePath("../Path3D")
+look_ahead_distance = 4
+player2 = true
+PlayerChoice = 2
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI3"]
+mesh = SubResource("TorusMesh_2kxcv")
 
 [connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
 
