@@ -21,9 +21,17 @@ var speed_percent = 1
 var input_dir: Vector2
 
 func _ready() -> void:
-	
 	carCam.top_level = true
+	
+	if is_ai_car():
+		PlayerChoice = randi_range(1, 4)
+		print("AI choose car ", PlayerChoice)
+	
+	# Hide all except chosen
+	for child in $"3DModel".get_children():
+		child.visible = false
 	$"3DModel".get_children()[PlayerChoice - 1].visible = true
+	
 	checkpoint = position
 
 func _process(delta: float) -> void:
@@ -50,6 +58,8 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if get_tree().current_scene.RaceStarted:
 		input_dir = get_ai_input_dir() if is_ai_car() else get_input_dir()
+		$BubbleTrail/BubbleParticles3D.emitting = true
+		$BubbleTrail/FoamParticles3D.emitting = true
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity / 4)

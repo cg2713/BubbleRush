@@ -49,6 +49,7 @@ rings = 8
 
 [node name="BubbleParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144811, -0.189518, -1.19209e-07)
+emitting = false
 amount = 40
 lifetime = 2.95
 explosiveness = 0.07
@@ -57,6 +58,7 @@ draw_pass_1 = SubResource("SphereMesh_3c8f3")
 
 [node name="FoamParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144811, -0.189518, -1.19209e-07)
+emitting = false
 amount = 200
 explosiveness = 0.07
 randomness = 0.3
