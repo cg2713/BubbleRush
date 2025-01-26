@@ -2,7 +2,7 @@ extends Control
 
 #@export var stopwatch : Stopwatch
 var counter : int = 0
-signal raceStart()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -26,7 +26,8 @@ func _on_timer_timeout() -> void:
 	if counter > 4:
 		get_parent().stopwatch.start()
 		#stopwatch.start()
-		raceStart.emit()
+		get_parent().raceStart.emit()
+		#get_parent().raceStarting()
 		queue_free()
 	queue_redraw()
 	pass # Replace with function body.

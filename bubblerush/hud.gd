@@ -11,7 +11,7 @@ func _ready():
 
 func _process(delta):
 	update_stopwatch_label()
-
+	
 func raceStarting():
 	raceStart.emit()
 
