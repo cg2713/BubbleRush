@@ -1,23 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf3mhtmhmqfdk"]
+[gd_scene load_steps=8 format=3 uid="uid://bf3mhtmhmqfdk"]
 
 [ext_resource type="Script" path="res://level_preview.gd" id="1_6qwvc"]
 [ext_resource type="PackedScene" uid="uid://cj7pgivlpytgi" path="res://Figure 8.tscn" id="1_7n1nb"]
 [ext_resource type="PackedScene" uid="uid://c7r5ijpdqmela" path="res://bathroom_level.tscn" id="2_kig4p"]
 [ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_x1fdh"]
 [ext_resource type="PackedScene" uid="uid://baisdj3sam854" path="res://playable_figure8.tscn" id="3_cyl4u"]
-[ext_resource type="PackedScene" uid="uid://bqlgw4rpt7uxs" path="res://playable_test_level.tscn" id="4_b2upe"]
+[ext_resource type="PackedScene" uid="uid://bqlgw4rpt7uxs" path="res://playable_bathroom_level.tscn" id="4_50jrc"]
+[ext_resource type="PackedScene" uid="uid://dms6exgn0g23p" path="res://bathroom_course_level.tscn" id="6_jqmcc"]
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("models")]
 script = ExtResource("1_6qwvc")
-models = [NodePath("Figure8"), NodePath("Level")]
+models = [NodePath("Figure8"), NodePath("BathroomCourse")]
 control = ExtResource("2_x1fdh")
-Levels = Array[PackedScene]([ExtResource("3_cyl4u"), ExtResource("4_b2upe")])
+Levels = Array[PackedScene]([ExtResource("3_cyl4u"), ExtResource("4_50jrc")])
 
 [node name="Figure8" parent="." instance=ExtResource("1_7n1nb")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 visible = false
 
+[node name="BathroomCourse" parent="." instance=ExtResource("6_jqmcc")]
+visible = false
+
 [node name="Level" parent="." instance=ExtResource("2_kig4p")]
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13.1228, 0)

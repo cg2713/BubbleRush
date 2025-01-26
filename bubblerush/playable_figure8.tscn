@@ -97,6 +97,7 @@ mesh = SubResource("BoxMesh_ujhpf")
 surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar"]
+visible = false
 mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
@@ -112,6 +113,7 @@ mesh = SubResource("BoxMesh_ujhpf")
 surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar2"]
+visible = false
 mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
@@ -127,6 +129,7 @@ mesh = SubResource("BoxMesh_ujhpf")
 surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar3"]
+visible = false
 mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
@@ -142,6 +145,7 @@ mesh = SubResource("BoxMesh_ujhpf")
 surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar4"]
+visible = false
 mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
