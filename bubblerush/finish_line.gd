@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	#print(body)
 	if body is car:
-		body.LapsCompleted += 1
+		body._complete_lap()
 	pass # Replace with function body.
 
 #func _finished():

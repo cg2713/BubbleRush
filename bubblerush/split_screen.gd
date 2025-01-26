@@ -3,8 +3,8 @@ extends Node3D
 @export var playerNode : Node
 @export_range(1,4) var amountOfPlayers = 1
 var cameraList : Array[Camera3D]
-@export var carList : Array[Node3D]
-@export var AICarList : Array[Node3D]
+@export var carList : Array[car]
+@export var AICarList : Array[car]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +24,10 @@ func _ready() -> void:
 		print($MarginContainer/GridContainer.columns)
 		for i in range(amountOfPlayers-1):
 			var newNode : Node = playerNode.duplicate()
+			print("New Node", newNode)
+			print("Thingy", newNode.get_child(0).get_child(0).get_child(0).get_child(0))
+			carList[i].lapCounterUI = newNode.get_child(0).get_child(0).get_child(0).get_child(0)
+			print("Lap Counter", carList[i].lapCounterUI)
 			if amountOfPlayers <= 3:
 				newNode.get_child(0).size.x = $MarginContainer.size.x/amountOfPlayers
 				newNode.get_child(0).size.y = $MarginContainer.size.y

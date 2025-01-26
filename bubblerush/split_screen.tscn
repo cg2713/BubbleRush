@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfuhwdte25jtw"]
+[gd_scene load_steps=3 format=3 uid="uid://bfuhwdte25jtw"]
 
 [ext_resource type="Script" path="res://split_screen.gd" id="1_nly53"]
+[ext_resource type="PackedScene" uid="uid://ci3je1r6o8spv" path="res://player_hud.tscn" id="2_4vibr"]
 
 [node name="Split Screen" type="Node3D" node_paths=PackedStringArray("playerNode")]
 script = ExtResource("1_nly53")
@@ -24,7 +25,9 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="MarginContainer/GridContainer/Player1"]
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="MarginContainer/GridContainer/Player1/SubViewport"]
+
+[node name="PlayerHUD" parent="MarginContainer/GridContainer/Player1/SubViewport/Camera3D" instance=ExtResource("2_4vibr")]

@@ -10,6 +10,7 @@ const SPEED = 25.0
 @export var checkpoint: Vector3
 @export var checkpointRotation: Vector3
 @export var carCam: Camera3D
+@export var lapCounterUI: RichTextLabel
 
 # AI variables
 @export var ai_waypoint_path : Path3D # if set, this is an AI car
@@ -34,6 +35,7 @@ func _ready() -> void:
 	
 	checkpoint = position
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if position.y <= -10:
 		position = checkpoint
@@ -42,8 +44,12 @@ func _process(delta: float) -> void:
 		
 func _complete_lap():
 	# Include check to confirm that car has traveled around the map
+	print("Lap",LapsCompleted+1,"completed")
 	LapsCompleted += 1
+	if lapCounterUI:
+		lapCounterUI.text = "Lap " + str(LapsCompleted)
 	if LapsCompleted >= 3:
+		print("Race Complete")
 		# This car wins!
 		get_tree().quit()
 

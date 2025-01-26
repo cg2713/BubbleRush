@@ -1,12 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://51pd6coiy4rs"]
+[gd_scene load_steps=4 format=3 uid="uid://51pd6coiy4rs"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_tj12n"]
 [ext_resource type="PackedScene" uid="uid://cnrh6wyt5uo10" path="res://Stoplight.tscn" id="2_0ab6v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ot7n0"]
-font_size = 40
-
-[sub_resource type="LabelSettings" id="LabelSettings_7mvx7"]
 font_size = 40
 
 [node name="HUD" type="Control" node_paths=PackedStringArray("stopwatch_label")]
@@ -38,10 +35,3 @@ grow_horizontal = 2
 text = "00:00:000"
 label_settings = SubResource("LabelSettings_ot7n0")
 vertical_alignment = 1
-
-[node name="LapCounter" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Lap 0"
-label_settings = SubResource("LabelSettings_7mvx7")
