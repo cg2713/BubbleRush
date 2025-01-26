@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtk47bngo2rpf"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_fqhhl"]
+[ext_resource type="Texture2D" uid="uid://2j73a10vwyok" path="res://istockphoto-1017626046-612x612.png" id="2_lp8us"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r8ns2"]
+font_size = 73
+font_color = Color(0, 0, 0, 1)
+outline_size = 25
+outline_color = Color(0.581033, 0.581033, 0.581033, 1)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqhhl")
+
+[node name="Istockphoto-1017626046-612x612" type="Sprite2D" parent="."]
+position = Vector2(575, 248)
+scale = Vector2(1.88235, 1.95098)
+texture = ExtResource("2_lp8us")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -1.0
+offset_right = -1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+text = "Credits:
+Programmers
+Artist
+Level Designers"
+label_settings = SubResource("LabelSettings_r8ns2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.837
+anchor_right = 0.504
+anchor_bottom = 0.837
+offset_left = -134.608
+offset_top = -43.376
+offset_right = 134.392
+offset_bottom = 43.624
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Menu"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
