@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4qssepqrjmmk"]
+[gd_scene load_steps=12 format=3 uid="uid://c4qssepqrjmmk"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
+[ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_4eqy6"]
 [ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="2_5p2si"]
 [ext_resource type="PackedScene" uid="uid://ccr4jphvmovxc" path="res://3D files/penguini.blend" id="3_pn1so"]
 [ext_resource type="PackedScene" uid="uid://dp2cncocua5kc" path="res://BubbleTrail.tscn" id="3_rw01i"]
@@ -37,6 +38,7 @@ shader_parameter/color4 = Color(0, 0.267, 1, 1)
 [node name="Car" type="CharacterBody3D" node_paths=PackedStringArray("carCam")]
 script = ExtResource("1_xxi4i")
 carCam = NodePath("Camera3D")
+controls = ExtResource("2_4eqy6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7gxqu")
