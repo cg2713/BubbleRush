@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://baisdj3sam854"]
+[gd_scene load_steps=24 format=3 uid="uid://baisdj3sam854"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_226ob"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="2_c61vw"]
@@ -13,11 +13,8 @@
 [ext_resource type="Resource" uid="uid://c255erv0lc2t1" path="res://resources/p3_controls.tres" id="11_74p75"]
 [ext_resource type="PackedScene" uid="uid://c2547qh46avf4" path="res://dirt.tscn" id="11_lb7uj"]
 [ext_resource type="Resource" uid="uid://bnfq6fjcesg5x" path="res://resources/p4_controls.tres" id="12_infrw"]
-[ext_resource type="PackedScene" uid="uid://osdwscdud0gk" path="res://3D files/TOILET.blend" id="14_0dphe"]
-[ext_resource type="PackedScene" uid="uid://ccr4jphvmovxc" path="res://3D files/penguini.blend" id="15_5xb6f"]
-[ext_resource type="PackedScene" uid="uid://c2j6bfh53tbc6" path="res://3D files/soap bottle.blend" id="16_5h1v0"]
-[ext_resource type="PackedScene" uid="uid://cp1xhotesa35r" path="res://3D files/Toilet Paper.blend" id="17_4hjm1"]
-[ext_resource type="PackedScene" uid="uid://cmardjq01eysr" path="res://3D files/sink.blend" id="18_uvqku"]
+[ext_resource type="PackedScene" uid="uid://c7r5ijpdqmela" path="res://bathroom_level.tscn" id="14_xm6fo"]
+[ext_resource type="ArrayMesh" uid="uid://bt4opdgc7nfju" path="res://3D files/Cappy.obj" id="15_ownek"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m4rcc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -76,6 +73,9 @@ light_energy = 0.5
 amountOfPlayers = 4
 carList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car3"), NodePath("../Car4")]
 AICarList = [NodePath("../AICar"), NodePath("../AICar2"), NodePath("../AICar3"), NodePath("../AICar4")]
+
+[node name="SubViewport" parent="Split Screen/MarginContainer/GridContainer/Player1" index="0"]
+size = Vector2i(1920, 1080)
 
 [node name="Finish Line" parent="." instance=ExtResource("6_8lnw1")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -12, 1, -1)
@@ -3228,26 +3228,14 @@ transform = Transform3D(0.114959, 0, 0, 0, 0.114959, 0, 0, 0, 0.114959, -90.7078
 [node name="Brush_1737876040_279" parent="Brush" instance=ExtResource("11_lb7uj")]
 transform = Transform3D(0.185892, 0, 0, 0, 0.185892, 0, 0, 0, 0.185892, -91.1766, -0.198082, -0.0406275)
 
-[node name="TOILET" parent="." instance=ExtResource("14_0dphe")]
-transform = Transform3D(-12.6367, 0, -2.59372, 0, 12.9002, 0, 2.59372, 0, -12.6367, 32.7291, -0.0966423, -44.912)
+[node name="Bathroom_Level" parent="." instance=ExtResource("14_xm6fo")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 132.193, 49.0163, 160.388)
 
-[node name="penguini" parent="." instance=ExtResource("15_5xb6f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3343, 54.781, -23.658)
-
-[node name="soap bottle" parent="." instance=ExtResource("16_5h1v0")]
-transform = Transform3D(2.0051, 0, -4.12312, 0, 4.58481, 0, 4.12312, 0, 2.0051, 11.7973, 6.16695, 12.9952)
-
-[node name="Toilet Paper" parent="." instance=ExtResource("17_4hjm1")]
-transform = Transform3D(5.82543, -5.1899, 2.26858e-07, 0, -3.41035e-07, -7.80197, 5.1899, 5.82543, -2.54638e-07, 10.5272, 7.61457, -32.4152)
-
-[node name="sink" parent="." instance=ExtResource("18_uvqku")]
-transform = Transform3D(-8.68264, 0, 12.7924, 0, 15.4607, 0, -12.7924, 0, -8.68264, -56.5999, 87.42, 37.9181)
-
-[node name="Retopo_Circle" parent="sink" index="1"]
-visible = false
+[node name="Cappy" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.82096, 0, -2.38079, 0, 7.22452, 0, 2.38079, 0, -6.82096, 143.328, 50.7233, 211.181)
+mesh = ExtResource("15_ownek")
 
 [connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
 [connection signal="body_entered" from="Finish Line" to="Car" method="_on_finish_line_body_entered"]
 
 [editable path="Split Screen"]
-[editable path="sink"]
