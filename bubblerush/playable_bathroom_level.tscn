@@ -44,9 +44,6 @@ light_energy = 0.5
 carList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car3"), NodePath("../Car4")]
 AICarList = [NodePath("../Car3AI"), NodePath("../Car3AI2"), NodePath("../Car3AI4"), NodePath("../Car3AI3")]
 
-[node name="SubViewport" parent="Split Screen/MarginContainer/GridContainer/Player1" index="0"]
-size = Vector2i(1920, 1080)
-
 [node name="Finish Line" parent="." instance=ExtResource("5_6mkut")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)
 
@@ -70,17 +67,17 @@ transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949
 PlayerChoice = 3
 
 [node name="Car2" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -28.1011, 2.74873, -12.6252)
+transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -31.6985, 2.80592, -14.0564)
 PlayerChoice = 2
 
 [node name="Car3" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -28.1011, 2.74873, -12.6252)
+transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -28.8026, 2.80592, -18.2213)
 
 [node name="Car4" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -28.1011, 2.74873, -12.6252)
+transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -30.3496, 2.80592, -8.02483)
 
 [node name="Car3AI" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -33.4027, 2.80592, -18.9362)
+transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -28.1011, 2.74873, -12.6252)
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI"]
 visible = false
@@ -1465,5 +1462,3 @@ transform = Transform3D(0.0707617, 0, 0, 0, 0.0707617, 0, 0, 0, 0.0707617, 2.315
 transform = Transform3D(0.0816793, 0, 0, 0, 0.0816793, 0, 0, 0, 0.0816793, 2.85439, 0.026439, 0.391755)
 
 [connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
-
-[editable path="Split Screen"]
