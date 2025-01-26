@@ -53,7 +53,7 @@ func _complete_lap():
 	if LapsCompleted >= 3:
 		print("Race Complete")
 		# This car wins!
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://victory.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbgui8gx8g3gr"]
+
+[ext_resource type="Texture2D" uid="uid://r71xlmyqtio0" path="res://1000_F_19217926_dlZXaPP7DX15igN0HhymDsbYXu2lA2ad.jpg" id="1_0aym4"]
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1000F19217926DlZXaPp7dx15IgN0HhymDsbYXu2lA2Ad" type="Sprite2D" parent="."]
+position = Vector2(576, 341)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("1_0aym4")
