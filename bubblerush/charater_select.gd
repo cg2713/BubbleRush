@@ -4,7 +4,8 @@ extends Control
 @export var playerControlerResource : Array[Resource]
 var playersReady : Array[Node]
 var playersReadyBool : Array[bool]
-@export var readyGridNode : Node
+#@export var readyGridNode : Node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,6 +39,10 @@ func _ready() -> void:
 	pass
 	
 
+func set_player_choices():
+	for i in playersReady:
+		print(i.values)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,6 +51,7 @@ func _process(delta: float) -> void:
 		playersReadyBool.append(i.finished)
 	#print(playersReadyBool)
 	if not false in playersReadyBool:
+		set_player_choices()
 		print("checked")
 		# move to next scene
 	pass

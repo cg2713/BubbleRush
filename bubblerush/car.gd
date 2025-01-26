@@ -5,13 +5,14 @@ class_name car
 const SPEED = 25.0
 @export var base_FOV = 75
 @export var speedup_FOV = 120
-@export var player2 = false
+#@export var player2 = false
 @export var PlayerChoice = 1
 @export var checkpoint: Vector3
 @export var checkpointRotation: Vector3
 @export var carCam: Camera3D
 @export var lapCounterUI: RichTextLabel
 @export var passedCheckpoints = []
+@export var controls : Resource
 
 # AI variables
 @export var ai_waypoint_path : Path3D # if set, this is an AI car
@@ -111,10 +112,7 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		#print("dirt_mesh_instance.transparency ", dirt_mesh_instance.transparency)
 		
 func get_input_dir():
-	if not player2:
-		return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	else:
-		return Input.get_vector("left", "right", "forward", "back")
+	return Input.get_vector(controls.move_left, controls.move_right, controls.move_forward, controls.move_back)
 		
 func get_ai_input_dir():
 	#print("curr ", current_waypoint)
