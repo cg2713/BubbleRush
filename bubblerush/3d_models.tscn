@@ -12,9 +12,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.203158, 0)
 
 [node name="2_duck" parent="." instance=ExtResource("2_4vb4f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.614966, 0)
+visible = false
 
 [node name="3_squeegee" parent="." instance=ExtResource("3_2tjyg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.510642, 0)
+visible = false
 
 [node name="4_bubble_boy" parent="." instance=ExtResource("4_0c3u6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64159, 0)
+visible = false

@@ -38,6 +38,7 @@ func _ready() -> void:
 	$"3DModel".get_children()[PlayerChoice - 1].visible = true
 	
 	checkpoint = position
+	checkpointRotation = rotation
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
