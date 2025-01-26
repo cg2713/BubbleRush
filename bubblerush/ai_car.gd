@@ -29,9 +29,12 @@ func get_input_dir():
 		# Target the next waypoint
 		current_waypoint = (current_waypoint + 1) % waypoint_path.curve.point_count
 		objective = Vector3.ZERO
+		
+	if find_child("debugMarkerObjective") != null:
+		$debugMarkerObjective.global_position = objective
 
 	#$debugMarkerSteer.position = local_target_direction * 2 # Visual debug in local space
-	#$debugMarkerObjective.global_position = objective
+	
 
 	# Calculate the steering input based on the local direction:
 	var steer_input = local_target_direction.x # Positive if target is to the right, negative if to the left
