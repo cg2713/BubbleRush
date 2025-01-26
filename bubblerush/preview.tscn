@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr4a47hexdf4c"]
+
+[ext_resource type="Script" path="res://preview.gd" id="1_1oaje"]
+[ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="1_3j3uh"]
+
+[node name="preview" type="Node3D" node_paths=PackedStringArray("models")]
+script = ExtResource("1_1oaje")
+models = [NodePath("cars_themovie_001/soap"), NodePath("cars_themovie_001/duck"), NodePath("cars_themovie_001/Cube_001"), NodePath("cars_themovie_001/Cube")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0.5, -0.5, -2, 3, -2)
+
+[node name="cars_themovie_001" parent="." instance=ExtResource("1_3j3uh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="soap" parent="cars_themovie_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="duck" parent="cars_themovie_001" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="Cube_001" parent="cars_themovie_001" index="2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
+
+[node name="Cube" parent="cars_themovie_001" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)
+light_energy = 20.0
+spot_range = 5.808
+spot_angle = 15.0
+
+[editable path="cars_themovie_001"]
