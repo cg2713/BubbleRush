@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://be0wkcxua363x"]
+[gd_scene load_steps=8 format=3 uid="uid://be0wkcxua363x"]
 
+[ext_resource type="Script" path="res://rigid_body_3d.gd" id="1_45yeu"]
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="2_idkmy"]
 [ext_resource type="PackedScene" uid="uid://b11714nbd5mqd" path="res://Dritparticle.tscn" id="3_q4q1i"]
+[ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="3_r1vjx"]
+[ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="5_xdxfv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8extg"]
 size = Vector3(10, 0.02, 50)
@@ -17,6 +20,7 @@ mass = 0.001
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true
+script = ExtResource("1_45yeu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_8extg")
@@ -24,6 +28,7 @@ shape = SubResource("BoxShape3D_8extg")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 process_mode = 4
 physics_interpolation_mode = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.4716, 0)
 mesh = SubResource("PlaneMesh_p2g0v")
 skeleton = NodePath("../..")
 
@@ -32,7 +37,13 @@ transform = Transform3D(0.722983, 0.377695, -0.578482, 0.0867267, 0.781088, 0.61
 shadow_enabled = true
 
 [node name="Finish Line" parent="." instance=ExtResource("2_idkmy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0952551, 0.0279018, -21.8583)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0952551, -6.92728, -21.8583)
 
 [node name="Node3D" parent="." instance=ExtResource("3_q4q1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48834, 18.9114, -13.9263)
+
+[node name="Split Screen" parent="." instance=ExtResource("3_r1vjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64574, 5.95956, -6.36146)
+
+[node name="Car" parent="." instance=ExtResource("5_xdxfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04405, -2.22284, 8.65177)

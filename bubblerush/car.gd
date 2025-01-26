@@ -9,6 +9,7 @@ const SPEED = 25.0
 @export var PlayerChoice = 1
 @export var checkpoint : Vector3
 @export var checkpointRotation : Vector3
+@export var carCam : Camera3D
 
 
 var speed_percent = 1
