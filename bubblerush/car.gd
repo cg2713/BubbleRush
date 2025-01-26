@@ -21,9 +21,13 @@ var speed_percent = 1
 var input_dir: Vector2
 
 func _ready() -> void:
-	
 	carCam.top_level = true
+	
+	# Hide all except chosen
+	for child in $"3DModel".get_children():
+		child.visible = false
 	$"3DModel".get_children()[PlayerChoice - 1].visible = true
+	
 	checkpoint = position
 
 func _process(delta: float) -> void:
