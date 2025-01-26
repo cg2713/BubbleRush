@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	#print(body)
 	if body is car:
-		print("Crossed")
-	pass # Replace with function body.
+		print("lap 1")
+	pass

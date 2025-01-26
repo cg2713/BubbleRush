@@ -1,34 +1,29 @@
-[gd_scene load_steps=15 format=3 uid="uid://chxhjxybcijc4"]
+[gd_scene load_steps=10 format=3 uid="uid://chxhjxybcijc4"]
 
 [ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
-[ext_resource type="Script" path="res://RaceManager.gd" id="1_sw4s4"]
-[ext_resource type="PackedScene" uid="uid://d4hr861egpao4" path="res://hud.tscn" id="1_v4755"]
+[ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="1_v4755"]
 [ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="2_ej04t"]
 [ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="4_dtuyo"]
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="5_6mkut"]
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="5_ejic5"]
-[ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="8_j4l7a"]
-[ext_resource type="Script" path="res://ai_car.gd" id="9_mls3h"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ujhpf"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kxvru"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmiqj"]
-albedo_color = Color(0.920709, 0.813, 3.85046e-07, 1)
+[sub_resource type="Sky" id="Sky_5jbr2"]
+sky_material = SubResource("ProceduralSkyMaterial_kxvru")
 
-[sub_resource type="TorusMesh" id="TorusMesh_gkast"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdo1d"]
-albedo_color = Color(0.333409, 0.741631, 0.303938, 1)
-
-[sub_resource type="Curve3D" id="Curve3D_7sw4p"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -28.656, 0, -9.46002, 0, 0, 0, 0, 0, 0, -24.4093, 0, -16.0622, 0, 0, 0, 0, 0, 0, -16.5938, 0, -20.4874, 0, 0, 0, 0, 0, 0, -5.31659, 0, -17.6324, 0, 0, 0, 0, 0, 0, -0.141942, 0, -9.53139, 0, 0, 0, 0, 0, 0, -0.570191, 0, 4.49369, 0, 0, 0, 0, 0, 0, -3.49654, 0, 13.3441, 0, 0, 0, 0, 0, 0, -12.3113, 0, 18.947, 0, 0, 0, 0, 0, 0, -23.1959, 0, 17.805, 0, 0, 0, 0, 0, 0, -30.1549, 0, 10.4891, 0, 0, 0, 0, 0, 0, -30.4404, 0, 1.60302, 0, 0, 0, 0, 0, 0, -29.9408, 0, -5.39167),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 12
+[sub_resource type="Environment" id="Environment_gbgu3"]
+background_mode = 2
+sky = SubResource("Sky_5jbr2")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="PlayableTestLevel" type="Node3D"]
-script = ExtResource("1_sw4s4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gbgu3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -52,23 +47,11 @@ light_energy = 0.5
 [node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player1/SubViewport" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0197, 0, 0)
 
-[node name="AudioListener3D" parent="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car/Camera3D" index="0"]
-current = true
-
 [node name="Car" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6974, 0, -2.27001)
 
 [node name="Camera3D" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="AudioListener3D" parent="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car/Camera3D" index="0"]
-current = true
-
-[node name="AudioListener3D" parent="Split Screen/MarginContainer/GridContainer/Player3/SubViewport/Car/Camera3D" index="0"]
-current = true
-
-[node name="AudioListener3D" parent="Split Screen/MarginContainer/GridContainer/Player4/SubViewport/Car/Camera3D" index="0"]
-current = true
 
 [node name="Finish Line" parent="." instance=ExtResource("5_6mkut")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)
@@ -76,85 +59,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.95
 [node name="Checkpoint" parent="." instance=ExtResource("5_ejic5")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -13.9674, -0.284395, -22.7178)
 
-[node name="AICar" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_j4l7a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6901, 0.447639, -4.16738)
-script = ExtResource("9_mls3h")
-waypoint_path = NodePath("../AIPath")
-look_ahead_distance = 4
-
-[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar"]
-transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_ujhpf")
-surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
-
-[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar"]
-visible = false
-mesh = SubResource("TorusMesh_gkast")
-surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
-
-[node name="AICar2" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_j4l7a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6121, 0.447639, 3.08925)
-script = ExtResource("9_mls3h")
-waypoint_path = NodePath("../AIPath")
-look_ahead_distance = 4
-
-[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar2"]
-transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_ujhpf")
-surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
-
-[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar2"]
-visible = false
-mesh = SubResource("TorusMesh_gkast")
-surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
-
-[node name="AICar3" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_j4l7a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4476, 0.447639, 7.7529)
-script = ExtResource("9_mls3h")
-waypoint_path = NodePath("../AIPath")
-look_ahead_distance = 4
-
-[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar3"]
-transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_ujhpf")
-surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
-
-[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar3"]
-visible = false
-mesh = SubResource("TorusMesh_gkast")
-surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
-
-[node name="AICar4" parent="." node_paths=PackedStringArray("waypoint_path") instance=ExtResource("8_j4l7a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.728, 0.447639, 9.87952)
-script = ExtResource("9_mls3h")
-waypoint_path = NodePath("../AIPath")
-look_ahead_distance = 4
-
-[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar4"]
-transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_ujhpf")
-surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
-
-[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar4"]
-visible = false
-mesh = SubResource("TorusMesh_gkast")
-surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
-
-[node name="AIPath" type="Path3D" parent="."]
-curve = SubResource("Curve3D_7sw4p")
-
-[connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
-
 [editable path="Split Screen"]
 [editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car"]
 [editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car/3DModel"]
 [editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car"]
 [editable path="Split Screen/MarginContainer/GridContainer/Player2/SubViewport/Car/3DModel"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player3/SubViewport/Car"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player3/SubViewport/Car/3DModel"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player4/SubViewport/Car"]
-[editable path="Split Screen/MarginContainer/GridContainer/Player4/SubViewport/Car/3DModel"]

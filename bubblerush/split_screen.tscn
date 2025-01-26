@@ -51,51 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.127, 0, 0)
 [node name="duck" parent="MarginContainer/GridContainer/Player2/SubViewport/Car/3DModel" index="1"]
 visible = true
 
-[node name="Player3" type="SubViewportContainer" parent="MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="SubViewport" type="SubViewport" parent="MarginContainer/GridContainer/Player3"]
-handle_input_locally = false
-size = Vector2i(576, 648)
-render_target_update_mode = 4
-
-[node name="Car" parent="MarginContainer/GridContainer/Player3/SubViewport" instance=ExtResource("1_0mga4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12727, 0, 0)
-player2 = true
-
-[node name="Camera3D" parent="MarginContainer/GridContainer/Player3/SubViewport/Car" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.127, 0, 0)
-
-[node name="duck" parent="MarginContainer/GridContainer/Player3/SubViewport/Car/3DModel" index="1"]
-visible = true
-
-[node name="Player4" type="SubViewportContainer" parent="MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="SubViewport" type="SubViewport" parent="MarginContainer/GridContainer/Player4"]
-handle_input_locally = false
-size = Vector2i(576, 648)
-render_target_update_mode = 4
-
-[node name="Car" parent="MarginContainer/GridContainer/Player4/SubViewport" instance=ExtResource("1_0mga4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12727, 0, 0)
-player2 = true
-
-[node name="Camera3D" parent="MarginContainer/GridContainer/Player4/SubViewport/Car" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.127, 0, 0)
-
-[node name="duck" parent="MarginContainer/GridContainer/Player4/SubViewport/Car/3DModel" index="1"]
-visible = true
-
 [editable path="MarginContainer/GridContainer/Player1/SubViewport/Car"]
 [editable path="MarginContainer/GridContainer/Player1/SubViewport/Car/3DModel"]
 [editable path="MarginContainer/GridContainer/Player2/SubViewport/Car"]
 [editable path="MarginContainer/GridContainer/Player2/SubViewport/Car/3DModel"]
-[editable path="MarginContainer/GridContainer/Player3/SubViewport/Car"]
-[editable path="MarginContainer/GridContainer/Player3/SubViewport/Car/3DModel"]
-[editable path="MarginContainer/GridContainer/Player4/SubViewport/Car"]
-[editable path="MarginContainer/GridContainer/Player4/SubViewport/Car/3DModel"]

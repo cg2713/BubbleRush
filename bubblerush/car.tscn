@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4qssepqrjmmk"]
+[gd_scene load_steps=7 format=3 uid="uid://c4qssepqrjmmk"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
 [ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="2_5p2si"]
@@ -10,8 +10,6 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bhmy"]
 size = Vector3(1.785, 1.125, 1.91)
-
-[sub_resource type="AudioStream" id="AudioStream_ov18b"]
 
 [node name="Car" type="CharacterBody3D"]
 script = ExtResource("1_xxi4i")
@@ -25,14 +23,12 @@ mesh = SubResource("BoxMesh_ak3fp")
 
 [node name="CameraHolder" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.997887, 0.0649679, 0, -0.0649679, 0.997887, 0, 3.24207, 4.80338)
+transform = Transform3D(1, 0, 0, 0, 0.958113, 0.286391, 0, -0.286391, 0.958113, 0, 1.90814, 3.25932)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 current = true
 fov = 90.0
-
-[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
 
 [node name="CarArea3D" type="Area3D" parent="."]
 collision_layer = 3
@@ -60,9 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.44, 0, 0)
 visible = false
 
 [node name="BubbleTrail" parent="." instance=ExtResource("3_rw01i")]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = SubResource("AudioStream_ov18b")
 
 [connection signal="area_entered" from="CarArea3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="CarArea3D" to="." method="_on_area_3d_body_entered"]
