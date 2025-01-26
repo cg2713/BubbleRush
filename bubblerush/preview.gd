@@ -5,9 +5,11 @@ extends Node3D
 
 var models : Array[Node]
 var finished : bool = false
+var n : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	models = model_parent.get_children()
+	n = len(models)
 	for model in models:
 		model.visible = false
 	models[values].visible = true
@@ -18,7 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	models[values].visible = true
 	if Input.is_action_just_pressed(control.move_right):
-		if values + 1 < 4:
+		if values + 1 < n:
 			models[values].visible = false
 			values += 1
 			models[values].visible = true
@@ -35,7 +37,7 @@ func _process(delta: float) -> void:
 			models[values].visible = true
 		else:
 			models[values].visible = false
-			values = 3
+			values = n - 1
 			models[values].visible = true
 			
 		pass
