@@ -35,10 +35,8 @@ func _physics_process(delta: float) -> void:
 	#%Camera3D.transform=%CameraHolder.transform
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if not player2:
-		input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	else:
-		input_dir = Input.get_vector("left", "right", "forward", "back")
+	if get_tree().root.get_child(0).RaceStarted:
+		input_dir = get_input_dir()
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity/4)
@@ -61,6 +59,12 @@ func _physics_process(delta: float) -> void:
 	#print("velocity ", velocity.length())
 	$BubbleTrail/BubbleParticles3D.amount_ratio = velocity.length() / 10
 	$BubbleTrail/FoamParticles3D.amount_ratio = velocity.length() / 10
+	
+func get_input_dir():
+	if not player2:
+		return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	else:
+		return Input.get_vector("left", "right", "forward", "back")
 	
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	#print("area entered")

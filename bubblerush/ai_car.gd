@@ -6,6 +6,7 @@ extends car
 var current_waypoint : int = 0
 var objective : Vector3
 
+# Override
 func get_input_dir():
 	print("curr ", current_waypoint)
 	if objective == Vector3.ZERO:
