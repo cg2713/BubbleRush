@@ -3,7 +3,8 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	get_tree().current_scene.Checkpoints.append(self)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,6 +15,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	#print(body)
 	if body is car:
-		body.checkpoint = position
-		body.checkpointRotation = rotation
-		print("Checkpoint reached:", position)
+		if not self in body.passedCheckpoints:
+			body.checkpoint = position
+			body.checkpointRotation = rotation
+			body.passedCheckpoints.append(self)
+			print("Checkpoint reached:", position)

@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	#print(body)
 	if body is car:
-		body._complete_lap()
+		if len(body.passedCheckpoints) >= len(get_tree().current_scene.Checkpoints):
+			body._complete_lap()
 	pass # Replace with function body.
 
 #func _finished():
