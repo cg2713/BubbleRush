@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_226ob"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="2_c61vw"]
 [ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="3_o5kel"]
-[ext_resource type="PackedScene" uid="uid://cj7pgivlpytgi" path="res://Figure 8.tscn" id="4_i15uy"]
+[ext_resource type="PackedScene" path="res://Figure 8.tscn" id="4_i15uy"]
 [ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="5_nsde3"]
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="6_8lnw1"]
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="7_kl1f3"]

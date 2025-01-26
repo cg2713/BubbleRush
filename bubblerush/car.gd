@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name car
 
-
+@export var LapsCompleted = 0
 const SPEED = 25.0
 @export var base_FOV = 75
 @export var speedup_FOV = 120
@@ -31,6 +31,13 @@ func _process(delta: float) -> void:
 		position = checkpoint
 		rotation = checkpointRotation
 		velocity = Vector3.ZERO
+		
+func _complete_lap():
+	# Include check to confirm that car has traveled around the map
+	LapsCompleted += 1
+	if LapsCompleted >= 3:
+		# This car wins!
+		get_tree().quit()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

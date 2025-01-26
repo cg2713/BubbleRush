@@ -9,7 +9,7 @@ font_size = 40
 [sub_resource type="LabelSettings" id="LabelSettings_7mvx7"]
 font_size = 40
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("stopwatch_label", "LapCounter")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("stopwatch_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +22,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tj12n")
 stopwatch_label = NodePath("StopwatchLabel")
-LapCounter = NodePath("LapCounter")
 
 [node name="stoplight" parent="." instance=ExtResource("2_0ab6v")]
 layout_mode = 1
@@ -44,5 +43,5 @@ vertical_alignment = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "0"
+text = "Lap 0"
 label_settings = SubResource("LabelSettings_7mvx7")
