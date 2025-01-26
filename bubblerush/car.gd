@@ -58,6 +58,8 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if get_tree().current_scene.RaceStarted:
 		input_dir = get_ai_input_dir() if is_ai_car() else get_input_dir()
+		$BubbleTrail/BubbleParticles3D.emitting = true
+		$BubbleTrail/FoamParticles3D.emitting = true
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity / 4)
