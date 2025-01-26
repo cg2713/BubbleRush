@@ -6,7 +6,7 @@ const SPEED = 25.0
 @export var base_FOV = 75
 @export var speedup_FOV = 120
 #@export var player2 = false
-@export var PlayerChoice = 1
+@export_range(1,4) var PlayerChoice = 1
 @export var checkpoint: Vector3
 @export var checkpointRotation: Vector3
 @export var carCam: Camera3D
@@ -113,7 +113,6 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		
 func get_input_dir():
 	return Input.get_vector(controls.move_left, controls.move_right, controls.move_forward, controls.move_back)
-		
 func get_ai_input_dir():
 	#print("curr ", current_waypoint)
 	if ai_objective == Vector3.ZERO:
