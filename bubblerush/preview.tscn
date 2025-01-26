@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr4a47hexdf4c"]
+[gd_scene load_steps=3 format=3 uid="uid://cuh2wdce4mg8y"]
 
 [ext_resource type="Script" path="res://preview.gd" id="1_1oaje"]
 [ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="1_3j3uh"]
