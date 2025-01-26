@@ -40,8 +40,10 @@ func _ready() -> void:
 	
 
 func set_player_choices():
-	for i in playersReady:
-		print(i.values)
+	for i in range(len(playersReady)):
+		Game.playerChoices[i] = playersReady[i].values
+		#print(i.values)
+	get_tree().change_scene_to_file("res://playable_figure8.tscn")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,6 +54,6 @@ func _process(delta: float) -> void:
 	#print(playersReadyBool)
 	if not false in playersReadyBool:
 		set_player_choices()
-		print("checked")
+		
 		# move to next scene
 	pass
