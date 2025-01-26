@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4qssepqrjmmk"]
+[gd_scene load_steps=8 format=3 uid="uid://c4qssepqrjmmk"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
 [ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="2_5p2si"]
+[ext_resource type="PackedScene" uid="uid://ccr4jphvmovxc" path="res://3D files/penguini.blend" id="3_pn1so"]
 [ext_resource type="PackedScene" uid="uid://dp2cncocua5kc" path="res://BubbleTrail.tscn" id="3_rw01i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7gxqu"]
@@ -44,6 +45,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.41334, 0, 0)
 
 [node name="soap" parent="3DModel" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39, 0, 0)
+
+[node name="penguini" parent="3DModel/soap" index="0" instance=ExtResource("3_pn1so")]
+transform = Transform3D(-0.300302, 0, 0.00416708, 0, 0.300331, 0, -0.00416708, 0, -0.300302, 0, 0.221757, -0.457883)
+
+[node name="penguini2" parent="3DModel/soap" index="1" instance=ExtResource("3_pn1so")]
+transform = Transform3D(0.208778, 0, -0.148689, 0, 0.256313, 0, 0.148689, 0, 0.208778, 0, 0.221757, 0.463462)
+
+[node name="duck" parent="3DModel" index="1"]
 visible = false
 
 [node name="Cube_001" parent="3DModel" index="2"]
