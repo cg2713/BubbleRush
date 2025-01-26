@@ -15,7 +15,7 @@ const SPEED = 25.0
 @export var controls : Resource
 @export var index = 0
 # List not working!!!!
-@export var PopSFX = []
+@export var PopSFX : Array[AudioStream]
 
 # AI variables
 @export var ai_waypoint_path : Path3D # if set, this is an AI car

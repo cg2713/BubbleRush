@@ -76,29 +76,33 @@ transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949
 [node name="Car4" parent="." instance=ExtResource("7_njtlm")]
 transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -23.2382, 2.80592, -8.02483)
 
-[node name="Car3AI" parent="." instance=ExtResource("7_njtlm")]
+[node name="Car3AI" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("7_njtlm")]
 transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -28.1011, 2.74873, -12.6252)
+ai_waypoint_path = NodePath("../Path3D")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI"]
 visible = false
 mesh = SubResource("TorusMesh_2kxcv")
 
-[node name="Car3AI2" parent="." instance=ExtResource("7_njtlm")]
+[node name="Car3AI2" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("7_njtlm")]
 transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -31.6985, 2.80592, -14.0564)
+ai_waypoint_path = NodePath("../Path3D")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI2"]
 visible = false
 mesh = SubResource("TorusMesh_2kxcv")
 
-[node name="Car3AI3" parent="." instance=ExtResource("7_njtlm")]
+[node name="Car3AI3" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("7_njtlm")]
 transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -28.8026, 2.80592, -18.2213)
+ai_waypoint_path = NodePath("../Path3D")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI3"]
 visible = false
 mesh = SubResource("TorusMesh_2kxcv")
 
-[node name="Car3AI4" parent="." instance=ExtResource("7_njtlm")]
+[node name="Car3AI4" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("7_njtlm")]
 transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -30.3496, 2.80592, -8.02483)
+ai_waypoint_path = NodePath("../Path3D")
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI4"]
 visible = false
