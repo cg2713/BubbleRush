@@ -35,3 +35,12 @@ grow_horizontal = 2
 text = "00:00:000"
 label_settings = SubResource("LabelSettings_ot7n0")
 vertical_alignment = 1
+
+[node name="LapCounter" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Lap 0"
+label_settings = SubResource("LabelSettings_q3l75")
+
+[connection signal="raceStart" from="stoplight" to="." method="raceStarting"]

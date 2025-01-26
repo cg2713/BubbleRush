@@ -131,6 +131,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 [node name="AIPath" type="Path3D" parent="."]
 curve = SubResource("Curve3D_xs15q")
 
+[connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
+
 [editable path="Split Screen"]
 [editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car"]
 [editable path="Split Screen/MarginContainer/GridContainer/Player1/SubViewport/Car/3DModel"]
