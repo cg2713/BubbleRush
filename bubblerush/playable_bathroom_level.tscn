@@ -64,39 +64,39 @@ transform = Transform3D(0.998748, 0, -0.0500176, 0, 1, 0, 0.0500176, 0, 0.998748
 curve = SubResource("Curve3D_u4vpn")
 
 [node name="Car" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -28.1011, 2.74873, -12.6252)
 PlayerChoice = 3
 
 [node name="Car2" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -28.1011, 2.74873, -12.6252)
 PlayerChoice = 2
 
 [node name="Car3" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -28.1011, 2.74873, -12.6252)
 
 [node name="Car4" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+transform = Transform3D(-0.993949, 0, -0.109838, 0, 1, 0, 0.109838, 0, -0.993949, -28.1011, 2.74873, -12.6252)
 
 [node name="Car3AI" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -26.0792, 3.41948, 9.73742)
+transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -33.4027, 2.80592, -18.9362)
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI"]
 mesh = SubResource("TorusMesh_2kxcv")
 
 [node name="Car3AI2" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -27.4899, 3.41948, 4.76482)
+transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -31.6985, 2.80592, -14.0564)
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI2"]
 mesh = SubResource("TorusMesh_2kxcv")
 
 [node name="Car3AI4" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -28.4773, 3.41948, -1.33632)
+transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -30.3496, 2.80592, -8.02483)
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI4"]
 mesh = SubResource("TorusMesh_2kxcv")
 
 [node name="Car3AI3" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(0.99987, 0, -0.0161086, 0, 1, 0, 0.0161086, 0, 0.99987, -30.6286, 3.41948, 8.74995)
+transform = Transform3D(-0.999056, 0, -0.043445, 0, 1, 0, 0.043445, 0, -0.999056, -28.8026, 2.80592, -18.2213)
 
 [node name="debugMarkerObjective" type="MeshInstance3D" parent="Car3AI3"]
 mesh = SubResource("TorusMesh_2kxcv")
