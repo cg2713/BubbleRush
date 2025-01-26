@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cj7pgivlpytgi"]
+[gd_scene load_steps=11 format=3 uid="uid://cj7pgivlpytgi"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_4gygr"]
 [ext_resource type="PackedScene" uid="uid://bjtthg8bgsifb" path="res://3D files/Temp Tracks/Track_Hill.glb" id="1_15whw"]
 [ext_resource type="PackedScene" uid="uid://wmnru3v4y7nj" path="res://3D files/Temp Tracks/Track_Straight.glb" id="2_01yc7"]
+[ext_resource type="Script" path="res://change_track_color.gd" id="2_l2afo"]
 [ext_resource type="PackedScene" uid="uid://dgy0sa3rm6d03" path="res://3D files/Temp Tracks/Track_Turn.glb" id="3_sxtyh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlwjd"]
+albedo_color = Color(0.5605, 0.95, 0.696825, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gmx3e"]
 size = Vector3(7.19194, 0.649918, 16.0011)
@@ -23,6 +27,8 @@ script = ExtResource("1_4gygr")
 
 [node name="8 Track" type="Node3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("2_l2afo")
+material = SubResource("StandardMaterial3D_dlwjd")
 
 [node name="Track_Hill" parent="8 Track" instance=ExtResource("1_15whw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
