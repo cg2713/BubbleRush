@@ -11,8 +11,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bhmy"]
 size = Vector3(1.785, 1.125, 1.91)
 
-[node name="Car" type="CharacterBody3D"]
+[node name="Car" type="CharacterBody3D" node_paths=PackedStringArray("carCam")]
 script = ExtResource("1_xxi4i")
+carCam = NodePath("Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_q6i1e")

@@ -42,8 +42,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0952551, -6.92728, -21.858
 [node name="Node3D" parent="." instance=ExtResource("3_q4q1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48834, 18.9114, -13.9263)
 
-[node name="Split Screen" parent="." instance=ExtResource("3_r1vjx")]
+[node name="Split Screen" parent="." node_paths=PackedStringArray("carList") instance=ExtResource("3_r1vjx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64574, 5.95956, -6.36146)
+amountOfPlayers = 4
+carList = [NodePath("../Car")]
 
 [node name="Car" parent="." instance=ExtResource("5_xdxfv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04405, -2.22284, 8.65177)

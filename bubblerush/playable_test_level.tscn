@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://chxhjxybcijc4"]
+[gd_scene load_steps=9 format=3 uid="uid://bqlgw4rpt7uxs"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_15jyv"]
 [ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
@@ -29,8 +29,9 @@ light_energy = 0.2
 transform = Transform3D(-0.538108, -0.78765, 0.300079, 3.95694e-08, 0.356018, 0.934479, -0.842876, 0.502851, -0.191576, -49.6027, 29.8346, 0)
 light_energy = 0.5
 
-[node name="Split Screen" parent="." node_paths=PackedStringArray("cameraList") instance=ExtResource("4_dtuyo")]
-cameraList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car3"), NodePath("../Car4")]
+[node name="Split Screen" parent="." node_paths=PackedStringArray("carList") instance=ExtResource("4_dtuyo")]
+amountOfPlayers = 3
+carList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car3"), NodePath("../Car4")]
 
 [node name="Finish Line" parent="." instance=ExtResource("5_6mkut")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)
@@ -38,20 +39,24 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.95
 [node name="Checkpoint" parent="." instance=ExtResource("5_ejic5")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -13.9674, -0.284395, -22.7178)
 
-[connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
 [node name="Car" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -30.8943, 1.96321, 3.07571)
+transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -30.8943, 3.41948, 3.07571)
 
 [node name="Car2" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -30.8943, 1.96321, 3.07571)
+transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -26.0792, 3.41948, 3.07571)
+player2 = true
 PlayerChoice = 2
 
 [node name="Car3" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -30.8943, 1.96321, 3.07571)
-PlayerChoice = 3
+transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -26.0792, 3.41948, 9.73742)
+player2 = true
+PlayerChoice = 2
 
 [node name="Car4" parent="." instance=ExtResource("7_njtlm")]
-transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -30.8943, 1.96321, 3.07571)
-PlayerChoice = 4
+transform = Transform3D(-0.999051, 0, -0.0435497, 0, 1, 0, 0.0435497, 0, -0.999051, -29.2779, 3.41948, 9.11168)
+player2 = true
+PlayerChoice = 2
+
+[connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
 
 [editable path="Split Screen"]
