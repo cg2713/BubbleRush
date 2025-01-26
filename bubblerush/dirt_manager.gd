@@ -7,7 +7,7 @@ func _ready() -> void:
 	add_child(timer)
 	timer.timeout.connect(reduce_children_transparency)
 	timer.one_shot = false
-	timer.wait_time = 0.1
+	timer.wait_time = 0.2
 	timer.start()
 
 func reduce_children_transparency():
