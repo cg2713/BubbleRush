@@ -1,13 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://owl5b5d6hxhj"]
+[gd_scene load_steps=6 format=3 uid="uid://owl5b5d6hxhj"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_fqhhl"]
 [ext_resource type="Texture2D" uid="uid://2j73a10vwyok" path="res://istockphoto-1017626046-612x612.png" id="2_lp8us"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_r8ns2"]
-font_size = 73
-font_color = Color(0, 0, 0, 1)
-outline_size = 25
-outline_color = Color(0.581033, 0.581033, 0.581033, 1)
+[ext_resource type="LabelSettings" uid="uid://b1dflovqko0pr" path="res://credits.tres" id="3_da5y6"]
+[ext_resource type="LabelSettings" uid="uid://d1soekemg0fpm" path="res://creditsDevs.tres" id="4_wflpe"]
+[ext_resource type="LabelSettings" uid="uid://cj1fc347wuhuu" path="res://creditsRoles.tres" id="5_mj73w"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -23,21 +20,63 @@ position = Vector2(575, 248)
 scale = Vector2(1.88235, 1.95098)
 texture = ExtResource("2_lp8us")
 
-[node name="Label" type="Label" parent="."]
+[node name="Credits" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = -1.0
-offset_top = 40.0
+offset_top = -167.0
 offset_right = -1.0
-offset_bottom = 453.0
+offset_bottom = 246.0
 grow_horizontal = 2
-text = "Credits:
-Programmers
-Artist
-Level Designers"
-label_settings = SubResource("LabelSettings_r8ns2")
+theme_override_font_sizes/font_size = 1
+text = "Credits"
+label_settings = ExtResource("3_da5y6")
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Devs" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.062
+anchor_right = 0.502
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -0.176003
+offset_right = -0.304016
+offset_bottom = -195.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 1
+text = "Alex Benton
+Augustus
+Chris Garcia
+Darrell
+Jairo Honorio
+JT"
+label_settings = ExtResource("4_wflpe")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Roles" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.062
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.415955
+offset_top = -0.176003
+offset_right = -1.0
+offset_bottom = -195.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 1
+text = "Programmer
+3D Art/Level Design
+Programmer
+3D Art
+AI Programmer
+2D Art/UI"
+label_settings = ExtResource("5_mj73w")
 vertical_alignment = 1
 
 [node name="MainMenu" type="Button" parent="."]
