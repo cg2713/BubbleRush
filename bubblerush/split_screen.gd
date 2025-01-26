@@ -4,6 +4,7 @@ extends Node3D
 @export_range(1,4) var amountOfPlayers = 1
 var cameraList : Array[Camera3D]
 @export var carList : Array[Node3D]
+@export var AICarList : Array[Node3D]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,6 +42,9 @@ func _ready() -> void:
 	
 	for i in range(amountOfPlayers):
 		carList[i].carCam = cameraList[i]
+		AICarList[3-i].queue_free()
+	for i in range(4-amountOfPlayers):
+		carList[3-i].queue_free()
 		#print(cameraList[i].get_node("Camera3D"))
 		#$MarginContainer/GridContainer.get_child(i).get_child(0).add_child(cameraList[i])     
 		
