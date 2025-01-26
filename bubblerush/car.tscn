@@ -86,6 +86,7 @@ visible = false
 
 [node name="bubble_boy1" parent="3DModel" instance=ExtResource("4_wqn18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51651, 0, 0)
+visible = false
 
 [node name="Cube" parent="3DModel/bubble_boy1/Armature" index="0"]
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, -0.0612513, 0.0485892, -0.00598091)

@@ -9,12 +9,12 @@ var cameraList : Array[Camera3D]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	if amountOfPlayers != 1:
+	if Game.playercount != 1:
 		
-		if amountOfPlayers <= 3:
-			playerNode.get_child(0).size.x = $MarginContainer.size.x/amountOfPlayers
+		if Game.playercount <= 3:
+			playerNode.get_child(0).size.x = $MarginContainer.size.x/Game.playercount
 			playerNode.get_child(0).size.y = $MarginContainer.size.y
-			$MarginContainer/GridContainer.columns = amountOfPlayers
+			$MarginContainer/GridContainer.columns = Game.playercount
 		else:
 			playerNode.get_child(0).size.x = $MarginContainer.size.x/2
 			playerNode.get_child(0).size.y = $MarginContainer.size.y/2
@@ -23,11 +23,11 @@ func _ready() -> void:
 		carList[0].lapCounterUI = playerNode.get_child(0).get_child(0).get_child(0).get_child(0)
 			
 		print($MarginContainer/GridContainer.columns)
-		for i in range(amountOfPlayers-1):
+		for i in range(Game.playercount-1):
 			var newNode : Node = playerNode.duplicate()
 			carList[i+1].lapCounterUI = newNode.get_child(0).get_child(0).get_child(0).get_child(0)
-			if amountOfPlayers <= 3:
-				newNode.get_child(0).size.x = $MarginContainer.size.x/amountOfPlayers
+			if Game.playercount <= 3:
+				newNode.get_child(0).size.x = $MarginContainer.size.x/Game.playercount
 				newNode.get_child(0).size.y = $MarginContainer.size.y
 				
 			else:
@@ -43,11 +43,11 @@ func _ready() -> void:
 		cameraList.append(playerNode.get_child(0).get_child(0))
 		carList[0].lapCounterUI = playerNode.get_child(0).get_child(0).get_child(0).get_child(0)
 	
-	for i in range(amountOfPlayers):
+	for i in range(Game.playercount):
 		carList[i].PlayerChoice = Game.playerChoices[i]
 		carList[i].carCam = cameraList[i]
 		AICarList[3-i].queue_free()
-	for i in range(4-amountOfPlayers):
+	for i in range(4-Game.playercount):
 		carList[3-i].queue_free()
 		#print(cameraList[i].get_node("Camera3D"))
 		#$MarginContainer/GridContainer.get_child(i).get_child(0).add_child(cameraList[i])     
