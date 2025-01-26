@@ -15,8 +15,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	#print(body)
-	if body is car and body is not aicar:
-		LapController.lap_counted(value)
+	if body is car:
+		if not body.is_ai_car():
+			LapController.lap_counted(value)
 	pass # Replace with function body.
 
 #func _finished():

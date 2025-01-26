@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://baisdj3sam854"]
+[gd_scene load_steps=19 format=3 uid="uid://baisdj3sam854"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_226ob"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="2_c61vw"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="6_8lnw1"]
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="7_kl1f3"]
 [ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="8_hmqxh"]
-[ext_resource type="Script" path="res://ai_car.gd" id="9_nrfl7"]
 [ext_resource type="Script" path="res://addons/scene_object_brush/Brush.gd" id="10_s0m3v"]
 [ext_resource type="PackedScene" uid="uid://c2547qh46avf4" path="res://dirt.tscn" id="11_lb7uj"]
 
@@ -74,8 +73,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.95
 [node name="Checkpoint" parent="." instance=ExtResource("7_kl1f3")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -13.9674, -0.284395, -22.7178)
 
-[node name="AICar" parent="." instance=ExtResource("8_hmqxh")]
+[node name="AICar" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("8_hmqxh")]
 transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -21.0983, 3.0406, 3.32179)
+ai_waypoint_path = NodePath("../AIPath")
 
 [node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar"]
 transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
@@ -87,8 +87,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
 mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
-[node name="AICar2" parent="." instance=ExtResource("8_hmqxh")]
+[node name="AICar2" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("8_hmqxh")]
 transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -28.731, 3.0406, 4.02369)
+ai_waypoint_path = NodePath("../AIPath")
 
 [node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar2"]
 transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
@@ -100,8 +101,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
 mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
-[node name="AICar3" parent="." instance=ExtResource("8_hmqxh")]
+[node name="AICar3" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("8_hmqxh")]
 transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -32.9229, 3.0406, 1.79495)
+ai_waypoint_path = NodePath("../AIPath")
 
 [node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar3"]
 transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
@@ -113,8 +115,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
 mesh = SubResource("TorusMesh_gkast")
 surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
-[node name="AICar4" parent="." instance=ExtResource("8_hmqxh")]
+[node name="AICar4" parent="." node_paths=PackedStringArray("ai_waypoint_path") instance=ExtResource("8_hmqxh")]
 transform = Transform3D(-0.148206, 0, -0.988956, 0, 1, 0, 0.988956, 0, -0.148206, -35.7255, 3.0406, -1.43359)
+ai_waypoint_path = NodePath("../AIPath")
 
 [node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar4"]
 transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)

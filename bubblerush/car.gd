@@ -41,8 +41,8 @@ func _physics_process(delta: float) -> void:
 	#%Camera3D.transform=%CameraHolder.transform
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if get_tree().root.get_child(0).RaceStarted:
-		input_dir = get_ai_input_dir() if ai_waypoint_path else get_input_dir()
+	if get_tree().current_scene.RaceStarted:
+		input_dir = get_ai_input_dir() if is_ai_car() else get_input_dir()
 	#print(input_dir.y)
 	var currentVelocity = velocity.length()
 	rotate_y(-input_dir.x * delta * currentVelocity / 4)
@@ -126,3 +126,6 @@ func get_ai_input_dir():
 	var speed_input = -1
 
 	return Vector2(steer_input, speed_input)
+
+func is_ai_car() -> bool:
+	return ai_waypoint_path != null
