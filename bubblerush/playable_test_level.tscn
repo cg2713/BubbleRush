@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://chxhjxybcijc4"]
+[gd_scene load_steps=15 format=3 uid="uid://chxhjxybcijc4"]
 
 [ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_sw4s4"]
@@ -9,6 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="5_ejic5"]
 [ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="8_j4l7a"]
 [ext_resource type="Script" path="res://ai_car.gd" id="9_mls3h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ujhpf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmiqj"]
+albedo_color = Color(0.920709, 0.813, 3.85046e-07, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_gkast"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdo1d"]
+albedo_color = Color(0.333409, 0.741631, 0.303938, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_7sw4p"]
 _data = {
@@ -70,7 +80,16 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -13.9674
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6901, 0.447639, -4.16738)
 script = ExtResource("9_mls3h")
 waypoint_path = NodePath("../AIPath")
-look_ahead_distance = 2
+look_ahead_distance = 4
+
+[node name="debugMarkerSteer" type="MeshInstance3D" parent="AICar"]
+transform = Transform3D(0.8, 0, 0, 0, -0.036137, 0.799183, 0, -0.799183, -0.036137, 0, 0, 0)
+mesh = SubResource("BoxMesh_ujhpf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmiqj")
+
+[node name="debugMarkerObjective" type="MeshInstance3D" parent="AICar"]
+mesh = SubResource("TorusMesh_gkast")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdo1d")
 
 [node name="AIPath" type="Path3D" parent="."]
 curve = SubResource("Curve3D_7sw4p")
