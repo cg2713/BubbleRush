@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bt4opdgc7nfju"
+path="res://.godot/imported/Cappy.obj-f45c25e7ed95be9eb36aee1cf71ff976.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cappy.obj-f45c25e7ed95be9eb36aee1cf71ff976.mesh"]
+
+source_file="res://3D files/Cappy.obj"
+dest_files=["res://.godot/imported/Cappy.obj-f45c25e7ed95be9eb36aee1cf71ff976.mesh", "res://.godot/imported/Cappy.obj-f45c25e7ed95be9eb36aee1cf71ff976.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

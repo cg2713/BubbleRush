@@ -46,13 +46,14 @@ size_flags_horizontal = 3
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/GridContainer/SubViewportContainer2"]
 own_world_3d = true
 handle_input_locally = false
-size = Vector2i(285, 512)
+size = Vector2i(285, 648)
 render_target_update_mode = 4
 
 [node name="preview" parent="VBoxContainer/GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("2_0mogo")]
 control = ExtResource("3_61i5o")
 
-[node name="GridContainer2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
+[node name="Control" type="Control" parent="VBoxContainer/GridContainer/SubViewportContainer2/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

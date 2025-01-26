@@ -44,7 +44,7 @@ func set_player_choices():
 		Game.playerChoices[i] = playersReady[i].values
 	print("Player choices = ", Game.playerChoices)
 		#print(i.values)
-	get_tree().change_scene_to_file("res://playable_figure8.tscn")
+	get_tree().change_scene_to_file("res://Level_preview.tscn")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

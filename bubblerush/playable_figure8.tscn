@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_226ob"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="2_c61vw"]
 [ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="3_o5kel"]
-[ext_resource type="PackedScene" path="res://Figure 8.tscn" id="4_i15uy"]
+[ext_resource type="PackedScene" uid="uid://cj7pgivlpytgi" path="res://Figure 8.tscn" id="4_i15uy"]
 [ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="5_nsde3"]
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="6_8lnw1"]
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="7_kl1f3"]
 [ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="8_hmqxh"]
-[ext_resource type="Resource" path="res://resources/p2_controls.tres" id="10_lqxgm"]
+[ext_resource type="Resource" uid="uid://k6xmxhfc5ied" path="res://resources/p2_controls.tres" id="10_lqxgm"]
 [ext_resource type="Script" path="res://addons/scene_object_brush/Brush.gd" id="10_s0m3v"]
-[ext_resource type="Resource" path="res://resources/p3_controls.tres" id="11_74p75"]
+[ext_resource type="Resource" uid="uid://c255erv0lc2t1" path="res://resources/p3_controls.tres" id="11_74p75"]
 [ext_resource type="PackedScene" uid="uid://c2547qh46avf4" path="res://dirt.tscn" id="11_lb7uj"]
 [ext_resource type="Resource" path="res://resources/p4_controls.tres" id="12_infrw"]
 [ext_resource type="PackedScene" uid="uid://osdwscdud0gk" path="res://3D files/TOILET.blend" id="14_0dphe"]
@@ -3239,7 +3239,11 @@ transform = Transform3D(5.82543, -5.1899, 2.26858e-07, 0, -3.41035e-07, -7.80197
 [node name="sink" parent="." instance=ExtResource("18_uvqku")]
 transform = Transform3D(-8.68264, 0, 12.7924, 0, 15.4607, 0, -12.7924, 0, -8.68264, -56.5999, 87.42, 37.9181)
 
+[node name="Retopo_Circle" parent="sink" index="1"]
+visible = false
+
 [connection signal="raceStart" from="CanvasLayer/HUD" to="." method="_on_hud_race_start"]
 [connection signal="body_entered" from="Finish Line" to="Car" method="_on_finish_line_body_entered"]
 
 [editable path="Split Screen"]
+[editable path="sink"]
