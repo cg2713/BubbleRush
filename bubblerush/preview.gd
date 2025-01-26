@@ -1,10 +1,15 @@
 extends Node3D
 @export_range(0,3) var values = 0
-@export var models : Array[MeshInstance3D]
+@export var model_parent : Node3D
 @export var control : Resource = null
+
+var models : Array[Node]
 var finished : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	models = model_parent.get_children()
+	for model in models:
+		model.visible = false
 	models[values].visible = true
 	pass # Replace with function body.
 

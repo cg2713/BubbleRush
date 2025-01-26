@@ -127,3 +127,7 @@ p4_r={
 "deadzone": 0.5,
 "events": []
 }
+
+[physics]
+
+3d/default_gravity_vector=Vector3(0, -2, 0)

@@ -1,12 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4qssepqrjmmk"]
+[gd_scene load_steps=8 format=3 uid="uid://c4qssepqrjmmk"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
 [ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_4eqy6"]
-[ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="2_5p2si"]
-[ext_resource type="PackedScene" uid="uid://ccr4jphvmovxc" path="res://3D files/penguini.blend" id="3_pn1so"]
 [ext_resource type="PackedScene" uid="uid://dp2cncocua5kc" path="res://BubbleTrail.tscn" id="3_rw01i"]
-[ext_resource type="PackedScene" uid="uid://cs6orktedqs7e" path="res://3D files/bubble_boy1.blend" id="4_wqn18"]
-[ext_resource type="Shader" path="res://car.gdshader" id="5_n8btl"]
+[ext_resource type="PackedScene" uid="uid://bmeslp1i20giw" path="res://3d_models.tscn" id="4_j4r5j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7gxqu"]
 radius = 1.0
@@ -16,27 +13,9 @@ radius = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bhmy"]
 size = Vector3(1.785, 1.125, 1.91)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kh8by"]
-render_priority = 0
-shader = ExtResource("5_n8btl")
-shader_parameter/time_speed = 1.0
-shader_parameter/surface_speed = 1.0
-shader_parameter/spin = 0.0
-shader_parameter/brightness = 0.6
-shader_parameter/color_intensity = 0.0
-shader_parameter/horizontal_frequency = 2.0
-shader_parameter/vertical_frequency = 2.0
-shader_parameter/size = 3.0
-shader_parameter/banding_bias = 0.6
-shader_parameter/wave_height = 0.5
-shader_parameter/texture_height = 0.5
-shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
-shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
-shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
-shader_parameter/color4 = Color(0, 0.267, 1, 1)
-
 [node name="Car" type="CharacterBody3D" node_paths=PackedStringArray("carCam")]
 script = ExtResource("1_xxi4i")
+speedup_FOV = 80
 carCam = NodePath("Camera3D")
 controls = ExtResource("2_4eqy6")
 
@@ -62,41 +41,8 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CarArea3D"]
 shape = SubResource("BoxShape3D_5bhmy")
 
-[node name="3DModel" parent="." instance=ExtResource("2_5p2si")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.41334, 0, 0)
-
-[node name="soap" parent="3DModel" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39, 0, 0)
-visible = false
-
-[node name="penguini" parent="3DModel/soap" index="0" instance=ExtResource("3_pn1so")]
-transform = Transform3D(-0.300302, 0, 0.00416708, 0, 0.300331, 0, -0.00416708, 0, -0.300302, 0, 0.221757, -0.457883)
-
-[node name="penguini2" parent="3DModel/soap" index="1" instance=ExtResource("3_pn1so")]
-transform = Transform3D(0.208778, 0, -0.148689, 0, 0.256313, 0, 0.148689, 0, 0.208778, 0, 0.221757, 0.463462)
-
-[node name="duck" parent="3DModel" index="1"]
-visible = false
-
-[node name="Cube_001" parent="3DModel" index="2"]
-transform = Transform3D(0.525848, 0, 0, 0, 0.525848, 0, 0, 0, 0.525848, 8.405, 0, 0)
-visible = false
-
-[node name="Cube" parent="3DModel" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.44, 0, 0)
-visible = false
-
-[node name="bubble_boy1" parent="3DModel" instance=ExtResource("4_wqn18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51651, 0, 0)
-visible = false
-
-[node name="Cube" parent="3DModel/bubble_boy1/Armature" index="0"]
-transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, -0.0612513, 0.0485892, -0.00598091)
-surface_material_override/0 = SubResource("ShaderMaterial_kh8by")
-
 [node name="BubbleTrail" parent="." instance=ExtResource("3_rw01i")]
 
-[connection signal="area_entered" from="CarArea3D" to="." method="_on_area_3d_area_entered"]
+[node name="3DModel" parent="." instance=ExtResource("4_j4r5j")]
 
-[editable path="3DModel"]
-[editable path="3DModel/bubble_boy1"]
+[connection signal="area_entered" from="CarArea3D" to="." method="_on_area_3d_area_entered"]

@@ -44,7 +44,8 @@ func _ready() -> void:
 		carList[0].lapCounterUI = playerNode.get_child(0).get_child(0).get_child(0).get_child(0)
 	
 	for i in range(Game.playercount):
-		carList[i].PlayerChoice = Game.playerChoices[i]
+		carList[i].PlayerChoice = Game.playerChoices[i] + 1
+		print("car ", i, "  is ", carList[i].PlayerChoice)
 		carList[i].carCam = cameraList[i]
 		AICarList[3-i].queue_free()
 	for i in range(4-Game.playercount):

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name car
 
-@export var LapsCompleted = 0
+@export var LapsCompleted = 1
 const SPEED = 25.0
 @export var base_FOV = 75
 @export var speedup_FOV = 120
@@ -25,11 +25,12 @@ var speed_percent = 1
 var input_dir: Vector2
 
 func _ready() -> void:
+	print("I am ", name, " my car is ", PlayerChoice)
 	carCam.top_level = true
 	
 	if is_ai_car():
 		PlayerChoice = randi_range(1, 4)
-		print("AI choose car ", PlayerChoice)
+		print("AI ", name, " choose car ", PlayerChoice)
 	
 	# Hide all except chosen
 	for child in $"3DModel".get_children():
@@ -53,7 +54,7 @@ func _complete_lap():
 	print("LapCounterUI", lapCounterUI)
 	if lapCounterUI:
 		lapCounterUI.text = "Lap " + str(LapsCompleted)
-	if LapsCompleted >= 3:
+	if LapsCompleted > 3:
 		print("Race Complete")
 		Game.Winner = index
 		# This car wins!
@@ -115,6 +116,7 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		
 func get_input_dir():
 	return Input.get_vector(controls.move_left, controls.move_right, controls.move_forward, controls.move_back)
+
 func get_ai_input_dir():
 	#print("curr ", current_waypoint)
 	if ai_objective == Vector3.ZERO:

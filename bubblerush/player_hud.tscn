@@ -15,6 +15,6 @@ offset_top = 56.0
 offset_right = 181.0
 offset_bottom = 124.0
 theme_override_font_sizes/normal_font_size = 45
-text = "Lap 0"
+text = "Lap 1"
 fit_content = true
 autowrap_mode = 0
