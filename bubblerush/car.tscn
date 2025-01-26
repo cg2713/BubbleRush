@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cfqagaxrwbe1w" path="res://3D files/cars_themovie_001.blend" id="2_5p2si"]
 [ext_resource type="PackedScene" uid="uid://dp2cncocua5kc" path="res://BubbleTrail.tscn" id="3_rw01i"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_q6i1e"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7gxqu"]
+radius = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ak3fp"]
 
@@ -16,7 +17,7 @@ script = ExtResource("1_xxi4i")
 carCam = NodePath("Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_q6i1e")
+shape = SubResource("CapsuleShape3D_7gxqu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
