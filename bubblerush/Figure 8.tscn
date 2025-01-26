@@ -1,0 +1,567 @@
+[gd_scene load_steps=9 format=3 uid="uid://cj7pgivlpytgi"]
+
+[ext_resource type="PackedScene" uid="uid://bjtthg8bgsifb" path="res://3D files/Temp Tracks/Track_Hill.glb" id="1_15whw"]
+[ext_resource type="PackedScene" uid="uid://wmnru3v4y7nj" path="res://3D files/Temp Tracks/Track_Straight.glb" id="2_01yc7"]
+[ext_resource type="PackedScene" uid="uid://dgy0sa3rm6d03" path="res://3D files/Temp Tracks/Track_Turn.glb" id="3_sxtyh"]
+[ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="4_k1xtx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmx3e"]
+size = Vector3(7.19194, 0.649918, 16.0011)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mgbdy"]
+size = Vector3(7.19194, 0.649918, 1.72523)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5w4pv"]
+size = Vector3(7.19194, 0.649918, 0.0841148)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_navcj"]
+size = Vector3(7.19194, 0.649918, 2.40015)
+
+[node name="Figure8" type="Node3D"]
+
+[node name="8 Track" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="Track_Hill" parent="8 Track" instance=ExtResource("1_15whw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Track_Hill2" parent="8 Track" instance=ExtResource("1_15whw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 4)
+
+[node name="Track_Straight" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Track_Straight3" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, 0)
+
+[node name="Track_Straight7" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, 12)
+
+[node name="Track_Straight2" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 0)
+
+[node name="Track_Straight4" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 0)
+
+[node name="Track_Straight12" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -12)
+
+[node name="Track_Straight5" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -4)
+
+[node name="Track_Straight13" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, 0, -4)
+
+[node name="Track_Straight6" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 8)
+
+[node name="Track_Turn" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="Track_Straight8" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 8)
+
+[node name="Track_Turn2" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, 12)
+
+[node name="Track_Turn3" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 4)
+
+[node name="Track_Turn7" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -8)
+
+[node name="Track_Turn8" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 8, 0, -12)
+
+[node name="Track_Turn9" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, -4)
+
+[node name="Track_Straight9" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, 12)
+
+[node name="Track_Straight10" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 8)
+
+[node name="Track_Turn4" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="Track_Straight11" parent="8 Track" instance=ExtResource("2_01yc7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 8)
+
+[node name="Track_Turn5" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, 12)
+
+[node name="Track_Turn6" parent="8 Track" instance=ExtResource("3_sxtyh")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 4)
+
+[node name="TrackStaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Col_Track_Straight" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 0, 0.000191912, 0, 1, 0, -0.000191912, 0, 1, 0.003, 0.0764782, -24.005)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight2" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 0, 0.000191912, 0, 1, 0, -0.000191912, 0, 1, 48.003, 0.076, -24.005)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight3" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 0, 0.000191912, 0, 1, 0, -0.000191912, 0, 1, 0.003, 0.076, 23.995)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight4" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 0, 0.000191912, 0, 1, 0, -0.000191912, 0, 1, -47.997, 0.076, 23.995)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight5" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.000191868, 0, -1, 0, 1, 0, 1, 0, 0.000191868, -23.997, 0.076, -0.005)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight7" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.000191868, 0, -1, 0, 1, 0, 1, 0, 0.000191868, -7.997, 0.076, -0.005)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight8" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.000191868, 0, -1, 0, 1, 0, 1, 0, 0.000191868, 8.003, 0.076, -0.005)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight9" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.000191868, 0, -1, 0, 1, 0, 1, 0, 0.000191868, 24.003, 0.076, -0.005)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight10" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.000191868, 0, -1, 0, 1, 0, 1, 0, 0.000191868, 24.003, 0.076, -48.005)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Straight6" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.000191868, 0, -1, 0, 1, 0, 1, 0, 0.000191868, -23.997, 0.076, 47.995)
+shape = SubResource("BoxShape3D_gmx3e")
+
+[node name="Col_Track_Hill" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 4.54492e-13, 0.000191912, 8.61536e-06, 0.998992, -0.0448922, -0.000191719, 0.0448922, 0.998992, 0.00171394, 0.100746, 15.1568)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill2" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 4.97231e-12, 0.000191912, 2.62578e-05, 0.990596, -0.136822, -0.000190107, 0.136822, 0.990595, 0.00171394, 0.240525, 13.5344)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill3" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 4.766e-12, 0.000191912, 4.85502e-05, 0.967471, -0.252981, -0.000185669, 0.252981, 0.967471, 0.00171394, 0.551532, 11.9043)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill4" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, -6.53622e-14, 0.000191912, 6.73659e-05, 0.936367, -0.351025, -0.0001797, 0.351025, 0.936366, 0.00171394, 1.03277, 10.3471)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill5" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 7.63733e-12, 0.000191912, 8.65796e-05, 0.892452, -0.451142, -0.000171272, 0.451142, 0.892452, 0.00171394, 1.70189, 8.78512)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill6" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 7.16864e-12, 0.000191912, 8.35472e-05, 0.900266, -0.435341, -0.000172772, 0.435341, 0.900265, 0.00171394, 2.41899, 7.27649)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill7" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, 3.41515e-12, 0.000191912, 6.94283e-05, 0.932267, -0.361771, -0.000178913, 0.361771, 0.932267, 0.00171394, 3.07632, 5.75539)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill8" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, -9.54534e-12, 0.000191912, 4.6444e-05, 0.970275, -0.242007, -0.000186207, 0.242007, 0.970274, 0.00171394, 3.56116, 4.19116)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill9" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, -9.54534e-12, 0.000191912, 2.71567e-05, 0.989938, -0.141506, -0.000189981, 0.141506, 0.989937, 0.00171053, 3.87228, 2.56067)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill10" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(1, -7.74465e-12, 0.000191912, 6.79807e-06, 0.999373, -0.0354229, -0.000191792, 0.0354228, 0.999372, 0.00171394, 4.01039, 0.885213)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill11" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -3.92597e-09, -0.000191999, 8.61536e-06, 0.998992, -0.0448922, 0.000191806, -0.0448922, -0.998992, 0.00171264, 0.100746, -15.1607)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill12" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -1.19682e-08, -0.000191999, 2.62578e-05, 0.990596, -0.136822, 0.000190195, -0.136822, -0.990595, 0.00171278, 0.240525, -13.5382)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill13" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -2.21248e-08, -0.000191997, 4.85502e-05, 0.967471, -0.252981, 0.000185757, -0.252981, -0.967471, 0.00171292, 0.551532, -11.9082)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill14" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -3.06875e-08, -0.000191994, 6.73659e-05, 0.936367, -0.351025, 0.000179787, -0.351025, -0.936366, 0.00171306, 1.03277, -10.3509)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill15" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -3.94543e-08, -0.00019199, 8.65797e-05, 0.892452, -0.451142, 0.00017136, -0.451142, -0.892452, 0.00171319, 1.70189, -8.78893)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill16" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -3.8079e-08, -0.000191991, 8.35472e-05, 0.900266, -0.435341, 0.000172859, -0.435341, -0.900265, 0.00171332, 2.41899, -7.28031)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill17" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -3.1644e-08, -0.000191994, 6.94282e-05, 0.932267, -0.361771, 0.000179001, -0.361771, -0.932267, 0.00171346, 3.07632, -5.75921)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill18" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -2.11615e-08, -0.000191997, 4.6444e-05, 0.970275, -0.242007, 0.000186295, -0.242007, -0.970274, 0.00171359, 3.56116, -4.19498)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill19" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -1.23631e-08, -0.000191999, 2.71567e-05, 0.989938, -0.141506, 0.000190068, -0.141506, -0.989937, 0.00171714, 3.87228, -2.56449)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill20" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -3.08765e-09, -0.000191999, 6.79807e-06, 0.999373, -0.0354229, 0.000191879, -0.0354228, -0.999372, 0.00171388, 4.01039, -0.889031)
+shape = SubResource("BoxShape3D_mgbdy")
+
+[node name="Col_Track_Hill_Center" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-1, -3.08809e-09, -0.000191999, 1.48811e-06, 0.99997, -0.00776674, 0.000191994, -0.00776662, -0.999969, 0.00186721, 4.04041, -0.000828773)
+shape = SubResource("BoxShape3D_5w4pv")
+
+[node name="Col_Track_Curve" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.0162656, 0, -0.999867, 0, 1, 0, 0.999867, 0, 0.0162656, -14.964, 0.076, 47.9958)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve2" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.204991, 0, -0.978764, 0, 1, 0, 0.978764, 0, 0.204991, -13.4376, 0.076, 47.7719)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve3" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.310079, 0, -0.950711, 0, 1, 0, 0.950711, 0, 0.310079, -11.5856, 0.076, 47.2428)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve4" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.442054, 0, -0.896988, 0, 1, 0, 0.896988, 0, 0.442054, -9.88533, 0.076, 46.5264)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve5" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.603653, 0, -0.797247, 0, 1, 0, 0.797247, 0, 0.603653, -8.47898, 0.076, 45.7327)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve6" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.651119, 0, -0.758976, 0, 1, 0, 0.758976, 0, 0.651119, -6.84766, 0.076, 44.5442)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve7" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.691147, 0, -0.722714, 0, 1, 0, 0.722714, 0, 0.691147, -5.186, 0.076, 43.1436)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve8" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.771735, 0, -0.635944, 0, 1, 0, 0.635944, 0, 0.771735, -3.88041, 0.076, 41.6956)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve9" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.848981, 0, -0.528424, 0, 1, 0, 0.528424, 0, 0.848981, -2.74098, 0.076, 40.2001)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve10" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.884573, 0, -0.466402, 0, 1, 0, 0.466402, 0, 0.884573, -1.67277, 0.076, 38.4435)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve11" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.93677, 0, -0.349946, 0, 1, 0, 0.349946, 0, 0.93677, -0.936889, 0.076, 36.7106)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve12" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.991028, 0, -0.133658, 0, 1, 0, 0.133658, 0, 0.991028, -0.0585794, 0.076, 32.6752)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve13" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.975285, 0, -0.220953, 0, 1, 0, 0.220953, 0, 0.975285, -0.462125, 0.076, 35.1439)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve14" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.989052, 0, -0.147568, 0, 1, 0, 0.147568, 0, 0.989052, -0.177268, 0.076, 33.8858)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve15" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.999867, 0, -0.0162656, 0, 1, 0, 0.0162656, 0, -0.999867, -47.9429, 0.076, 33.1021)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve16" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.978764, 0, -0.204991, 0, 1, 0, 0.204991, 0, -0.978764, -47.7191, 0.076, 34.6285)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve17" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.950711, 0, -0.310079, 0, 1, 0, 0.310079, 0, -0.950711, -47.1899, 0.076, 36.4805)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve18" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.896988, 0, -0.442054, 0, 1, 0, 0.442054, 0, -0.896988, -46.4735, 0.076, 38.1808)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve19" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.797247, 0, -0.603653, 0, 1, 0, 0.603653, 0, -0.797247, -45.6798, 0.076, 39.5871)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve20" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.758976, 0, -0.651119, 0, 1, 0, 0.651119, 0, -0.758976, -44.4913, 0.076, 41.2184)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve21" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.722714, 0, -0.691147, 0, 1, 0, 0.691147, 0, -0.722714, -43.0908, 0.076, 42.8801)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve22" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.635944, 0, -0.771735, 0, 1, 0, 0.771735, 0, -0.635944, -41.6427, 0.076, 44.1857)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve23" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.528424, 0, -0.848981, 0, 1, 0, 0.848981, 0, -0.528424, -40.1473, 0.076, 45.3251)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve24" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.466402, 0, -0.884573, 0, 1, 0, 0.884573, 0, -0.466402, -38.3906, 0.076, 46.3933)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve25" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.349946, 0, -0.93677, 0, 1, 0, 0.93677, 0, -0.349946, -36.6578, 0.076, 47.1292)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve26" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.133658, 0, -0.991028, 0, 1, 0, 0.991028, 0, -0.133658, -32.6223, 0.076, 48.0075)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve27" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.220953, 0, -0.975285, 0, 1, 0, 0.975285, 0, -0.220953, -35.091, 0.076, 47.604)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve28" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.147568, 0, -0.989052, 0, 1, 0, 0.989052, 0, -0.147568, -33.8329, 0.076, 47.8888)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve29" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.0162655, 0, 0.999867, 0, 1, 0, -0.999867, 0, -0.0162655, -33.1247, 0.076, 0.0351543)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve30" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.204991, 0, 0.978764, 0, 1, 0, -0.978764, 0, -0.204991, -34.6511, 0.076, 0.259024)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve31" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.310079, 0, 0.950711, 0, 1, 0, -0.950711, 0, -0.310079, -36.5031, 0.076, 0.788164)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve32" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.442054, 0, 0.896988, 0, 1, 0, -0.896988, 0, -0.442054, -38.2034, 0.076, 1.50454)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve33" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.603653, 0, 0.797247, 0, 1, 0, -0.797247, 0, -0.603653, -39.6097, 0.076, 2.29825)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve34" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.651119, 0, 0.758976, 0, 1, 0, -0.758976, 0, -0.651119, -41.241, 0.076, 3.48677)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve35" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.691147, 0, 0.722714, 0, 1, 0, -0.722714, 0, -0.691147, -42.9027, 0.076, 4.88731)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve36" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.771735, 0, 0.635944, 0, 1, 0, -0.635944, 0, -0.771735, -44.2083, 0.076, 6.33533)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve37" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.848981, 0, 0.528424, 0, 1, 0, -0.528424, 0, -0.848981, -45.3477, 0.076, 7.83083)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve38" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.884573, 0, 0.466402, 0, 1, 0, -0.466402, 0, -0.884573, -46.4159, 0.076, 9.58745)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve39" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.93677, 0, 0.349946, 0, 1, 0, -0.349946, 0, -0.93677, -47.1518, 0.076, 11.3203)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve40" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.991028, 0, 0.133658, 0, 1, 0, -0.133658, 0, -0.991028, -48.0301, 0.076, 15.3558)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve41" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.975285, 0, 0.220953, 0, 1, 0, -0.220953, 0, -0.975285, -47.6266, 0.076, 12.887)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve42" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.989052, 0, 0.147568, 0, 1, 0, -0.147568, 0, -0.989052, -47.9114, 0.076, 14.1452)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve43" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.0162655, 0, 0.999867, 0, 1, 0, -0.999867, 0, -0.0162655, 14.8753, 0.076, -47.9648)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve44" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.204991, 0, 0.978764, 0, 1, 0, -0.978764, 0, -0.204991, 13.3489, 0.076, -47.741)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve45" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.310079, 0, 0.950711, 0, 1, 0, -0.950711, 0, -0.310079, 11.4969, 0.076, -47.2118)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve46" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.442054, 0, 0.896988, 0, 1, 0, -0.896988, 0, -0.442054, 9.79663, 0.076, -46.4955)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve47" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.603653, 0, 0.797247, 0, 1, 0, -0.797247, 0, -0.603653, 8.39028, 0.076, -45.7017)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve48" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.651119, 0, 0.758976, 0, 1, 0, -0.758976, 0, -0.651119, 6.75896, 0.076, -44.5132)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve49" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.691147, 0, 0.722714, 0, 1, 0, -0.722714, 0, -0.691147, 5.0973, 0.076, -43.1127)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve50" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.771735, 0, 0.635944, 0, 1, 0, -0.635944, 0, -0.771735, 3.79171, 0.076, -41.6647)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve51" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.848981, 0, 0.528424, 0, 1, 0, -0.528424, 0, -0.848981, 2.65228, 0.076, -40.1692)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve52" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.884573, 0, 0.466402, 0, 1, 0, -0.466402, 0, -0.884573, 1.58407, 0.076, -38.4126)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve53" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.93677, 0, 0.349946, 0, 1, 0, -0.349946, 0, -0.93677, 0.84819, 0.076, -36.6797)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve54" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.991028, 0, 0.133658, 0, 1, 0, -0.133658, 0, -0.991028, -0.0301208, 0.076, -32.6442)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve55" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.975285, 0, 0.220953, 0, 1, 0, -0.220953, 0, -0.975285, 0.373425, 0.076, -35.113)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve56" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(-0.989052, 0, 0.147568, 0, 1, 0, -0.147568, 0, -0.989052, 0.0885696, 0.076, -33.8549)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve57" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.999867, 0, 0.0162655, 0, 1, 0, -0.0162655, 0, 0.999867, 48.0929, 0.076, -32.9481)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve58" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.978764, 0, 0.204991, 0, 1, 0, -0.204991, 0, 0.978764, 47.8691, 0.076, -34.4745)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve59" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.950711, 0, 0.310079, 0, 1, 0, -0.310079, 0, 0.950711, 47.3399, 0.076, -36.3265)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve60" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.896988, 0, 0.442054, 0, 1, 0, -0.442054, 0, 0.896988, 46.6236, 0.076, -38.0268)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve61" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.797247, 0, 0.603653, 0, 1, 0, -0.603653, 0, 0.797247, 45.8298, 0.076, -39.4331)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve62" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.758976, 0, 0.651119, 0, 1, 0, -0.651119, 0, 0.758976, 44.6413, 0.076, -41.0644)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve63" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.722714, 0, 0.691147, 0, 1, 0, -0.691147, 0, 0.722714, 43.2408, 0.076, -42.7261)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve64" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.635944, 0, 0.771735, 0, 1, 0, -0.771735, 0, 0.635944, 41.7928, 0.076, -44.0317)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve65" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.528424, 0, 0.848981, 0, 1, 0, -0.848981, 0, 0.528424, 40.2973, 0.076, -45.1711)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve66" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.466402, 0, 0.884573, 0, 1, 0, -0.884573, 0, 0.466402, 38.5407, 0.076, -46.2393)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve67" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.349946, 0, 0.93677, 0, 1, 0, -0.93677, 0, 0.349946, 36.8078, 0.076, -46.9752)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve68" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.133658, 0, 0.991028, 0, 1, 0, -0.991028, 0, 0.133658, 32.7723, 0.076, -47.8535)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve69" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.220953, 0, 0.975284, 0, 1, 0, -0.975284, 0, 0.220953, 35.2411, 0.076, -47.45)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve70" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.147568, 0, 0.989052, 0, 1, 0, -0.989052, 0, 0.147568, 33.983, 0.076, -47.7348)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve71" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.0162655, 0, -0.999867, 0, 1, 0, 0.999867, 0, 0.0162655, 33.0236, 0.076, -0.0318627)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve72" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.204991, 0, -0.978764, 0, 1, 0, 0.978764, 0, 0.204991, 34.5499, 0.076, -0.255732)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve73" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.310079, 0, -0.950711, 0, 1, 0, 0.950711, 0, 0.310079, 36.4019, 0.076, -0.784869)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve74" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.442054, 0, -0.896988, 0, 1, 0, 0.896988, 0, 0.442054, 38.1022, 0.076, -1.50125)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve75" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.603653, 0, -0.797247, 0, 1, 0, 0.797247, 0, 0.603653, 39.5086, 0.076, -2.29496)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve76" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.651119, 0, -0.758976, 0, 1, 0, 0.758976, 0, 0.651119, 41.1399, 0.076, -3.48348)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve77" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.691147, 0, -0.722714, 0, 1, 0, 0.722714, 0, 0.691147, 42.8015, 0.076, -4.88402)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve78" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.771735, 0, -0.635944, 0, 1, 0, 0.635944, 0, 0.771735, 44.1071, 0.076, -6.33204)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve79" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.848981, 0, -0.528424, 0, 1, 0, 0.528424, 0, 0.848981, 45.2466, 0.076, -7.82754)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve80" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.884573, 0, -0.466402, 0, 1, 0, 0.466402, 0, 0.884573, 46.3148, 0.076, -9.58415)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve81" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.93677, 0, -0.349946, 0, 1, 0, 0.349946, 0, 0.93677, 47.0507, 0.076, -11.317)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve82" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.991028, 0, -0.133658, 0, 1, 0, 0.133658, 0, 0.991028, 47.929, 0.076, -15.3525)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve83" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.975284, 0, -0.220953, 0, 1, 0, 0.220953, 0, 0.975284, 47.5254, 0.076, -12.8837)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Col_Track_Curve84" type="CollisionShape3D" parent="TrackStaticBody3D"]
+transform = Transform3D(0.989052, 0, -0.147568, 0, 1, 0, 0.147568, 0, 0.989052, 47.8103, 0.076, -14.1419)
+shape = SubResource("BoxShape3D_navcj")
+
+[node name="Car" parent="TrackStaticBody3D" instance=ExtResource("4_k1xtx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.88665, 0.400959, 1.91317)
+
+[node name="Car2" parent="TrackStaticBody3D" instance=ExtResource("4_k1xtx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.88665, 0.400959, -2.08683)
+player2 = true
+PlayerChoice = 2
+
+[node name="Node3D" type="Node3D" parent="TrackStaticBody3D"]
