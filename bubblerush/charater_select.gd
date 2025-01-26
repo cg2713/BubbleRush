@@ -14,7 +14,7 @@ func _ready() -> void:
 	playersReady.append(playerNode.get_child(0).get_child(0))
 	if Game.playercount != 1:
 		playerNode.get_child(0).size.x = $VBoxContainer.size.x/Game.playercount
-		playerNode.get_child(0).size.y = $VBoxContainer/GridContainer.size.y
+		playerNode.get_child(0).size.y = size.y
 		#newcolorRect.size.x = $VBoxContainer.size.x/Game.playercount
 		#newcolorRect.size.y = $VBoxContainer/GridContainer2.size.y
 		#readyGridNode.add_child(newcolorRect)
@@ -25,14 +25,14 @@ func _ready() -> void:
 			#newcolorRect2.size.y = $VBoxContainer/GridContainer2.size.y
 			var newNode : Node = playerNode.duplicate()
 			newNode.get_child(0).size.x = $VBoxContainer.size.x / Game.playercount
-			newNode.get_child(0).size.y = $VBoxContainer/GridContainer.size.y
+			newNode.get_child(0).size.y = size.y
 			playersReady.append(newNode.get_child(0).get_child(0))
 			newNode.get_child(0).get_child(0).control = playerControlerResource[i+1]
 			#readyGridNode.add_child(newcolorRect2)
 			$VBoxContainer/GridContainer.add_child(newNode)
 	else:
 		playerNode.get_child(0).size.x = $VBoxContainer.size.x
-		playerNode.get_child(0).size.y = $VBoxContainer/GridContainer.size.y
+		playerNode.get_child(0).size.y = size.y
 		#newcolorRect.size.x = $VBoxContainer.size.x/Game.playercount
 		#newcolorRect.size.y = $VBoxContainer/GridContainer2.size.y
 		#readyGridNode.add_child(newcolorRect)
