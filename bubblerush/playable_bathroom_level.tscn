@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_15jyv"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="1_v4755"]
 [ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="2_ej04t"]
-[ext_resource type="PackedScene" uid="uid://dms6exgn0g23p" path="res://bathroom_course_level.tscn" id="4_4ex5u"]
+[ext_resource type="PackedScene" path="res://bathroom_course_level.tscn" id="4_4ex5u"]
 [ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="4_dtuyo"]
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="5_6mkut"]
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="5_ejic5"]
@@ -20,7 +20,7 @@ point_count = 21
 
 [sub_resource type="TorusMesh" id="TorusMesh_2kxcv"]
 
-[node name="PlayableTestLevel" type="Node3D"]
+[node name="PlayableTestLevel2" type="Node3D"]
 script = ExtResource("1_15jyv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -43,9 +43,6 @@ light_energy = 0.5
 [node name="Split Screen" parent="." node_paths=PackedStringArray("carList", "AICarList") instance=ExtResource("4_dtuyo")]
 carList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car3"), NodePath("../Car4")]
 AICarList = [NodePath("../Car3AI"), NodePath("../Car3AI2"), NodePath("../Car3AI4"), NodePath("../Car3AI3")]
-
-[node name="SubViewport" parent="Split Screen/MarginContainer/GridContainer/Player1" index="0"]
-size = Vector2i(1920, 1080)
 
 [node name="Finish Line" parent="." instance=ExtResource("5_6mkut")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)

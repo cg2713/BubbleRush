@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4qssepqrjmmk"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
-[ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_4eqy6"]
+[ext_resource type="Resource" path="res://resources/p1_controls.tres" id="2_4eqy6"]
 [ext_resource type="PackedScene" uid="uid://dp2cncocua5kc" path="res://BubbleTrail.tscn" id="3_rw01i"]
-[ext_resource type="PackedScene" uid="uid://bmeslp1i20giw" path="res://3d_models.tscn" id="4_qnu3f"]
+[ext_resource type="PackedScene" path="res://3d_models.tscn" id="4_qnu3f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7gxqu"]
 radius = 1.0
