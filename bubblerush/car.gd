@@ -11,6 +11,7 @@ const SPEED = 25.0
 @export var checkpointRotation: Vector3
 @export var carCam: Camera3D
 @export var lapCounterUI: RichTextLabel
+@export var passedCheckpoints = []
 
 # AI variables
 @export var ai_waypoint_path : Path3D # if set, this is an AI car
@@ -43,6 +44,7 @@ func _process(delta: float) -> void:
 		velocity = Vector3.ZERO
 		
 func _complete_lap():
+	passedCheckpoints = []
 	# Include check to confirm that car has traveled around the map
 	print("Lap",LapsCompleted+1,"completed")
 	LapsCompleted += 1

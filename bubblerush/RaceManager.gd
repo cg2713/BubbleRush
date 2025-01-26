@@ -2,6 +2,7 @@ extends Node3D
 
 @export var racers = []
 @export var RaceStarted = false
+@export var Checkpoints = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

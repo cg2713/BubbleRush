@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://bqlgw4rpt7uxs"]
 
 [ext_resource type="Script" path="res://RaceManager.gd" id="1_15jyv"]
-[ext_resource type="PackedScene" uid="uid://fj1npsnv4s1e" path="res://test_level.tscn" id="1_30ef4"]
 [ext_resource type="PackedScene" uid="uid://51pd6coiy4rs" path="res://hud.tscn" id="1_v4755"]
 [ext_resource type="PackedScene" uid="uid://mqe1mxi1aqvl" path="res://stop_watch.tscn" id="2_ej04t"]
 [ext_resource type="PackedScene" uid="uid://bfuhwdte25jtw" path="res://split_screen.tscn" id="4_dtuyo"]
+[ext_resource type="PackedScene" uid="uid://bn5uu3qdi2non" path="res://bathroom_level.tscn" id="4_vp3gt"]
 [ext_resource type="PackedScene" uid="uid://diq6shlq4m8l7" path="res://finish_line.tscn" id="5_6mkut"]
 [ext_resource type="PackedScene" uid="uid://bhjgcx26cvvs8" path="res://checkpoint.tscn" id="5_ejic5"]
 [ext_resource type="PackedScene" uid="uid://c4qssepqrjmmk" path="res://car.tscn" id="7_njtlm"]
@@ -27,8 +27,8 @@ script = ExtResource("1_15jyv")
 
 [node name="StopWatch" parent="." instance=ExtResource("2_ej04t")]
 
-[node name="Level" parent="." instance=ExtResource("1_30ef4")]
-transform = Transform3D(20.9484, 0, 0, 0, 20.9484, 0, 0, 0, 20.9484, -14.7904, -3.06501, -0.910541)
+[node name="Level2" parent="." instance=ExtResource("4_vp3gt")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.970888, -0.223837, 0.0852827, 0.165117, 0.883336, 0.438695, -0.17353, -0.411842, 0.89458, 24.0591, 29.8346, 0)
@@ -38,8 +38,12 @@ light_energy = 0.2
 transform = Transform3D(-0.538108, -0.78765, 0.300079, 3.95694e-08, 0.356018, 0.934479, -0.842876, 0.502851, -0.191576, -49.6027, 29.8346, 0)
 light_energy = 0.5
 
-[node name="Split Screen" parent="." node_paths=PackedStringArray("carList") instance=ExtResource("4_dtuyo")]
-carList = [NodePath("../Car"), null, null]
+[node name="Split Screen" parent="." node_paths=PackedStringArray("carList", "AICarList") instance=ExtResource("4_dtuyo")]
+carList = [NodePath("../Car"), NodePath("../Car2"), NodePath("../Car3"), NodePath("../Car4")]
+AICarList = [NodePath("../Car3AI"), NodePath("../Car3AI2"), NodePath("../Car3AI4"), NodePath("../Car3AI3")]
+
+[node name="SubViewport" parent="Split Screen/MarginContainer/GridContainer/Player1" index="0"]
+size = Vector2i(1152, 648)
 
 [node name="Finish Line" parent="." instance=ExtResource("5_6mkut")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9509, -0.704265, -7.00158)
@@ -60,6 +64,17 @@ transform = Transform3D(0.998748, 0, -0.0500176, 0, 1, 0, 0.0500176, 0, 0.998748
 curve = SubResource("Curve3D_u4vpn")
 
 [node name="Car" parent="." instance=ExtResource("7_njtlm")]
+transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+PlayerChoice = 3
+
+[node name="Car2" parent="." instance=ExtResource("7_njtlm")]
+transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+PlayerChoice = 2
+
+[node name="Car3" parent="." instance=ExtResource("7_njtlm")]
+transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
+
+[node name="Car4" parent="." instance=ExtResource("7_njtlm")]
 transform = Transform3D(0.998725, 0, 0.0504711, 0, 1, 0, -0.0504711, 0, 0.998725, -30.9957, 3.36229, 3.12199)
 
 [node name="Car3AI" parent="." instance=ExtResource("7_njtlm")]
