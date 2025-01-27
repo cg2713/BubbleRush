@@ -60,6 +60,7 @@ shape = SubResource("BoxShape3D_5bhmy")
 [node name="3DModel" parent="." instance=ExtResource("4_qnu3f")]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = -5.0
 
 [node name="AudioStreamPlayer3DScrub" type="AudioStreamPlayer3D" parent="."]
 
