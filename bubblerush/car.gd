@@ -27,6 +27,7 @@ var nextPopSound = 1
 
 var speed_percent = 1
 var input_dir: Vector2
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	print("I am ", name, " my car is ", PlayerChoice)
@@ -51,12 +52,11 @@ func _process(delta: float) -> void:
 		rotation = checkpointRotation
 		velocity = Vector3.ZERO
 	# Multiply this calculation to pop more often, or a number less than 1 to pop less often
-	nextPopSound -= velocity.length() * delta / 10
-	if nextPopSound <= 0:
+	nextPopSound -= (velocity.length() + rng.randf_range(-.1,.1)) * delta / 3
+	if nextPopSound <= 0 and is_on_floor():
 		#Play random pop sfx
 		$AudioStreamPlayer3D.stream = PopSFX.pick_random()
 		$AudioStreamPlayer3D.play()
-		print("Pop!")
 		nextPopSound = 1
 		
 func _complete_lap():

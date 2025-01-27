@@ -1,13 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4qssepqrjmmk"]
+[gd_scene load_steps=16 format=3 uid="uid://c4qssepqrjmmk"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
 [ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_4eqy6"]
-[ext_resource type="AudioStream" uid="uid://erfv1jl8rxht" path="res://Audio/Pop/Alex/A_Pawp2.mp3" id="3_l80my"]
 [ext_resource type="PackedScene" uid="uid://dp2cncocua5kc" path="res://BubbleTrail.tscn" id="3_rw01i"]
-[ext_resource type="AudioStream" uid="uid://cp3wom7urtfhf" path="res://Audio/Pop/Alex/A_Pawp3.mp3" id="4_m6ibe"]
+[ext_resource type="AudioStream" uid="uid://by4o6dd38blj" path="res://Audio/Pop/Alex/A_Pop.mp3" id="3_wrn6y"]
 [ext_resource type="PackedScene" uid="uid://bmeslp1i20giw" path="res://3d_models.tscn" id="4_qnu3f"]
-[ext_resource type="AudioStream" uid="uid://n58xkg1611l2" path="res://Audio/Pop/Alex/A_Pawp4.mp3" id="5_op0x6"]
-[ext_resource type="AudioStream" uid="uid://b7trnxvd7i37o" path="res://Audio/Pop/Alex/A_Pawp.mp3" id="6_ljdg5"]
+[ext_resource type="AudioStream" uid="uid://bx60sb8jxb576" path="res://Audio/Pop/Alex/A_Pop2.mp3" id="4_rvb02"]
+[ext_resource type="AudioStream" uid="uid://df2cfk4osmo3u" path="res://Audio/Pop/Alex/A_Pop3.mp3" id="5_7reem"]
+[ext_resource type="AudioStream" uid="uid://bc7c18rkvru84" path="res://Audio/Pop/Alex/A_Pop4.mp3" id="6_gachd"]
+[ext_resource type="AudioStream" uid="uid://dpccsjvwh335g" path="res://Audio/Pop/Alex/A_Pop5.mp3" id="7_420tw"]
+[ext_resource type="AudioStream" uid="uid://cv3c1gq0q5c8t" path="res://Audio/Pop/Alex/A_Pop6.mp3" id="8_fhq7x"]
+[ext_resource type="AudioStream" uid="uid://bq10shxqql6u1" path="res://Audio/Pop/Alex/A_Pop7.mp3" id="9_cm740"]
+[ext_resource type="AudioStream" uid="uid://dhu6ghpatcqnb" path="res://Audio/Pop/Alex/A_Pop8.mp3" id="10_sqliw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7gxqu"]
 radius = 1.0
@@ -22,7 +26,7 @@ script = ExtResource("1_xxi4i")
 speedup_FOV = 80
 carCam = NodePath("Camera3D")
 controls = ExtResource("2_4eqy6")
-PopSFX = Array[AudioStream]([ExtResource("3_l80my"), ExtResource("4_m6ibe"), ExtResource("5_op0x6"), ExtResource("6_ljdg5")])
+PopSFX = Array[AudioStream]([ExtResource("3_wrn6y"), ExtResource("4_rvb02"), ExtResource("5_7reem"), ExtResource("6_gachd"), ExtResource("7_420tw"), ExtResource("8_fhq7x"), ExtResource("9_cm740"), ExtResource("10_sqliw")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7gxqu")
