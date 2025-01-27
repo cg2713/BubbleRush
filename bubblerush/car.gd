@@ -14,7 +14,6 @@ const SPEED = 25.0
 @export var passedCheckpoints = []
 @export var controls : Resource
 @export var index = 0
-# List not working!!!!
 @export var PopSFX : Array[AudioStream]
 
 # AI variables
@@ -36,6 +35,7 @@ func _ready() -> void:
 	if is_ai_car():
 		PlayerChoice = randi_range(1, 4)
 		print("AI ", name, " choose car ", PlayerChoice)
+		$AudioListener3D.queue_free()
 	
 	# Hide all except chosen
 	for child in $"3DModel".get_children():

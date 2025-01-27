@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhjgcx26cvvs8"]
+[gd_scene load_steps=13 format=3 uid="uid://bhjgcx26cvvs8"]
 
 [ext_resource type="Script" path="res://checkpoint.gd" id="1_8qspk"]
 [ext_resource type="Material" uid="uid://bfqdffqxjcss5" path="res://GoodZone.tres" id="2_43hfg"]
+[ext_resource type="AudioStream" uid="uid://cu45c8hl5l3yk" path="res://Audio/Checkpoint/Alex/A_Checkpoint1.mp3" id="2_67gkd"]
+[ext_resource type="AudioStream" uid="uid://ca6hehuv2wn" path="res://Audio/Checkpoint/Alex/A_Checkpoint2.mp3" id="3_bljmk"]
+[ext_resource type="AudioStream" uid="uid://cwgwpgayivk3d" path="res://Audio/Checkpoint/Alex/A_Checkpoint3.mp3" id="4_ljsuc"]
+[ext_resource type="AudioStream" uid="uid://ciyj3cdsevf3c" path="res://Audio/Checkpoint/Alex/A_Checkpoint4.mp3" id="5_sqxr0"]
+[ext_resource type="AudioStream" uid="uid://ilol8esi8kme" path="res://Audio/Checkpoint/Alex/A_Checkpoint5.mp3" id="6_quux6"]
+[ext_resource type="AudioStream" uid="uid://bcc636wqotbu" path="res://Audio/Checkpoint/Alex/A_Checkpoint6.mp3" id="7_1s8s3"]
+[ext_resource type="AudioStream" uid="uid://tv7paw4asuhg" path="res://Audio/Checkpoint/Alex/A_Checkpoint7.mp3" id="8_6kbtf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q405b"]
 size = Vector3(15, 3, 1)
@@ -9,8 +16,11 @@ size = Vector3(15, 3, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_awj0i"]
 size = Vector3(15, 3, 1)
 
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_ww2re"]
+
 [node name="Checkpoint" type="Area3D"]
 script = ExtResource("1_8qspk")
+SFX = Array[AudioStream]([ExtResource("2_67gkd"), ExtResource("3_bljmk"), ExtResource("4_ljsuc"), ExtResource("5_sqxr0"), ExtResource("6_quux6"), ExtResource("7_1s8s3"), ExtResource("8_6kbtf")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_q405b")
@@ -18,5 +28,10 @@ shape = SubResource("BoxShape3D_q405b")
 [node name="CSGMesh3D" type="CSGMesh3D" parent="CollisionShape3D"]
 material_override = ExtResource("2_43hfg")
 mesh = SubResource("BoxMesh_awj0i")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamPolyphonic_ww2re")
+autoplay = true
+max_polyphony = 8
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

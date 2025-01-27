@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var SFX : Array[AudioStream]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,3 +21,8 @@ func _on_body_entered(body: Node3D) -> void:
 			body.checkpointRotation = rotation
 			body.passedCheckpoints.append(self)
 			print("Checkpoint reached:", position)
+			var playback = $AudioStreamPlayer3D.get_stream_playback()
+			for sfx in SFX:
+				playback.play_stream(sfx, 0, 1, 1, 0, "Master");
+				#$AudioStreamPlayer3D.stream = sfx
+				#$AudioStreamPlayer3D.play()
