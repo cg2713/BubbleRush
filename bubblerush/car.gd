@@ -15,6 +15,7 @@ const SPEED = 25.0
 @export var controls : Resource
 @export var index = 0
 @export var PopSFX : Array[AudioStream]
+@export var ScrubSFX : Array[AudioStream]
 
 # AI variables
 @export var ai_waypoint_path : Path3D # if set, this is an AI car
@@ -125,6 +126,8 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		speed_percent *= lerp(1.0, 0.95, current_dirt_energy)
 		# print(speed_percent)
 		dirt_mesh_instance.transparency += 0.9
+		$AudioStreamPlayer3DScrub.stream = ScrubSFX.pick_random()
+		$AudioStreamPlayer3DScrub.play()
 		#print("dirt_mesh_instance.transparency ", dirt_mesh_instance.transparency)
 		
 func get_input_dir():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4qssepqrjmmk"]
+[gd_scene load_steps=20 format=3 uid="uid://c4qssepqrjmmk"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_xxi4i"]
 [ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_4eqy6"]
@@ -12,6 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://cv3c1gq0q5c8t" path="res://Audio/Pop/Alex/A_Pop6.mp3" id="8_fhq7x"]
 [ext_resource type="AudioStream" uid="uid://bq10shxqql6u1" path="res://Audio/Pop/Alex/A_Pop7.mp3" id="9_cm740"]
 [ext_resource type="AudioStream" uid="uid://dhu6ghpatcqnb" path="res://Audio/Pop/Alex/A_Pop8.mp3" id="10_sqliw"]
+[ext_resource type="AudioStream" uid="uid://78jn7qyfyb2s" path="res://Audio/Scrub/Alex/Scrub2.mp3" id="11_cnqtd"]
+[ext_resource type="AudioStream" uid="uid://dsi4ft6ic2anw" path="res://Audio/Scrub/Alex/Scrub3.mp3" id="12_qcn3h"]
+[ext_resource type="AudioStream" uid="uid://bwr0oh8f1seun" path="res://Audio/Scrub/Alex/Scrub4.mp3" id="13_8l7gb"]
+[ext_resource type="AudioStream" uid="uid://b8rmlt0h6h5m7" path="res://Audio/Scrub/Alex/Scrub.mp3" id="14_po36e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7gxqu"]
 radius = 1.0
@@ -27,6 +31,7 @@ speedup_FOV = 80
 carCam = NodePath("Camera3D")
 controls = ExtResource("2_4eqy6")
 PopSFX = Array[AudioStream]([ExtResource("3_wrn6y"), ExtResource("4_rvb02"), ExtResource("5_7reem"), ExtResource("6_gachd"), ExtResource("7_420tw"), ExtResource("8_fhq7x"), ExtResource("9_cm740"), ExtResource("10_sqliw")])
+ScrubSFX = Array[AudioStream]([ExtResource("11_cnqtd"), ExtResource("12_qcn3h"), ExtResource("13_8l7gb"), ExtResource("14_po36e")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7gxqu")
@@ -55,6 +60,8 @@ shape = SubResource("BoxShape3D_5bhmy")
 [node name="3DModel" parent="." instance=ExtResource("4_qnu3f")]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3DScrub" type="AudioStreamPlayer3D" parent="."]
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 

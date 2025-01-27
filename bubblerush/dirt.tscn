@@ -22,3 +22,5 @@ surface_material_override/0 = ExtResource("1_7wudt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/DirtArea3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4.04557, 0)
 shape = SubResource("BoxShape3D_ccevi")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
