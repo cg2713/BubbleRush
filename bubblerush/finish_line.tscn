@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://diq6shlq4m8l7"]
+[gd_scene load_steps=13 format=3 uid="uid://diq6shlq4m8l7"]
 
 [ext_resource type="Script" path="res://finish_line.gd" id="1_m0kg3"]
+[ext_resource type="AudioStream" uid="uid://cu45c8hl5l3yk" path="res://Audio/Checkpoint/Alex/A_Checkpoint1.mp3" id="2_41rv5"]
 [ext_resource type="Material" uid="uid://bfqdffqxjcss5" path="res://GoodZone.tres" id="2_hfqxu"]
+[ext_resource type="AudioStream" uid="uid://ca6hehuv2wn" path="res://Audio/Checkpoint/Alex/A_Checkpoint2.mp3" id="3_wifw0"]
+[ext_resource type="AudioStream" uid="uid://cwgwpgayivk3d" path="res://Audio/Checkpoint/Alex/A_Checkpoint3.mp3" id="4_4cay6"]
+[ext_resource type="AudioStream" uid="uid://ciyj3cdsevf3c" path="res://Audio/Checkpoint/Alex/A_Checkpoint4.mp3" id="5_ilqtr"]
+[ext_resource type="AudioStream" uid="uid://ilol8esi8kme" path="res://Audio/Checkpoint/Alex/A_Checkpoint5.mp3" id="6_fk60u"]
+[ext_resource type="AudioStream" uid="uid://bcc636wqotbu" path="res://Audio/Checkpoint/Alex/A_Checkpoint6.mp3" id="7_ik43q"]
+[ext_resource type="AudioStream" uid="uid://tv7paw4asuhg" path="res://Audio/Checkpoint/Alex/A_Checkpoint7.mp3" id="8_nomlf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q405b"]
 size = Vector3(1, 1, 17.5)
@@ -9,8 +16,11 @@ size = Vector3(1, 1, 17.5)
 [sub_resource type="BoxMesh" id="BoxMesh_tpf5g"]
 size = Vector3(1, 1, 17.5)
 
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_vq8l2"]
+
 [node name="Finish Line" type="Area3D"]
 script = ExtResource("1_m0kg3")
+SFX = Array[AudioStream]([ExtResource("2_41rv5"), ExtResource("3_wifw0"), ExtResource("4_4cay6"), ExtResource("5_ilqtr"), ExtResource("6_fk60u"), ExtResource("7_ik43q"), ExtResource("8_nomlf")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_q405b")
@@ -18,5 +28,10 @@ shape = SubResource("BoxShape3D_q405b")
 [node name="CSGMesh3D" type="CSGMesh3D" parent="CollisionShape3D"]
 mesh = SubResource("BoxMesh_tpf5g")
 material = ExtResource("2_hfqxu")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamPolyphonic_vq8l2")
+autoplay = true
+max_polyphony = 8
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
