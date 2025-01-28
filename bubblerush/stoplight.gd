@@ -12,6 +12,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+# Drawing cirlces every second to signify ready set go total amount of seconds 4
 func _draw():
 	if counter > 1:
 		draw_circle(Vector2(size.x/3,size.y/5),50,Color.RED)

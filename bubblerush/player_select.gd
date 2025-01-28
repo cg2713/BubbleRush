@@ -8,7 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# this is just checking whitch button has been pressed to calcualte how many players there are in the game
 func _process(delta: float) -> void:
 	if $MarginContainer/GridContainer/Button.button_pressed:
 		Game.playercount = 1

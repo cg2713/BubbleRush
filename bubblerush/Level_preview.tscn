@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c7r5ijpdqmela" path="res://bathroom_level.tscn" id="2_kig4p"]
 [ext_resource type="Resource" uid="uid://077f7h2sq7ux" path="res://resources/p1_controls.tres" id="2_x1fdh"]
 [ext_resource type="PackedScene" uid="uid://baisdj3sam854" path="res://playable_figure8.tscn" id="3_cyl4u"]
-[ext_resource type="PackedScene" uid="uid://bqlgw4rpt7uxs" path="res://playable_test_level.tscn" id="4_50jrc"]
+[ext_resource type="PackedScene" uid="uid://bqlgw4rpt7uxs" path="res://playable_bathroom_level.tscn" id="4_50jrc"]
 [ext_resource type="PackedScene" uid="uid://dms6exgn0g23p" path="res://bathroom_course_level.tscn" id="6_jqmcc"]
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("models")]
